@@ -1,1 +1,1 @@
-# cuxr
+# Cornell XR Club Github
