@@ -1123,7 +1123,7 @@ body {
   left: 200px;
   -webkit-transform: rotate(-25deg);
   transform: rotate(-25deg);
-  border: 5px solid #0f33ff;
+  border: 5px solid #b31b1b;;
   border-right-color: transparent;
   border-bottom-color: transparent;
 }
@@ -1137,7 +1137,7 @@ body {
   transform: rotate(45deg);
   width: 10px;
   height: 10px;
-  background-color: #0f33ff;
+  background-color: #b31b1b;;
 }
 
 .about--banner h2 {
@@ -1156,7 +1156,7 @@ body {
   left: 268px;
   width: 30px;
   height: 30px;
-  background-color: #0f33ff;
+  background-color: #b31b1b;;
   border-radius: 50%;
 }
 
@@ -1167,7 +1167,7 @@ body {
   left: 255px;
   width: 10px;
   height: 10px;
-  background-color: #0f33ff;
+  background-color: #b31b1b;;
 }
 
 .about--banner a {
@@ -1219,7 +1219,7 @@ body {
   height: 75px;
   text-decoration: none;
   color: #fff;
-  border: 10px solid #0f33ff;
+  border: 10px solid #b31b1b;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -1402,7 +1402,7 @@ body {
 }
 
 .contact--lockup .modal--options li:nth-child(1) {
-  background-color: #1769ff;
+  background-color: #b31b1b;
 }
 
 .contact--lockup .modal--options li:nth-child(2) {
@@ -1411,7 +1411,7 @@ body {
 
 .contact--lockup .modal--options li:nth-child(3) {
   margin-bottom: 0;
-  background-color: #0f33ff;
+  background-color: #b31b1b;
   text-transform: uppercase;
 }
 
@@ -1564,8 +1564,8 @@ body {
 }
 
 .work-request--options input[type="checkbox"]:checked+label {
-  background-color: #0f33ff;
-  border-color: #0f33ff;
+  background-color: #b31b1b;
+  border-color: #b31b1b;
 }
 
 .work-request--options input[type="checkbox"]:checked+label svg {
@@ -1699,7 +1699,7 @@ body {
   -webkit-transform: translateZ(0) translateX(0) rotateY(0deg);
   transform: translateZ(0) translateX(0) rotateY(0deg);
   min-height: 100%;
-  outline: 30px solid #0f33ff;
+  outline: 30px solid #b31b1b;
   -webkit-transition: -webkit-transform 0.4s;
   transition: -webkit-transform 0.4s;
   transition: transform 0.4s;
@@ -1727,7 +1727,7 @@ body {
 .effect-rotate-left--animate .container {
   -webkit-transform: translateZ(-1800px) translateX(-50%) rotateY(45deg);
   transform: translateZ(-1800px) translateX(-50%) rotateY(45deg);
-  outline: 30px solid #0f33ff;
+  outline: 30px solid #b31b1b;
 }
 
 .outer-nav {
@@ -1801,7 +1801,7 @@ body {
   width: 110%;
   height: 15px;
   opacity: 0;
-  background-color: #0f33ff;
+  background-color: #b31b1b;
 }
 
 .outer-nav>li.is-active::before {
