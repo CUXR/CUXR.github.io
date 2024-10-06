@@ -22,4 +22,4 @@ mask dark three:
 #6d6d6d
 
 mask outline:
-#c4c4c4
+#c4c4c4# Cornell XR Club Github
