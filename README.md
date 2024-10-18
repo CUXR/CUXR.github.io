@@ -1,7 +1,7 @@
 # CUXR.github.io
 Website for CUXR
 
-
+10/15/2024
 
 brown face: 
 #96501e
