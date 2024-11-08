@@ -1816,11 +1816,19 @@ body {
   .outer-nav>li {
     font-size: 44px;
   }
+
+  .team-member {
+    width: calc(50% - 20px);
+  }
 }
 
 @media (max-width: 600px) {
   .outer-nav>li {
     font-size: 34px;
+  }
+
+  .team-member {
+    width: 100%;
   }
 }
 
@@ -1842,4 +1850,40 @@ body {
 .outer-nav li.is-vis:nth-child(5) {
   -webkit-transition-delay: 0.16s;
   transition-delay: 0.16s;
+}
+
+.team-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+  overflow-y: auto;
+}
+
+.team-member {
+  width: calc(33% - 10px);
+  text-align: center;
+  padding: 30px;
+  background-color: #e7a866;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 50px;
+}
+
+.member-photo {
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.member-name {
+  font-weight: bold;
+  color: #000000;
+  font-size: 16px;
+}
+
+.member-bio {
+  color: #6d6d6d;
+  font-size: 14px;
 }
