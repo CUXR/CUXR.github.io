@@ -1990,4 +1990,12 @@ body {
   .header--logo2 p{
     display:none;
   }
+
+  .intro--banner h2 {
+    position: relative;
+    /* You can also use other values like absolute, fixed, or static */
+    margin-top: -5%;
+    color: rgb(227, 227, 227);
+    font-size: 20px;
+  }
 }
