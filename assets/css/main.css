@@ -1963,3 +1963,27 @@ body {
   padding: 7px;
   margin-top: -5px;
 }
+
+@media (max-width: 800px) {
+  .clickables{
+    margin-left: 0px;
+    margin-top: 7px;
+  }
+
+  .clickables img{
+    height: 30px !important;
+    width: auto;
+  }
+
+  .clickables a{
+    font-size: 10px;
+  }
+
+  .header--logo img{
+    height: 30px !important;
+  }
+
+  .header--logo p{
+    display:none;
+  }
+}
