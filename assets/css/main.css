@@ -1986,4 +1986,8 @@ body {
   .header--logo p{
     display:none;
   }
+
+  .header--logo2 p{
+    display:none;
+  }
 }
