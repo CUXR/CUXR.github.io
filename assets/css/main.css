@@ -500,6 +500,12 @@ body {
   -ms-flex-pack: justify;
   justify-content: space-between;
   z-index: 10;
+  text-align: center;
+  flex-direction: row;
+}
+
+.header .clickables{
+  padding-right: 35px;
 }
 
 .header--logo {
@@ -510,6 +516,13 @@ body {
   -webkit-box-align: center;
   -webkit-align-items: center;
   -ms-flex-align: center;
+  align-items: center;
+  text-decoration: none;
+  color: #fff;
+}
+
+.header--logo2 {
+  display: flex;
   align-items: center;
   text-decoration: none;
   color: #fff;
@@ -750,7 +763,17 @@ body {
   font-weight: 1000;
   line-height: 1;
   z-index: 1;
+  margin-top: -15px;
 }
+
+.intro--banner h2 {
+  position: relative;
+  /* You can also use other values like absolute, fixed, or static */
+  margin-top: -5%;
+  color: rgb(227, 227, 227);
+  font-size: 25px;
+}
+
 
 .intro--options {
   display: -webkit-box;
@@ -767,9 +790,10 @@ body {
 }
 
 .intro--options>a {
-  max-width: 250px;
+  margin-top: -8px;
+  max-width: 850px;
   text-decoration: none;
-  color: #282828;
+  color: #fff;
   -webkit-transition: color 0.2s ease-in-out;
   transition: color 0.2s ease-in-out;
 }
@@ -779,12 +803,14 @@ body {
 }
 
 .intro--options h3 {
-  font-size: 16px;
+  font-size: 24px;
   text-transform: uppercase;
 }
 
 .intro--options p {
   margin-bottom: 0;
+  margin-top: -20px;
+  font-size: 16px;
 }
 
 @media (max-width: 900px) {
@@ -1333,7 +1359,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url("../img/contact-visual.png");
+  background-image: url("../img/ithaca.png");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -1406,16 +1432,16 @@ body {
 }
 
 .contact--lockup .modal--options li:nth-child(1) {
-  background-color: #96501e;
+  background-color: #b31b1b;
 }
 
 .contact--lockup .modal--options li:nth-child(2) {
-  background-color: #e7a866;
+  background-color: #b31b1b;
 }
 
 .contact--lockup .modal--options li:nth-child(3) {
   margin-bottom: 0;
-  background-color: #96501e;
+  background-color: #b31b1b;
   /* text-transform: uppercase; */
 }
 
@@ -1887,4 +1913,53 @@ body {
 .member-bio {
   color: #6d6d6d;
   font-size: 14px;
+}
+
+
+#github img{
+  color: white;
+  background-color: white;
+}
+
+.clickables {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+  float: left;
+  justify-self: left !important;
+}
+
+.clickables a {
+  margin-left: 15px;
+}
+
+.clickables a p{
+  margin-right: 10px;
+  margin-left: -2px;
+  text-transform: lowercase;
+}
+
+#apply {
+  color: black;
+  background-color: white;
+  font-weight: 650;
+  border: white;
+  border-style: solid;
+  text-decoration: none;
+  border-radius: 10px;
+  padding: 7px;
+  margin-top: -5px;
+}
+
+#apply:hover{
+  color: white;
+  background-color: black;
+  font-weight: 650;
+  border: white;
+  border-style: solid;
+  text-decoration: none;
+  border-radius: 10px;
+  padding: 7px;
+  margin-top: -5px;
 }
