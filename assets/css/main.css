@@ -285,7 +285,7 @@ body {
 }
 
 body {
-  background-color: #0c0c0c;
+  background-color: #000000;
   font-size: 14px;
   line-height: 1.6;
   font-family: "Montserrat", sans-serif;
@@ -724,6 +724,28 @@ body {
   justify-content: center;
   margin: 0 auto;
 }
+
+.threejs-container {
+  width: 1000px; /* Adjust width as needed */
+  height: 1000px; /* Adjust height as needed */
+  transform: translateY(-50%); /* Center vertically using transform */
+  position: absolute;
+  margin-left: 35%;
+  margin-top: -20%;
+  z-index: -1;
+}
+
+@media (max-width: 900px) {
+  .threejs-container {
+    width: 700px; /* Adjust width as needed */
+    height: 700px; /* Adjust height as needed */
+    transform: translateY(-50%); /* Center vertically using transform */
+    position: absolute;
+    margin-left: -30%;
+    margin-top: -30%;
+    z-index: -1;
+  }
+  }
 
 @media (max-width: 1180px) {
   .intro {

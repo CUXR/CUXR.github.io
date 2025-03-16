@@ -17,6 +17,14 @@
   <meta name="keywords" content="XR, VR, AR, Virtual Reality, Augmented Reality">
   <meta name="author" content="Cornell XR Club">
   <link rel="stylesheet" href="assets/css/main.css">
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.174.0/build/three.module.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.174.0/examples/jsm/"
+      }
+    }
+  </script>
 </head>
 
 <body>
@@ -86,7 +94,9 @@
           <ul class="l-main-content main-content">
             <li class="l-section section section--is-active">
               <div class="intro">
+
                 <div class="intro--banner">
+                  <div class="intro--left">
                   <h1>
                     <span style="color: #b31b1b;">C</span>ornell<br>
                     <span style="color: #b31b1b;">U</span>niversity<br>
@@ -98,6 +108,18 @@
                     @ Cornell University
                   </h2>
                 </div>
+
+                <div class="intro--right">
+                  <div class="threejs-container" style="flex: 1; position: relative;">
+                    <!-- The Three.js renderer will attach here -->
+                  </div>
+                </div>
+
+                <script type="module" src="assets/js/script.js"></script>
+
+                </div>
+
+                
                 <div class="intro--options">
                   <a>
                     <h3><strong>About</strong></h3>
