@@ -15,7 +15,7 @@ const loader = new STLLoader();
                         reflectivity: 0.8,
                         shininess: 0.5,
                         polygonOffset: true,
-                        polygonOffsetFactor: 1, // positive value pushes polygon further away
+                        polygonOffsetFactor: 3, // positive value pushes polygon further away
                         polygonOffsetUnits: 1
                     });
 
@@ -108,10 +108,22 @@ camera.position.z = 5;
 function animate() {
     if(line) {
     line.rotation.z += 0.01;
+    // if(line.position.y < 0.1){
+    //     line.position.y += 0.005;
+    // }
+    // else {
+    //     line.position.y -= 0.005;
+    // }
     }
 
     if(mesh) {
     mesh.rotation.z += 0.01;
+    // if(mesh.position.y < 0.5){
+    //     mesh.position.y += 0.005;
+    // }
+    // else {
+    //     mesh.position.y -= 0.005;
+    // }
     }
 
     requestAnimationFrame(animate);
