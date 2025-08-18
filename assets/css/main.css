@@ -2124,3 +2124,48 @@ body {
     margin-top: -1px !important;
   }
 }
+
+/* Footer styles */
+.footer {
+  background: #181818;
+  border-top: 1px solid #333;
+  padding: 20px 0;
+  text-align: center;
+  margin-top: 40px;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.footer-link {
+  color: #e0e0e0;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.3s ease;
+}
+
+.footer-link:hover {
+  color: #b31b1b;
+  text-decoration: underline;
+}
+
+.footer-copyright {
+  color: #888;
+  font-size: 12px;
+  margin-top: 10px;
+  opacity: 0.8;
+}
+
+@media (max-width: 700px) {
+  .footer {
+    padding: 15px 0;
+    margin-top: 20px;
+  }
+  
+  .footer-link {
+    font-size: 12px;
+  }
+}
