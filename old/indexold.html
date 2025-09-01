@@ -1,0 +1,237 @@
+<!-- 
+  Need to reformat subteam page, fix extra page when scroll up on subteams 
+  (i fixed this and then i broke it again ig?)
+
+  fix header for media queries 
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Cornell XR</title>
+  <link rel="icon" type="image/x-icon" href="assets/img/CUXR_Logo_Ico.ico">  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="An undegraduate project based team for Virtual, Augmented, and Mixed Reality projects in software and hardware.">
+  <meta name="keywords" content="XR, VR, AR, Virtual Reality, Augmented Reality">
+  <meta name="author" content="Cornell XR">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.174.0/build/three.module.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.174.0/examples/jsm/"
+      }
+    }
+  </script>
+</head>
+
+<body>
+
+  <!-- notification for small viewports and landscape oriented smartphones -->
+  <div class="device-notification">
+    <a class="device-notification--logo" href="#0">
+      <img src="assets\img\CUXR_Logo_Transparent_(1).png" alt="Global">
+      <p>CUXR</p>
+    </a>
+    <p class="device-notification--message">This website is best viewed on a larger screen!</p>
+  </div>
+
+  <div class="perspective effect-rotate-left">
+    <div class="container">
+      <div class="outer-nav--return"></div>
+      <div id="viewport" class="l-viewport">
+        <div class="l-wrapper">
+          <header class="header">
+            <a class="header--logo" href="\">
+              <img src="assets\img\CUXR_Logo_Transparent_(1).png" style="height: 40px; width: auto;" alt="Global">
+              <p>CUXR</p>
+            </a>
+
+            <div class="clickables">
+
+              <a class="header--logo2" href="https://www.instagram.com/cornellxr/" target="_blank">
+                <img src="assets\img\instagram.svg" style="height: 55px; width: auto;" alt="Global">
+                <p>@cornellxr</p>
+              </a>
+              
+              <a href="https://github.com\CUXR" target="_blank">
+                <img src="assets\img\github-icon.svg" style="height: 40px; width: auto;" alt="Global">
+              </a>
+
+              <a href="https://www.linkedin.com/company/cornell-xr/" target="_blank">
+                <img src="assets\img\linkedin-icon.svg" style="height: 55px; width: auto;" alt="linkedin">
+              </a>
+
+              <a id="apply" href="https://forms.gle/XucBntV7S8HJpvue6" target="_blank"> Apply to Join Us! </a>
+
+            </div>
+
+            <div class="header--nav-toggle">
+              <span></span>
+            </div>
+
+          </header>
+
+          <nav class="l-side-nav">
+            <ul class="side-nav">
+              <li class="is-active"><span>Home</span></li>
+              <li><span>Projects</span></li>
+              <li><span>Team</span></li>
+              <li><span>Contact</span></li>
+            </ul>
+          </nav>
+
+
+
+          <ul class="l-main-content main-content">
+            <li class="l-section section section--is-active">
+              <div class="intro">
+
+                <div class="intro--banner">
+                  <div class="intro--left">
+                  <h1>
+                    <span style="color: #b31b1b;">C</span>ornell<br>
+                    <span style="color: #b31b1b;">U</span>niversity<br>
+                    E<span style="color: #b31b1b;">X</span>tended <br>
+                    <span style="color: #b31b1b;">R</span>eality
+                  </h1>
+                  <h2>
+                    Engineering Project Team <br>
+                    @ Cornell University
+                  </h2>
+                </div>
+
+                <div class="intro--right">
+                  <div class="threejs-container" style="flex: 1; position: relative;">
+                    <!-- The Three.js renderer will attach here -->
+                  </div>
+                </div>
+
+                <script type="module" src="assets/js/script.js"></script>
+
+                </div>
+
+                
+                <div class="intro--options">
+                  <a>
+                    <h3><strong>About</strong></h3>
+                    <p>A team of undergraduate students at Cornell University exploring and creating <strong>software</strong>, <strong>hardware</strong>, <strong>games</strong>, and <strong>events</strong> for <strong>Virtual, Augmented, Mixed Reality</strong>, and <strong>Human-Computer Interaction (HCI)</strong>!</p>
+                  </a>
+                  <!-- <a href="#0">
+                    <h3>Fantasy interactive</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do.</p>
+                  </a>
+                  <a href="#0">
+                    <h3>Paul &amp; shark</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do.</p>
+                  </a> -->
+                </div>
+              </div>
+            </li>
+            <li class="l-section section">
+              <div class="work">
+                <h2>Current Projects</h2>
+                <div class="work--lockup">
+                  <div class="projects-grid">
+                    <div class="project-card">
+                      <img src="assets/img/VR_equpment.jpeg" alt="Victory" class="project-image">
+                      <p class="project-title">VR Escape Room</p>
+                      <p class="project-description">Escape an island as a robot!</p>
+                    </div>
+                    <div class="project-card">
+                      <img src="assets/img/hg.png" alt="various VR equp" class="project-image">
+                      <p class="project-title">Haptic Gloves</p>
+                      <p class="project-description">DIY Force-feedback Haptic Gloves for VR Interaction</p>
+                    </div>
+                    <div class="project-card">
+                      <img src="assets/img/cccc_1_1.png" alt="VR goggles" class="project-image">
+                      <p class="project-title">Smart Glasses Model</p>
+                      <p class="project-description">A general purpose smart glasses computer-vision model.</p>
+                    </div>
+                    <div class="project-card">
+                      <img src="assets/img/ffarm.png" alt="Force-Feedback Arm" class="project-image">
+                      <p class="project-title">Force-Feedback Arm</p>
+                      <p class="project-description">An exoskeleton arm providing haptic feedback for immersive XR experiences.</p>
+                    </div>
+                    <div class="project-card">
+                      <img src="assets/img/olfactory.png" alt="Olfactory Display" class="project-image">
+                      <p class="project-title">Olfactory Display</p>
+                      <p class="project-description">A scent-generating device to add smell to virtual environments.</p>
+                    </div>
+                    <div class="project-card">
+                      <img src="assets/img/muse2.png" alt="BCI Controller" class="project-image">
+                      <p class="project-title">BCI Controller</p>
+                      <p class="project-description">A brain-computer interface for controlling XR systems with neural signals.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="l-section section">
+              <div class="about">
+                <div class="about--banner">
+                  <h2>Meet our Team! <br> (Page Under Construction)</h2>
+                  <!-- <img src="assets/img/about-visual.png" alt="ugly"> -->
+                </div>
+                <div class="about--options">
+                  <!-- <a href="appdev.html">
+                    <h3>App Developement Team</h3>
+                  </a>
+                  <a href="design.html">
+                    <h3>Design Team</h3>
+                  </a>
+                  <a href="business.html">
+                    <h3>Business Team</h3>
+                  </a> -->
+                </div>
+              </div>
+            </li>
+            <li class="l-section section">
+              <div class="contact">
+                <div class="contact--lockup">
+                  <div class="modal">
+                    <div class="modal--information">
+                      <p>Feel free to reach out with any questions!</p>
+                      <!-- <a href="mailto:cornellxrclub@gmail.com">cornellxrclub@gmail.com</a> -->
+                    </div>
+                    <ul class="modal--options">
+                      <!-- pulled links from google doc, mailing list not valid anymore -->
+                      <li><a href="https://forms.gle/MQAfxMXwZB8sztwt5" target="_blank">Apply</a></li>
+                      <li><a href="mailto:cornellxrclub@gmail.com">Contact Us</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <ul class="outer-nav">
+      <li class="is-active">Home</li>
+      <li>Projects</li>
+      <li>Team</li>
+      <li>Contact</li>
+    </ul>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <a href="https://hr.cornell.edu/about/workplace-rights/equal-education-and-employment" target="_blank" class="footer-link">
+        Equal Education and Employment
+      </a>
+      <div class="footer-copyright">
+        © CUXR 2025
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+  <script>window.jQuery || document.write('<script src="assets/js/vendor/jquery-2.2.4.min.js"><\/script>')</script>
+  <script src="assets/js/functions-min.js"></script>
+</body>
+
+</html>

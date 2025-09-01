@@ -1,18 +1,19 @@
 # CUXR.github.io
+
 Website for CUXR
 
 10/15/2024
 
-brown face: 
+brown face:
 #96501e
 
 inside ear:
 #e7a866
 
-nose: 
+nose:
 #412616
 
-red: 
+red:
 #b31b1b
 
 mask light:
@@ -22,4 +23,4 @@ mask dark three:
 #6d6d6d
 
 mask outline:
-#c4c4c4# Cornell XR Club Github
+#c4c4c4# Cornell XR Github
