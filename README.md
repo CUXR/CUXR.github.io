@@ -14,7 +14,7 @@ nose:
 #412616
 
 red:
-#b31b1b
+#E74C3C
 
 mask light:
 #ededed
