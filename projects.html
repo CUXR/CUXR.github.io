@@ -4,352 +4,228 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="assets/img/CUXR_Logo_Ico.ico">
-
-    <!-- SEO Meta Tags -->
-    <title>Cornell XR Projects - VR, AR, HCI, Smart Glasses & Haptic Devices</title>
-    <meta name="description"
-        content="Explore Cornell XR's innovative projects including haptic gloves, force-feedback arms, smart glasses CV models, VR escape rooms, and brain-computer interfaces. XR technology development at Cornell University.">
-    <meta name="keywords"
-        content="Cornell XR Projects, VR Projects, AR Projects, Haptic Devices, Smart Glasses, Computer Vision, Haptic Gloves, Force Feedback, Brain-Computer Interface, BCI, Olfactory Display, VR Escape Room, Architecture Viewer, Unity Development, XR Technology, HCI Research, Cornell University Projects, Immersive Technology">
-    <meta name="author" content="Cornell XR">
-    <meta name="robots" content="index, follow">
-    <meta name="language" content="English">
-    <meta name="revisit-after" content="7 days">
-
-    <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Cornell XR Projects - VR, AR, HCI, Smart Glasses & Haptic Devices">
-    <meta property="og:description"
-        content="Explore Cornell XR's innovative projects including haptic gloves, force-feedback arms, smart glasses CV models, VR escape rooms, and brain-computer interfaces. XR technology development at Cornell University.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://cuxr.github.io/projects.html">
-    <meta property="og:image" content="https://cuxr.github.io/assets/img/CUXR_Logo_Transparent.png">
-    <meta property="og:site_name" content="Cornell XR">
-    <meta property="og:locale" content="en_US">
-
-    <!-- Twitter Card Meta Tags -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Cornell XR Projects - VR, AR, HCI, Smart Glasses & Haptic Devices">
-    <meta name="twitter:description"
-        content="Explore Cornell XR's innovative projects including haptic gloves, force-feedback arms, smart glasses CV models, VR escape rooms, and brain-computer interfaces. XR technology development at Cornell University.">
-    <meta name="twitter:image" content="https://cuxr.github.io/assets/img/CUXR_Logo_Transparent.png">
-
-    <!-- Additional SEO Meta Tags -->
-    <meta name="theme-color" content="#E74C3C">
-    <meta name="msapplication-TileColor" content="#E74C3C">
-    <meta name="application-name" content="Cornell XR">
-    <meta name="apple-mobile-web-app-title" content="Cornell XR">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://cuxr.github.io/projects.html">
-
-    <!-- Structured Data for Projects -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "CollectionPage",
-        "name": "Cornell XR Projects",
-        "description": "Innovative XR projects including haptic devices, smart glasses, VR games, and brain-computer interfaces developed by Cornell University's Extended Reality engineering project team.",
-        "url": "https://cuxr.github.io/projects.html",
-        "mainEntity": {
-            "@type": "ItemList",
-            "itemListElement": [
-                {
-                    "@type": "CreativeWork",
-                    "name": "Haptic Gloves",
-                    "description": "DIY force-feedback haptic gloves for realistic and interactive VR experiences"
-                },
-                {
-                    "@type": "CreativeWork", 
-                    "name": "Force-Feedback Arm",
-                    "description": "An exoskeleton arm providing haptic feedback for immersive XR experiences"
-                },
-                {
-                    "@type": "CreativeWork",
-                    "name": "Olfactory Display", 
-                    "description": "A scent-generating device to add another layer of immersion to virtual environments"
-                },
-                {
-                    "@type": "CreativeWork",
-                    "name": "BCI Controller",
-                    "description": "A brain-computer interface for controlling XR systems with neural signals"
-                },
-                {
-                    "@type": "CreativeWork",
-                    "name": "Smart Glasses CV Model",
-                    "description": "A general-purpose computer-vision model designed for smart glasses applications"
-                }
-            ]
-        },
-        "publisher": {
-            "@type": "Organization",
-            "name": "Cornell XR",
-            "url": "https://cuxr.github.io/"
-        }
-    }
-    </script>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-        }
-
-        /* Custom red color overrides */
-        .text-red-400,
-        .text-red-500 {
-            color: #E74C3C !important;
-        }
-
-        .bg-red-500,
-        .bg-red-600,
-        .bg-red-700 {
-            background-color: #E74C3C !important;
-        }
-
-        .border-red-500 {
-            border-color: #E74C3C !important;
-        }
-
-        .hover\:text-red-500:hover {
-            color: #E74C3C !important;
-        }
-
-        .hover\:bg-red-700:hover {
-            background-color: #E74C3C !important;
-        }
-    </style>
+    <title>Projects</title>
+    <link rel="icon" type="image/x-icon" href="Assets/CUXR.ico">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter&family=JetBrains+Mono:wght@800&family=Sometype+Mono:wght@700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://use.typekit.net/dlf8cvy.css">
+    <link rel="stylesheet" href="https://use.typekit.net/dlf8cvy.css">
 </head>
 
-<body class="bg-black text-white">
-
-    <!-- Header -->
-    <header class="bg-black/80 backdrop-blur-md sticky top-0 z-50 border-b border-white/20">
-        <nav class="container mx-auto px-6 py-4">
-            <div class="flex items-center justify-between">
-                <a href="/" class="flex items-center space-x-2">
-                    <img src="assets/img/CUXR_Logo_Transparent.png" alt="CUXR Logo" class="h-10">
-                    <span class="text-2xl font-bold text-white">CUXR</span>
-                </a>
-
-                <!-- Desktop Nav -->
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="/" class="text-white hover:text-red-500 transition duration-300">Home</a>
-                    <a href="/projects" class="text-white font-semibold border-b-2 border-red-500 pb-1">Projects</a>
-                    <a href="/team" class="text-white hover:text-red-500 transition duration-300">Team</a>
-                    <a href="/contact" class="text-white hover:text-red-500 transition duration-300">Contact</a>
-                </div>
-
-                <div class="hidden md:flex items-center space-x-4">
-                    <a href="https://bit.ly/sp2026cuxr" target="_blank"
-                        class="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-lg transition duration-300">Apply
-                        to Join</a>
-                </div>
-
-                <!-- Mobile Nav Button -->
-                <div class="md:hidden">
-                    <button id="mobile-menu-button" class="text-white focus:outline-none">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M4 6h16M4 12h16m-7 6h7"></path>
-                        </svg>
-                    </button>
-                </div>
-            </div>
-
-            <!-- Mobile Nav -->
-            <div id="mobile-menu" class="hidden md:hidden mt-4">
-                <a href="/" class="block py-2 px-4 text-sm text-white hover:bg-black rounded">Home</a>
-                <a href="/projects" class="block py-2 px-4 text-sm text-white">Projects</a>
-                <a href="/team" class="block py-2 px-4 text-sm text-white hover:bg-black rounded">Team</a>
-                <a href="/contact" class="block py-2 px-4 text-sm text-white hover:bg-black rounded">Contact</a>
-                <a href="https://bit.ly/sp2026cuxr" target="_blank"
-                    class="block mt-2 bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-lg transition duration-300 text-center">Apply
-                    to Join</a>
-            </div>
+<body>
+    <header id="header">
+        <div id="logo">
+            <a href="index.html">
+                <img src="Assets/CUXR_logo.png" alt="CUXR Logo">
+            </a>
+        </div>
+        <nav id="main-nav">
+            <a href="index.html">About</a>
+            <a href="projects.html">Projects</a>
+            <a href="team.html">Team</a>
+            <a href="sponsor.html">Sponsors</a>
         </nav>
     </header>
 
-    <!-- Main Content -->
-    <main class="container mx-auto px-6 py-16">
-        <div class="text-center mb-12">
-            <h1 class="text-4xl md:text-5xl font-extrabold text-white">Our Projects</h1>
-            <!-- <p class="text-lg text-red-400 mt-2">PLEASE NOTE THAT PROJECTS ARE NOT FULLY UP TO DATE AND BEING
-                CONSOLIDATED DUE TO OUR TRANSITION INTO A PROJECT TEAM!</p> -->
+    <div class="proj-page">
+        <div class="team-description-container">
+            <div class="fade-image-container">
+                <img src="Assets/game_env.png" alt="CUXR Projects">
+            </div>
+            <section id="proj-description">
+                <h1>Projects</h1>
+                <p>
+                    Our team works on making sure that these projects explores on what's possible about XR.
+                    From software development to creating a full haptics systems, we bridge the gap between
+                    the digital and the physical through touch and sensation, our work spans the full spectrum
+                    of extended reality. We believe that the most groundbreaking experiences emerge at the
+                    intersection of disciplines, which is why our team brings together diverse expertise to
+                    explore, experiment, and redefine what XR can be.
+                </p>
+            </section>
         </div>
 
-        <!-- Haptics Section -->
-        <div class="mb-16">
-            <div class="text-center mb-8">
-                <h2 class="text-3xl font-bold text-white mb-4">Haptics Team</h2>
-                <p class="text-lg text-gray-300 max-w-4xl mx-auto">The Haptics Team is working towards making XR
-                    experiences as immersive as possible through the development of various haptic devices <strong class="text-red-400">that
-                        will eventually integrate into one unified system</strong>.</p>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <!-- Haptic Gloves -->
-                <div
-                    class="bg-gray-800 rounded-lg overflow-hidden shadow-lg transform hover:scale-105 transition-transform duration-300">
-                    <div class="w-full h-48 bg-gray-700 flex items-center justify-center">
-                        <span class="text-8xl">
-                            <img src="assets/img/hg.png" alt="haptic gloves" class="h-48 w-auto shadow-lg">
+        <section class="proj-content">
 
-                        </span>
+            <div class="proj-selection-anim">
+
+                <div class="proj-section">
+                    <!-- Row 1: 4 projects -->
+                    <div class="proj-gallery-row" id="rowTop">
+                        <div class="proj-item" data-project="arm">
+                            <div class="proj-item-inner">
+                                <div class="proj-item-image">
+                                    <div class="proj-img-glow"></div>
+                                    <img src="Assets/project-arm.png" alt="Haptics Arm" class="proj-thumb-img">
+                                </div>
+                                <div class="proj-item-detail">
+                                    <div class="proj-item-divider"></div>
+                                    <div class="proj-item-text">
+                                        <h3 class="proj-item-title">Force-Feedback Arm <span class="proj-item-tag"> <br> Haptics</span></h3>
+                                        <p class="proj-item-desc">Arm to restrict movement in certain scenarios in VR. The
+                                            main concept/idea is that the arm reacts to the environment. If we touch a wall,
+                                            for example, it can restrict your arm to provide realistic feedback.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="proj-item" data-project="gloves">
+                            <div class="proj-item-inner">
+                                <div class="proj-item-image">
+                                    <div class="proj-img-glow"></div>
+                                    <img src="Assets/project-gloves.png" alt="Haptic Gloves" class="proj-thumb-img">
+                                </div>
+                                <div class="proj-item-detail">
+                                    <div class="proj-item-divider"></div>
+                                    <div class="proj-item-text">
+                                        <h3 class="proj-item-title">Haptic Gloves <span class="proj-item-tag"> <br> Haptics</span></h3>
+                                        <p class="proj-item-desc">Part of the larger haptics project. These wearable gloves
+                                            will enable tracking of each finger's pose, alongside force-feedback for
+                                            touching objects. This will allow users to feel the actions of picking things up
+                                            and the actual firmness of the object. Finger tracking is enabled by hall-effect
+                                            sensors and force-feedback is controlled via low-power servos. A microcontroller
+                                            communicates with a PC driver to control the gloves.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="proj-item" data-project="olfactory">
+                            <div class="proj-item-inner">
+                                <div class="proj-item-image">
+                                    <div class="proj-img-glow"></div>
+                                    <img src="Assets/project-olfactory.png" alt="Olfactory Device" class="proj-thumb-img">
+                                </div>
+                                <div class="proj-item-detail">
+                                    <div class="proj-item-divider"></div>
+                                    <div class="proj-item-text">
+                                        <h3 class="proj-item-title">Olfactory Display <span class="proj-item-tag"> <br>Haptics</span></h3>
+                                        <p class="proj-item-desc">This project is a wearable device mounted beneath a VR
+                                            headset that delivers scents directly to the user's nose. It uses electronically
+                                            controlled fans and atomizers (converts liquid into vapor) to synchronize
+                                            smelling with the virtual reality environment in real time.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="proj-item" data-project="treadmill">
+                            <div class="proj-item-inner">
+                                <div class="proj-item-image">
+                                    <div class="proj-img-glow"></div>
+                                    <img src="Assets/project-treadmill.png" alt="VR Treadmill" class="proj-thumb-img">
+                                </div>
+                                <div class="proj-item-detail">
+                                    <div class="proj-item-divider"></div>
+                                    <div class="proj-item-text">
+                                        <h3 class="proj-item-title">Omndirectional Treadmill <span class="proj-item-tag"> <br>Haptics</span></h3>
+                                        <p class="proj-item-desc">An all-in-one device responsible for mimicking natural
+                                            movements whilst keeping its user in place.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+
                     </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-white mb-2">Haptic Gloves</h3>
-                        <p class="text-gray-400">DIY force-feedback haptic gloves for realistic and interactive VR
-                            experiences.</p>
+                    <!-- Row 2: 3 projects -->
+                    <div class="proj-gallery-row" id="rowBottom">
+                        <div class="proj-item" data-project="bci">
+                            <div class="proj-item-inner">
+                                <div class="proj-item-image">
+                                    <div class="proj-img-glow"></div>
+                                    <img src="Assets/project-bci.png" alt="BCI" class="proj-thumb-img">
+                                </div>
+                                <div class="proj-item-detail">
+                                    <div class="proj-item-divider"></div>
+                                    <div class="proj-item-text">
+                                        <h3 class="proj-item-title">BCI Controller <span class="proj-item-tag"> <br>BCI</span></h3>
+                                        <p class="proj-item-desc">
+                                            This project is exploring alternative VR input methods, and are currently trying
+                                            to create a
+                                            more generalizable BCI controller for VR applications.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="proj-item" data-project="game">
+                            <div class="proj-item-inner">
+                                <div class="proj-item-image">
+                                    <div class="proj-img-glow"></div>
+                                    <img src="Assets/project-game.png" alt="Game VR Headset" class="proj-thumb-img">
+                                </div>
+                                <div class="proj-item-detail">
+                                    <div class="proj-item-divider"></div>
+                                    <div class="proj-item-text">
+                                        <h3 class="proj-item-title">Awake <span class="proj-item-tag"> <br> VR Game</span></h3>
+                                        <p class="proj-item-desc">An experimental stealth-horror game made in Unity that
+                                            tests different novel mechanics. We are currently creating a demo level that
+                                            will be complete and available for public playtesting by the end of the
+                                            semester.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="proj-item" data-project="glasses">
+                            <div class="proj-item-inner">
+                                <div class="proj-item-image">
+                                    <div class="proj-img-glow"></div>
+                                    <img src="Assets/project-glasses.png" alt="XR Glasses" class="proj-thumb-img">
+                                </div>
+                                <div class="proj-item-detail">
+                                    <div class="proj-item-divider"></div>
+                                    <div class="proj-item-text">
+                                        <h3 class="proj-item-title">Object Recall Glasses <span class="proj-item-tag"> <br> Software</span></h3>
+                                        <p class="proj-item-desc"> A Rokid smart-glasses and Android companion app that
+                                            helps you find lost items by recalling the last time they were seen and
+                                            describing the surroundings. We use a persistent memory system to recall where
+                                            objects are and track hand movements using a YOLO model to see where objects are
+                                            placed.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                       
                     </div>
                 </div>
 
-                <!-- Force-Feedback Arm -->
-                <div
-                    class="bg-gray-800 rounded-lg overflow-hidden shadow-lg transform hover:scale-105 transition-transform duration-300">
-                    <div class="w-full h-48 bg-gray-700 flex items-center justify-center">
-                        <span class="text-8xl">
-                            <img src="assets/img/arm1.jpg" alt="Arm" class="h-48 w-auto shadow-lg">
-                        </span>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-white mb-2">Force-Feedback Arm</h3>
-                        <p class="text-gray-400">An exoskeleton arm providing haptic feedback for immersive XR
-                            experiences.</p>
-                    </div>
-                </div>
+            </div>
 
-                <!-- Olfactory Display -->
-                <div
-                    class="bg-gray-800 rounded-lg overflow-hidden shadow-lg transform hover:scale-105 transition-transform duration-300">
-                    <div class="w-full h-48 bg-gray-700 flex items-center justify-center">
-                        <span class="text-8xl">
-                            <img src="assets/img/olfactory1.png" alt="smell" class="h-48 w-auto shadow-lg">
-                        </span>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-white mb-2">Olfactory Display</h3>
-                        <p class="text-gray-400">A scent-generating device to add another layer of immersion to virtual
-                            environments.</p>
-                    </div>
-                </div>
+            <div class="proj-cta">
+                <h2 class="proj-cta-heading">Interested in Collaborating with us?</h2>
+                <a href="sponsor.html" class="proj-cta-btn">Learn how you can contribute</a>
+            </div>
+        </section>
+    </div>
 
-                <!-- BCI Controller -->
-                <div
-                    class="bg-gray-800 rounded-lg overflow-hidden shadow-lg transform hover:scale-105 transition-transform duration-300">
-                    <div class="w-full h-48 bg-gray-700 flex items-center justify-center">
-                        <span class="text-8xl">
-                            <img src="assets/img/bci2.png" alt="muse 2" class="h-48 w-auto shadow-lg">
-                        </span>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-white mb-2">BCI Controller</h3>
-                        <p class="text-gray-400">A brain-computer interface (Muse 2) for controlling XR systems with neural
-                            signals.</p>
-                    </div>
-                </div>
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-logo">
+                <a href="index.html">
+                    <img src="Assets/CUXR_logo.png" alt="CUXR Logo">
+                </a>
             </div>
-        </div>
-
-        <!-- Games Section -->
-        <div class="mb-16">
-            <div class="text-center mb-8">
-                <h2 class="text-3xl font-bold text-white mb-4">Games Team</h2>
-                <p class="text-lg text-gray-300 max-w-4xl mx-auto">The Games Team creates immersive XR games and
-                    interactive experiences that push the boundaries of virtual storytelling and user immersion.</p>
+            <div class="footer-text">
+                <p>&copy; 2026 CUXR. All rights reserved.</p>
+                <p>Registered student organization of Cornell University.</p>
+                <p><a href="https://www.cornell.edu/equity/equal-opportunity/" target="_blank" class="footer-link">Equal Education and Employment</a></p>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- VR Escape Room -->
-                <div
-                    class="bg-gray-800 rounded-lg overflow-hidden shadow-lg transform hover:scale-105 transition-transform duration-300">
-                    <div class="w-full h-48 bg-gray-700 flex items-center justify-center">
-                        <span class="text-8xl">🤖</span>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-white mb-2">VR Escape Room</h3>
-                        <p class="text-gray-400">Escape an island as a robot in this immersive virtual reality puzzle
-                            game.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Software Section -->
-        <div class="mb-16">
-            <div class="text-center mb-8">
-                <h2 class="text-3xl font-bold text-white mb-4">Software Team</h2>
-                <p class="text-lg text-gray-300 max-w-4xl mx-auto">The Software Team develops XR software solutions
-                    using Unity and Computer Vision for the Cornell community with real-world applications.</p>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <!-- Architecture Viewer -->
-                <div
-                    class="bg-gray-800 rounded-lg overflow-hidden shadow-lg transform hover:scale-105 transition-transform duration-300">
-                    <div class="w-full h-48 bg-gray-700 flex items-center justify-center">
-                        <span class="text-8xl">🏗️</span>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-white mb-2">Architecture Viewer</h3>
-                        <p class="text-gray-400">Integrating viewing of various architecture models in VR with features
-                            for day/night cycles and accessibility.</p>
-                    </div>
-                </div>
-
-                <!-- Smart Glasses CV Model -->
-                <div
-                    class="bg-gray-800 rounded-lg overflow-hidden shadow-lg transform hover:scale-105 transition-transform duration-300">
-                    <div class="w-full h-48 bg-gray-700 flex items-center justify-center">
-                        <span class="text-8xl">👓</span>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-white mb-2">Smart Glasses CV Model</h3>
-                        <p class="text-gray-400">A general-purpose computer-vision model designed for smart glasses
-                            applications.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </main>
-
-    <!-- Footer -->
-    <footer class="bg-black mt-16 border-t border-white/20">
-        <div class="container mx-auto px-6 py-8">
-            <div class="text-center mb-6">
-                <p class="text-sm text-white">This organization is a registered student organization of Cornell
-                    University.</p>
-                <p class="text-sm text-white mt-1">Contact: <a href="mailto:cuxr@cornell.edu"
-                        class="text-red-500 hover:underline">cuxr@cornell.edu</a></p>
-                <a href="https://hr.cornell.edu/about/workplace-rights/equal-education-and-employment" target="_blank"
-                    class="text-sm text-white underline mt-2 block">Equal Education and Employment</a>
-            </div>
-            <div class="flex justify-center space-x-6 mb-6">
-                <a href="https://www.instagram.com/cornellxr/" target="_blank"
-                    class="flex items-center justify-center"><img src="assets/img/instagram.svg" alt="Instagram"
-                        class="w-6 h-6"></a>
-                <a href="https://github.com/CUXR" target="_blank" class="flex items-center justify-center"><img
-                        src="assets/img/github-icon.svg" alt="GitHub" class="w-5 h-5"></a>
-                <a href="https://www.linkedin.com/company/cornell-xr/" target="_blank"
-                    class="flex items-center justify-center"><img src="assets/img/linkedin-icon.svg" alt="LinkedIn"
-                        class="w-6 h-6"></a>
-            </div>
-            <div class="text-center">
-                <p class="text-sm text-white">&copy; 2025 CUXR. All rights reserved.</p>
+            <div class="footer-socials">
+                <a href="https://www.instagram.com/cornellxr/" target="_blank"><img src="Assets/instagram.svg" alt="Instagram"></a>
+                <a href="https://www.linkedin.com/company/cornell-xr/" target="_blank"><img src="Assets/linkedin.svg" alt="LinkedIn"></a>
+                <a href="mailto:cuxr@cornell.edu"><img src="Assets/email.svg" alt="Email"></a>
             </div>
         </div>
     </footer>
-
-    <script>
-        // Mobile menu toggle
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-    </script>
-
+    <script src="script.js"></script>
 </body>
 
 </html>

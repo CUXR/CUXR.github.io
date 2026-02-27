@@ -1,0 +1,1224 @@
+/* =============================================================
+   CUXR Website — Combined Stylesheet
+   Sections: Reset, Nav, Home, Team, Projects, Responsive
+   ============================================================= */
+
+/* ===== Reset & Base ===== */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #292929;
+    min-height: 100vh;
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    color: white;
+    line-height: 1.4;
+}
+
+h1 {
+    font-family: 'JetBrains Mono', sans-serif;
+    font-size: 60px;
+    color: white;
+    text-align: center;
+    line-height: 1.2;
+    border-bottom: 2px solid #EC2727;
+    margin-top: 2.5%;
+}
+
+h2 {
+    font-family: 'new-science', sans-serif;
+    font-size: 36px;
+    color: #f7f7f7;
+    line-height: 1.1;
+}
+
+h3, p {
+    font-family: 'Inter', sans-serif;
+}
+
+
+/* =============================================================
+   NAV
+   ============================================================= */
+
+#header {
+    background-color: #151515;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    width: 100%;
+    padding: 4px;
+}
+
+#logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+#logo img {
+    width: 152px;
+    height: fit-content;
+    object-fit: contain;
+}
+
+#logo span {
+    font-weight: bold;
+    font-size: 20px;
+    color: #f7f7f7;
+}
+
+#main-nav {
+    display: flex;
+    font-family: 'new-science', sans-serif;
+    width: 100%;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    gap: 6.25rem;
+    padding-right: 5%;
+    height: 115%;
+}
+
+#main-nav a {
+    font-weight: bold;
+    font-size: 20px;
+    color: #ffffff;
+    text-decoration: none;
+    line-height: 32px;
+}
+
+#main-nav a:hover {
+    opacity: 0.8;
+}
+
+.nav-button {
+    color: #f7f7f7;
+    position: relative;
+    padding: 0%;
+    display: inline-block;
+    background-color: #292929;
+}
+
+.nav-button svg {
+    display: block;
+}
+
+.button-text {
+    font-family: monospace;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    pointer-events: none;
+}
+
+
+/* =============================================================
+   HOME PAGE
+   ============================================================= */
+
+.home-page {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: center;
+    width: 100%;
+}
+
+.cuxr-hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    padding: 40px 48px;
+    background-color: #000000;
+    min-height: 90vh;
+}
+
+.cuxr-hero-text {
+    flex: 0 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    color: #ffffff;
+}
+
+.cuxr-hero-words {
+    font-family: 'new-science', sans-serif;
+    font-size: clamp(56px, 7vw, 104px);
+    font-weight: 700;
+    line-height: 1.0;
+}
+
+.cuxr-line {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    margin-bottom: 4px;
+}
+
+.cuxr-initial {
+    color: #EC2727;
+}
+
+.cuxr-word {
+    color: #ffffff;
+}
+
+.cuxr-subtext {
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    line-height: 1.6;
+}
+
+.cuxr-hero-video {
+    flex: 0 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cuxr-video {
+    width: 110%;
+    max-width: 640px;
+    border-radius: 24px;
+    background-color: #000000;
+    object-fit: contain;
+}
+
+.about-us {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 12px 4px;
+    max-width: 1496px;
+    width: 100%;
+}
+
+.about-us strong {
+    font-weight: bold !important;
+    color: #EC2727; /* or any accent color you want */
+}
+
+.about-us p {
+    padding: 0 48px;
+}
+
+.content-section {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 1496px;
+    min-height: 480px;
+    border-radius: 12px;
+    overflow: hidden;
+    padding: 48px;
+}
+
+.image-container {
+    position: absolute;
+    inset: 0 40px;
+    z-index: 0;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.image-fade-industry {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to left, #292929 25%, transparent 100%);
+    z-index: 1;
+}
+
+.image-fade-work {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, #292929 25%, transparent 100%);
+    z-index: 1;
+}
+
+.text-content-industry {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    max-width: 520px;
+    margin-left: auto;
+}
+
+.text-content-work {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    max-width: 520px;
+    margin-right: auto;
+}
+
+.text-content p {
+    padding: 0% 10% 0% 0%;
+}
+
+
+/* =============================================================
+   TEAM PAGE
+   ============================================================= */
+
+.team-description-container {
+    position: relative;
+    width: 100%;
+    margin-bottom: 24px;
+}
+
+.fade-image-container {
+    position: relative;
+    width: 100%;
+    margin: 0 auto -4px auto;
+    overflow: hidden;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+}
+
+.fade-image-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transform: translateZ(0);
+}
+
+.fade-image-container::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 704px;
+    background: linear-gradient(to bottom, rgba(41, 41, 41, 0), rgba(41, 41, 41, 1));
+    pointer-events: none;
+    transform: translateZ(0);
+    will-change: transform;
+}
+
+#team-description,
+#proj-description {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    color: #f7f7f7;
+    text-align: center;
+    padding: 24px;
+    z-index: 2;
+}
+
+#team-description h1,
+#proj-description h1 {
+    font-size: 60px;
+    margin-bottom: 16px;
+    display: inline-block;
+}
+
+#team-description p,
+#proj-description p {
+    font-size: 18px;
+    margin: 0;
+    padding: 0 48px;
+    text-align: left;
+}
+
+/* Team Navigation (filter buttons) */
+#team-nav {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    margin-bottom: 4px;
+    padding: 0 56px 16px 56px;
+    justify-content: center;
+}
+
+#team-nav .nav-button {
+    padding: 16px 40px;
+    display: block;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    min-width: 136px;
+    white-space: nowrap;
+    text-align: center;
+}
+
+#team-nav .nav-button:hover {
+    background-color: rgba(247, 247, 247, 0.05);
+}
+
+#team-nav .button-text {
+    position: static;
+    transform: none;
+    font-family: 'Inter', sans-serif;
+    display: inline-block;
+    padding-bottom: 4px;
+    border-bottom: transparent 2px solid;
+    transition: border-bottom 0.2s ease;
+    pointer-events: none;
+}
+
+#team-nav button[data-active="true"] {
+    font-weight: bold;
+}
+
+#team-nav button[data-active="true"] .button-text {
+    border-bottom: #EC2727 2px solid;
+}
+
+/* Profiles Grid */
+#profiles-container {
+    padding: 0 56px;
+    display: flex;
+    justify-content: center;
+}
+
+.profiles-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 32px;
+    max-width: 1200px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.profile-card {
+    width: 100%;
+    transition: opacity 0.4s ease;
+}
+
+.profile-card.fade-out {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.profile-card.hidden {
+    display: none;
+}
+
+.profile-name {
+    font-size: 16px;
+    margin: 8px auto 4px;
+    text-align: center;
+}
+
+.profile-bio {
+    text-align: center;
+    display: -webkit-box;
+    font-size: 12px;
+    color: #666;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.profile-bio p {
+    font-family: 'new-science', sans-serif;
+    color: #f7f7f7;
+    font-size: 12px;
+    line-height: 1.1;
+}
+
+.profile-image {
+    position: relative;
+    overflow: hidden;
+    display: block;
+    width: 100%;
+    aspect-ratio: 200 / 304;
+    transition: box-shadow 0.3s ease;
+    border-radius: 8px;
+}
+
+.profile-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.profile-image:hover {
+    box-shadow: rgba(0, 0, 139, 0.5);
+}
+
+.profile-image::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #070728b5;
+    mix-blend-mode: multiply;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.profile-image:hover::before {
+    opacity: 0.7;
+}
+
+.profile-image-container {
+    position: relative;
+}
+
+.overlay-text {
+    line-height: 1.5;
+    font-style: normal;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.overlay-text p {
+    font-family: 'new-science', sans-serif;
+    color: #f7f7f7;
+    font-size: 16px;
+}
+
+.profile-card:hover .overlay-text {
+    opacity: 1;
+}
+
+.overlay-text h4 {
+    margin: 0;
+}
+
+
+/* =============================================================
+   PROJECTS PAGE
+   ============================================================= */
+
+.proj-page {
+    width: 100%;
+    min-height: 100vh;
+}
+
+.proj-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 32px 40px;
+    overflow: hidden;
+}
+
+.proj-selection-anim {
+    width: 100%;
+    max-width: 1440px;
+    display: flex;
+    flex-direction: column;
+    gap: 56px;
+    padding: 20px 0;
+}
+
+.proj-section {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.proj-section-heading {
+    font-family: 'new-science', sans-serif;
+    font-weight: 600;
+    font-size: 32px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #f7f7f7;
+    padding: 0 8px;
+    text-align: center;
+}
+
+#rowBottom {
+    justify-content: space-evenly;
+}
+
+.proj-section-description {
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    line-height: 1.6;
+    color: #f7f7f7;
+    text-align: left;
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+.proj-gallery-row {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    transition: gap 0.4s ease;
+}
+
+.proj-gallery-row.proj-has-selection {
+    gap: 32px;
+}
+
+.proj-item {
+    padding: 8px 8px;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    flex-shrink: 1;
+}
+
+.proj-item-inner {
+    display: flex;
+    align-items: center;
+}
+
+.proj-item-image {
+    position: relative;
+    width: clamp(104px, 11vw, 210px);
+    height: clamp(116px, 13vw, 236px);
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+
+.proj-item:hover .proj-item-image {
+    transform: scale(1.05);
+}
+
+.proj-img-glow {
+    position: absolute;
+    inset: 10%;
+    background: radial-gradient(ellipse at center, rgba(231, 76, 60, 0.45) 0%, transparent 70%);
+    filter: blur(20px);
+    opacity: 0.5;
+    transition: opacity 0.3s ease;
+    z-index: 0;
+}
+
+.proj-item:hover .proj-img-glow {
+    opacity: 0.8;
+}
+
+.proj-thumb-img {
+    position: relative;
+    z-index: 1;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    filter: sepia(0.6) saturate(2) hue-rotate(-20deg) brightness(0.8);
+    transition: filter 0.3s ease;
+}
+
+.proj-item:hover .proj-thumb-img {
+    filter: sepia(0.6) saturate(3) hue-rotate(-10deg) brightness(1);
+}
+
+.proj-item-detail {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    max-width: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-width 0.4s ease, opacity 0.35s ease;
+}
+
+.proj-item.proj-selected .proj-item-detail {
+    max-width: 380px;
+    opacity: 1;
+}
+
+.proj-item-divider {
+    width: 1px;
+    height: 192px;
+    flex-shrink: 0;
+    background: linear-gradient(
+        to bottom,
+        transparent 0%,
+        rgba(255, 255, 255, 0.3) 15%,
+        rgba(255, 255, 255, 0.3) 85%,
+        transparent 100%
+    );
+}
+
+.proj-item-text {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 344px;
+    flex-shrink: 0;
+}
+
+.proj-item-title {
+    font-family: 'new-science', monospace;
+    font-weight: 800;
+    font-size: 24px;
+    color: #f7f7f7;
+    line-height: 1;
+    white-space: normal;
+}
+
+.proj-item-tag {
+    font-weight: 400;
+}
+
+.proj-item-desc {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    color: #fff;
+    line-height: 1.5;
+}
+
+.proj-cta {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.proj-cta-heading {
+    font-family: 'new-science', sans-serif;
+    font-weight: 400;
+    font-size: 32px;
+    color: #fff;
+    line-height: 1.3;
+}
+
+.proj-cta-btn {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    color: #fff;
+    text-decoration: none;
+    padding: 16px 32px;
+    background-color: #EC2727;
+    border-radius: 8px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.proj-cta-btn:hover {
+    background-color: #7d1117;
+}
+
+
+/* =============================================================
+   SPONSORS PAGE
+   ============================================================= */
+
+.sponsor-page {
+    width: 100%;
+}
+
+.sponsor-hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 80px;
+    padding: 80px 48px;
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+.sponsor-hero-heading h1 {
+    font-family: 'new-science', sans-serif;
+    font-size: 80px;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.1;
+    border-bottom: none;
+    text-align: left;
+    margin-top: 0;
+}
+
+.sponsor-hero-text {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    max-width: 560px;
+}
+
+.sponsor-hero-text p {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    color: #fff;
+    line-height: 1.6;
+}
+
+.sponsor-hero-text a {
+    color: #EC2727;
+    text-decoration: underline;
+}
+
+.sponsor-hero-text a:hover {
+    color: #fff;
+}
+
+.sponsor-packet {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    padding: 0 48px 80px;
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+.sponsor-packet h2 {
+    text-align: center;
+}
+
+.pdf-viewer {
+    width: 100%;
+    max-width: 960px;
+    height: 600px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.pdf-viewer iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.pdf-download-link {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    color: #fff;
+    text-decoration: none;
+    padding: 16px 32px;
+    background-color: #EC2727;
+    border-radius: 8px;
+    transition: background-color 0.2s ease;
+}
+
+.pdf-download-link:hover {
+    background-color: #7d1117;
+}
+
+.sponsor-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    padding: 40px 48px 80px;
+}
+
+.sponsor-grid h2 {
+    text-align: center;
+}
+
+.sponsor-logos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    max-width: 1200px;
+    width: 100%;
+}
+
+.sponsor-placeholder {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.4);
+}
+
+
+/* =============================================================
+   FOOTER
+   ============================================================= */
+
+.site-footer {
+    background-color: #151515;
+    padding: 32px 24px;
+    margin-top: 40px;
+    width: 100%;
+}
+
+.footer-inner {
+    max-width: 1440px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.footer-socials {
+    margin-left: auto;
+}
+
+.footer-logo a {
+    display: block;
+}
+
+.footer-logo img {
+    width: 212px;
+    height: auto;
+    object-fit: contain;
+}
+
+.footer-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    text-align: left;
+}
+
+.footer-text p {
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    color: #fff;
+    line-height: 1.5;
+}
+
+.footer-link {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+.footer-link:hover {
+    opacity: 0.8;
+}
+
+.footer-socials {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.footer-socials a {
+    display: block;
+    width: 54px;
+    height: 54px;
+    flex-shrink: 0;
+    overflow: hidden;
+}
+
+.footer-socials a img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.about-socials {
+    margin-top: 8px;
+}
+
+.about-socials a {
+    width: 48px;
+    height: 48px;
+}
+
+
+/* =============================================================
+   RESPONSIVE
+   ============================================================= */
+
+@media (max-width: 1200px) {
+    h2 { font-size: 48px; }
+
+    #header {
+        grid-template-columns: auto 1fr;
+        padding: 8px 16px;
+        column-gap: 16px;
+    }
+    #main-nav {
+        gap: 2.5rem;
+        padding-right: 0;
+    }
+    #logo img {
+        width: 128px;
+    }
+
+    .cuxr-hero {
+        padding: 48px 48px;
+        gap: 48px;
+    }
+    .proj-gallery-row { gap: 48px; }
+    .proj-gallery-row.proj-has-selection { gap: 16px; }
+}
+
+@media (max-width: 900px) {
+    #header {
+        grid-template-columns: 1fr;
+        row-gap: 8px;
+        justify-items: center;
+    }
+    #logo {
+        justify-content: center;
+    }
+    #main-nav {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+        height: auto;
+    }
+    #main-nav a {
+        font-size: 16px;
+    }
+
+    .cuxr-hero {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 40px 32px;
+    }
+    .cuxr-hero-video {
+        width: 100%;
+    }
+    .cuxr-video {
+        max-width: 100%;
+    }
+    .proj-gallery-row { flex-wrap: wrap; gap: 32px; }
+    .proj-item-image { width: 160px; height: 180px; }
+    .proj-item.proj-selected .proj-item-detail { max-width: 280px; }
+    .proj-item-text { width: 248px; }
+    .proj-cta-heading { font-size: 32px; }
+    .proj-cta-sub { font-size: 24px; }
+
+    /* Team / Projects hero text on image */
+    #team-description h1,
+    #proj-description h1 {
+        font-size: 42px;
+    }
+    #team-description p,
+    #proj-description p {
+        padding: 0 24px;
+        font-size: 16px;
+    }
+    /* On tablet and below, place the hero text
+       in normal flow under the image so it
+       doesn't overlap awkwardly. */
+    #team-description,
+    #proj-description {
+        position: static;
+        padding: 24px 24px 32px;
+        text-align: center;
+        background-color: #292929;
+    }
+    .team-description-container {
+        display: flex;
+        flex-direction: column;
+    }
+    .fade-image-container::after {
+        /* Slightly shorter overlay since text
+           is no longer on top of the image */
+        height: 260px;
+    }
+    #team-nav {
+        padding: 0 24px 16px 24px;
+        flex-wrap: wrap;
+    }
+    #profiles-container {
+        padding: 0 24px;
+    }
+    .profiles-grid {
+        gap: 24px;
+    }
+
+    .sponsor-hero {
+        gap: 40px;
+        padding: 56px 24px;
+    }
+    .sponsor-hero-heading h1 {
+        font-size: 48px;
+    }
+    .sponsor-hero-text {
+        max-width: 100%;
+    }
+    .sponsor-packet {
+        padding: 0 24px 56px;
+    }
+    .pdf-viewer {
+        height: 480px;
+    }
+}
+
+@media (max-width: 768px) {
+    h1 { font-size: 48px; }
+    h2 { font-size: 36px; }
+    .home-page { gap: 40px; }
+    .cuxr-hero {
+        padding: 32px 20px;
+        align-items: center;
+    }
+    .cuxr-hero-text {
+        align-items: flex-start;
+        text-align: left;
+        margin: 0 auto;
+    }
+    .cuxr-line {
+        justify-content: flex-start;
+    }
+    .about-us p {
+        padding: 0 20px;
+        font-size: 16px;
+    }
+
+    .content-section {
+        min-height: 380px;
+        padding: 32px 20px;
+    }
+    .image-container {
+        inset: 0 12px;
+    }
+    .text-content-industry,
+    .text-content-work {
+        max-width: 100%;
+    }
+
+    /* Stack sponsor hero vertically */
+    .sponsor-hero {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 32px 20px;
+    }
+    .sponsor-hero-heading h1 {
+        font-size: 36px;
+    }
+    .sponsor-hero-text p {
+        font-size: 14px;
+    }
+    .pdf-viewer {
+        height: 360px;
+    }
+
+    /* Team filter buttons */
+    #team-nav {
+        gap: 8px;
+    }
+    #team-nav .nav-button {
+        padding: 8px 16px;
+        min-width: auto;
+        font-size: 14px;
+    }
+    .profiles-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+
+    .site-footer {
+        padding: 24px 12px;
+        margin-top: 24px;
+    }
+    .footer-inner {
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+    }
+    .footer-text {
+        text-align: center;
+    }
+    .footer-socials {
+        margin-left: 0;
+    }
+    .footer-logo img {
+        width: 140px;
+    }
+    .footer-text p {
+        font-size: 12px;
+    }
+    .footer-socials {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 24px;
+    }
+    .footer-socials a {
+        width: 36px;
+        height: 36px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        font-size: 16px;
+    }
+    h1 {
+        font-size: 36px;
+    }
+    h2 {
+        font-size: 28px;
+    }
+
+    #header {
+        padding: 8px 12px;
+    }
+    #logo img {
+        width: 112px;
+    }
+    #main-nav {
+        gap: 0.75rem;
+    }
+    #main-nav a {
+        font-size: 14px;
+    }
+
+    .cuxr-hero-words {
+        font-size: clamp(40px, 10vw, 56px);
+    }
+    .cuxr-subtext p {
+        font-size: 16px;
+    }
+
+    #team-description p,
+    #proj-description p {
+        padding: 0 16px;
+        font-size: 14px;
+    }
+    .fade-image-container::after {
+        height: 320px;
+    }
+
+    .proj-section-description {
+        font-size: 16px;
+        padding: 0 4px;
+    }
+    .proj-item-desc {
+        font-size: 11px;
+    }
+    .proj-item-title {
+        font-size: 20px;
+    }
+
+    .sponsor-packet {
+        padding: 0 16px 40px;
+    }
+    .pdf-viewer {
+        height: 280px;
+    }
+
+    .footer-socials {
+        gap: 16px;
+    }
+}

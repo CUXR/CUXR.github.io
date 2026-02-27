@@ -4,736 +4,741 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="assets/img/CUXR_Logo_Ico.ico">
+    <title>CUXR Team Profiles</title>
+    <link rel="icon" type="image/x-icon" href="Assets/CUXR.ico">
+    <link rel="stylesheet" href="styles.css">
 
-    <!-- SEO Meta Tags -->
-    <title>Cornell XR Team - Meet Our XR, VR, AR & HCI Engineers</title>
-    <meta name="description"
-        content="Meet the talented Cornell XR team members working on Extended Reality projects. Our diverse team includes hardware engineers, software developers, and HCI researchers specializing in VR, AR, smart glasses, and haptic technology.">
-    <meta name="keywords"
-        content="Cornell XR Team, XR Engineers, VR Developers, AR Developers, HCI Researchers, Smart Glasses Engineers, Haptic Technology, Cornell University Students, Engineering Project Team, Hardware Engineers, Software Developers, Computer Vision, Unity Developers, Brain-Computer Interface, Haptic Gloves, Force Feedback">
-    <meta name="author" content="Cornell XR">
-    <meta name="robots" content="index, follow">
-    <meta name="language" content="English">
-    <meta name="revisit-after" content="7 days">
-
-    <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Cornell XR Team - Meet Our XR, VR, AR & HCI Engineers">
-    <meta property="og:description"
-        content="Meet the talented Cornell XR team members working on Extended Reality projects. Our diverse team includes hardware engineers, software developers, and HCI researchers specializing in VR, AR, smart glasses, and haptic technology.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://cuxr.github.io/team.html">
-    <meta property="og:image" content="https://cuxr.github.io/assets/img/CUXR_Logo_Transparent.png">
-    <meta property="og:site_name" content="Cornell XR">
-    <meta property="og:locale" content="en_US">
-
-    <!-- Twitter Card Meta Tags -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Cornell XR Team - Meet Our XR, VR, AR & HCI Engineers">
-    <meta name="twitter:description"
-        content="Meet the talented Cornell XR team members working on Extended Reality projects. Our diverse team includes hardware engineers, software developers, and HCI researchers specializing in VR, AR, smart glasses, and haptic technology.">
-    <meta name="twitter:image" content="https://cuxr.github.io/assets/img/CUXR_Logo_Transparent.png">
-
-    <!-- Additional SEO Meta Tags -->
-    <meta name="theme-color" content="#E74C3C">
-    <meta name="msapplication-TileColor" content="#E74C3C">
-    <meta name="application-name" content="Cornell XR">
-    <meta name="apple-mobile-web-app-title" content="Cornell XR">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://cuxr.github.io/team.html">
-
-    <!-- Structured Data for Team -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "AboutPage",
-        "name": "Cornell XR Team",
-        "description": "Meet the talented Cornell XR team members working on cutting-edge Extended Reality projects including VR, AR, smart glasses, and haptic technology.",
-        "url": "https://cuxr.github.io/team.html",
-        "mainEntity": {
-            "@type": "Organization",
-            "name": "Cornell XR",
-            "description": "Cornell University's Extended Reality engineering project team",
-            "member": [
-                {
-                    "@type": "Person",
-                    "name": "Peter He",
-                    "jobTitle": "Full Team + Hardware Lead",
-                    "alumniOf": "Cornell University",
-                    "knowsAbout": ["Extended Reality", "Hardware Engineering", "Haptic Technology"]
-                },
-                {
-                    "@type": "Person",
-                    "name": "Isabella Frank", 
-                    "jobTitle": "Hardware Member",
-                    "alumniOf": "Cornell University",
-                    "knowsAbout": ["Hardware Engineering", "Extended Reality", "Haptic Devices"]
-                },
-                {
-                    "@type": "Person",
-                    "name": "Grace Jin",
-                    "jobTitle": "Design + Software Lead", 
-                    "alumniOf": "Cornell University",
-                    "knowsAbout": ["Software Development", "Design", "Extended Reality"]
-                },
-                {
-                    "@type": "Person",
-                    "name": "Wei-Che (Harry) Lin",
-                    "jobTitle": "Software Lead",
-                    "alumniOf": "Cornell University", 
-                    "knowsAbout": ["Software Development", "Extended Reality", "Computer Vision"]
-                }
-            ]
-        },
-        "publisher": {
-            "@type": "Organization",
-            "name": "Cornell XR",
-            "url": "https://cuxr.github.io/"
-        }
-    }
-    </script>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-        }
-
-        /* Custom red color overrides */
-        .text-red-400,
-        .text-red-500 {
-            color: #E74C3C !important;
-        }
-
-        .bg-red-500,
-        .bg-red-600,
-        .bg-red-700 {
-            background-color: #E74C3C !important;
-        }
-
-        .border-red-500 {
-            border-color: #E74C3C !important;
-        }
-
-        .hover\:text-red-500:hover {
-            color: #E74C3C !important;
-        }
-
-        .hover\:bg-red-700:hover {
-            background-color: #E74C3C !important;
-        }
-    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter&family=JetBrains+Mono:wght@800&family=Sometype+Mono:wght@700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://use.typekit.net/dlf8cvy.css">
 </head>
 
-<body class="bg-black text-white">
-
+<body>
     <!-- Header -->
-    <header class="bg-black/80 backdrop-blur-md sticky top-0 z-50 border-b border-white/20">
-        <nav class="container mx-auto px-6 py-4">
-            <div class="flex items-center justify-between">
-                <a href="/" class="flex items-center space-x-2">
-                    <img src="assets/img/CUXR_Logo_Transparent.png" alt="CUXR Logo" class="h-10">
-                    <span class="text-2xl font-bold text-white">CUXR</span>
-                </a>
-
-                <!-- Desktop Nav -->
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="/" class="text-white hover:text-red-500 transition duration-300">Home</a>
-                    <a href="/projects" class="text-white hover:text-red-500 transition duration-300">Projects</a>
-                    <a href="/team" class="text-white font-semibold border-b-2 border-red-500 pb-1">Team</a>
-                    <a href="/contact" class="text-white hover:text-red-500 transition duration-300">Contact</a>
-                </div>
-
-                <div class="hidden md:flex items-center space-x-4">
-                    <a href="https://bit.ly/sp2026cuxr" target="_blank"
-                        class="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-lg transition duration-300">Apply
-                        to Join</a>
-                </div>
-
-                <!-- Mobile Nav Button -->
-                <div class="md:hidden">
-                    <button id="mobile-menu-button" class="text-white focus:outline-none">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M4 6h16M4 12h16m-7 6h7"></path>
-                        </svg>
-                    </button>
-                </div>
-            </div>
-
-            <!-- Mobile Nav -->
-            <div id="mobile-menu" class="hidden md:hidden mt-4">
-                <a href="/" class="block py-2 px-4 text-sm text-white hover:bg-black rounded">Home</a>
-                <a href="/projects" class="block py-2 px-4 text-sm text-white hover:bg-black rounded">Projects</a>
-                <a href="/team" class="block py-2 px-4 text-sm text-white">Team</a>
-                <a href="/contact" class="block py-2 px-4 text-sm text-white hover:bg-black rounded">Contact</a>
-                <a href="https://bit.ly/sp2026cuxr" target="_blank"
-                    class="block mt-2 bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-lg transition duration-300 text-center">Apply
-                    to Join</a>
-            </div>
+    <header id="header">
+        <div id="logo">
+            <a href="index.html">
+                <img src="Assets/CUXR_logo.png" alt="CUXR Logo">
+            </a>
+        </div>
+        <nav id="main-nav">
+            <a href="index.html">About</a>
+            <a href="projects.html">Projects</a>
+            <a href="team.html">Team</a>
+            <a href="sponsor.html">Sponsors</a>
         </nav>
     </header>
 
-    <!-- Main Content -->
-    <main class="container mx-auto px-6 py-16">
-        <div class="text-center mb-12">
-            <h1 class="text-4xl md:text-5xl font-extrabold text-white">Meet the Team</h1>
-            <p class="text-lg text-red-400 mt-2">Page Under Construction</p>
-            <br>
-            <!-- <p class="text-white mb-6">
-                <strong>If you want to schedule a coffee chat, please fill out: <a
-                        href="https://forms.gle/vMZERwftmqJyaUGaA" target="_blank"
-                        class="text-red-500 hover:underline">https://forms.gle/vMZERwftmqJyaUGaA</a></strong>
-            </p> -->
+    <!-- Team Description -->
+    <div class="team-description-container">
+        <div class="fade-image-container">
+            <img src="Assets/team_photo.png" alt="CUXR Team Photo">
+        </div>
+        <section id="team-description">
+            <h1>Our Team</h1>
+            <p>CUXR is dedicated to forming a dynamic team centered around diverse perspectives and talents in the
+                fields of Human-Computer Interaction (HCI) and Extended Reality (XR). By bringing together individuals
+                with a wide range of skills and backgrounds, we foster a collaborative environment where creativity and
+                innovation can thrive. Together, we aim to push the boundaries of what's possible, building
+                projects that shape the future of immersive technology.</p>
+        </section>
+    </div>
+
+
+    <!-- Navigation Buttons -->
+    <nav id="team-nav">
+        <button class="nav-button" data-page="full-team">
+
+            <span class="button-text">Full Team</span>
+        </button>
+
+        <button class="nav-button" data-page="lead">
+
+            <span class="button-text">Leads</span>
+        </button>
+
+        <button class="nav-button" data-page="haptics">
+
+            <span class="button-text">Haptics</span>
+        </button>
+
+        <button class="nav-button" data-page="bci">
+
+            <span class="button-text">BCI</span>
+        </button>
+
+        <button class="nav-button" data-page="software">
+            <span class="button-text">Software</span>
+        </button>
+
+        <button class="nav-button" data-page="game">
+
+            <span class="button-text">Game</span>
+        </button>
+
+        <button class="nav-button" data-page="business">
+
+            <span class="button-text">Business</span>
+        </button>
+    </nav>
+
+    <!-- All Profiles in One Container -->
+    <section id="profiles-container">
+        <div class="profiles-grid">
+            <div class="profile-card" data-teams="haptics lead">
+                <div class="profile-image-container">
+                    <picture class="profile-image">
+                        <img src="Website_Headshots/Peter_He.png">
+                        <div class="overlay-text">
+                            <p>
+                                Electrical and Computer Engineering
+                                ph475@cornell.edu
+                            </p>
+                        </div>
+                    </picture>
+
+                    <h3 class="profile-name">Peter He</h3>
+                    <p class="profile-bio"> Full Team Lead</p>
+                </div>
+            </div>
+            <div class="profile-card" data-teams="haptics lead">
+                <div class="profile-image-container">
+                    <picture class="profile-image">
+                        <img src="Website_Headshots/Eric_Seo.png">
+                        <div class="overlay-text">
+                            <p>
+                                Electrical and Computer Engineering
+                                eys39@cornell.edu
+                            </p>
+                        </div>
+                    </picture>
+
+                </div>
+                <h3 class="profile-name">Eric Seo</h3>
+                <p class="profile-bio">Full Team Lead</p>
+            </div>
+            <div class="profile-card" data-teams="software lead">
+                <div class="profile-image-container">
+                    <picture class="profile-image">
+                        <img src="Website_Headshots\Ethan_Coskay.png">
+                        <div class="overlay-text">
+                            <p>
+                                Computer Science
+                                enc33@cornell.edu
+                            </p>
+                        </div>
+                    </picture>
+
+                </div>
+                <h3 class="profile-name">Ethan Coskay</h3>
+                <p class="profile-bio">Software Lead
+            </div>
+
+            <div class="profile-card" data-teams="haptics lead">
+                <div class="profile-image-container">
+                    <picture class="profile-image">
+                        <img src="Website_Headshots\Zach_Riiff.png">
+                        <div class="overlay-text">
+                            <p>
+                                Electrical and Computer Engineering
+                                zcr5@cornell.edu
+                            </p>
+                        </div>
+                    </picture>
+
+                </div>
+                <h3 class="profile-name">Zach Riiff</h3>
+                <p class="profile-bio">Electrical Lead</p>
+            </div>
+            <div class="profile-card" data-teams="haptics lead">
+                <div class="profile-image-container">
+                    <picture class="profile-image">
+                        <img src="Website_Headshots\Sam_Keamy.png">
+                        <div class="overlay-text">
+                            <p>
+                                Electrical and Computer Engineering
+                                swk57@cornell.edu
+                            </p>
+                        </div>
+                    </picture>
+
+                </div>
+                <h3 class="profile-name">Sam Keamy</h3>
+                <p class="profile-bio">Electrical Lead</p>
+            </div>
+
+            <div class="profile-card" data-teams="haptics lead">
+                <div class="profile-image-container">
+                    <picture class="profile-image">
+                        <img src="Assets/placeholder.png">
+                        <div class="overlay-text">
+                            <p>
+                                Mechanical Engineering
+                                cl2624@cornell.edu
+                            </p>
+                        </div>
+                    </picture>
+
+                </div>
+                <h3 class="profile-name">Carmen Lin</h3>
+                <p class="profile-bio">Mechanical Lead</p>
+            </div>
+
+            <div class="profile-card" data-teams="haptics lead">
+                <div class="profile-image-container">
+                    <picture class="profile-image">
+                        <img src="Website_Headshots/Gina_Liu.png">
+                        <div class="overlay-text">
+                            <p>
+                                Mechanical Engineering
+                                gl528@cornell.edu
+                            </p>
+                        </div>
+                    </picture>
+
+                </div>
+                <h3 class="profile-name">Gina Liu</h3>
+                <p class="profile-bio">Mechanical Lead</p>
+            </div>
+
+
+            <div class="profile-card" data-teams="game lead">
+                <div class="profile-image-container">
+                    <picture class="profile-image">
+                        <img src="Assets/placeholder.png">
+                        <div class="overlay-text">
+                            <p>
+                                Computer Science
+                                atf52@cornell.edu
+                            </p>
+                        </div>
+                    </picture>
+
+                </div>
+                <h3 class="profile-name">Annabelle Ford</h3>
+                <p class="profile-bio">Game Lead</p>
+            </div>
+
+            <div class="profile-card" data-teams="business lead">
+                <div class="profile-image-container">
+                    <picture class="profile-image">
+                        <img src="Website_Headshots\Fairooz_Tahsin.png">
+                        <div class="overlay-text">
+                            <p>
+                                Information Science
+                                ft255@cornell.edu
+                            </p>
+                        </div>
+                    </picture>
+
+                </div>
+                <h3 class="profile-name">Fairooz Tahsin</h3>
+                <p class="profile-bio">Business Team Lead </p>
+            </div>
+
+            <div class="profile-card" data-teams="bci lead">
+                <div class="profile-image-container">
+                    <picture class="profile-image">
+                        <img src="Website_Headshots\Alan_Wu.png">
+                        <div class="overlay-text">
+                            <p>
+                                Biology
+                                ayw34@cornell.edu
+                            </p>
+                        </div>
+                    </picture>
+
+                </div>
+                <h3 class="profile-name">Alan Wu</h3>
+                <p class="profile-bio">BCI Lead</p>
+            </div>
+
+            <div class="profile-card" data-teams="game">
+                <div class="profile-image-container">
+                    <picture class="profile-image">
+                        <img src="Website_Headshots\Xinqing_Rachel_Lin.png">
+                        <div class="overlay-text">
+                            <p>
+                                Computer Science
+                                xl892@cornell.edu
+                            </p>
+                        </div>
+                    </picture>
+
+                </div>
+                <h3 class="profile-name">Xinqing (Rachel) Lin</h3>
+                <p class="profile-bio">Game Team Member </p>
+            </div>
+
+            <div class="profile-card" data-teams="haptics">
+                <div class="profile-image-container">
+                    <picture class="profile-image">
+                        <img src="Assets/placeholder.png">
+                        <div class="overlay-text">
+                            <p>
+                                Computer Science
+                                gsj33@cornell.edu
+                            </p>
+                        </div>
+                    </picture>
+
+                </div>
+                <h3 class="profile-name">Grace Jin</h3>
+                <p class="profile-bio">Game Team Member </p>
+            </div>
+
+            <div class="profile-card" data-teams="business">
+                <div class="profile-image-container">
+                    <picture class="profile-image">
+                        <img src="Website_Headshots/Liliane_Wu.png">
+                        <div class="overlay-text">
+                            <p>
+                                Operations Research and Information Engineering
+                                yw2542@cornell.edu
+                            </p>
+                        </div>
+                    </picture>
+
+                </div>
+                <h3 class="profile-name">Liliane Wu</h3>
+                <p class="profile-bio">Business Team Member</p>
+            </div>
+
+            <div class="profile-card" data-teams="software lead">
+                <div class="profile-image-container">
+                    <picture class="profile-image">
+                        <img src="Website_Headshots\Harry_Lin.png">
+                        <div class="overlay-text">
+                            <p>
+                                Information Science
+                                wl725@cornell.edu
+                            </p>
+                        </div>
+                    </picture>
+
+                </div>
+                <h3 class="profile-name">Wei-Che (Harry) Lin</h3>
+                <p class="profile-bio">Software (Haptics) Lead</p>
+            </div>
+
+            
+
+
+            <div class="profile-card" data-teams="bci">
+                <div class="profile-image-container">
+                    <picture class="profile-image">
+                        <img src="Assets/placeholder.png">
+                        <div class="overlay-text">
+                            <p>
+                                Computer Science
+                                Ab3235@cornell.edu
+                            </p>
+                        </div>
+                    </picture>
+                </div>
+                <h3 class="profile-name">Ashee B Bansaal</h3>
+                <p class="profile-bio">BCI Team Member</p>
+            </div>
+
+            <div class="profile-card" data-teams="game">
+                <div class="profile-image-container">
+                    <picture class="profile-image">
+                        <img src="Assets/placeholder.png">
+                        <div class="overlay-text">
+                            <p>
+                                Computer Science
+                                gm564@cornell.edu
+                            </p>
+                        </div>
+                    </picture>
+
+                </div>
+                <h3 class="profile-name">George Margono</h3>
+                <p class="profile-bio">Game Team Member</p>
+            </div>
+
+            <div class="profile-card" data-teams="haptics">
+                <div class="profile-image-container">
+                    <picture class="profile-image">
+                        <img src="Website_Headshots/Natalie_Yeung.png">
+                        <div class="overlay-text">
+                            <p>
+                                Electrical and Computer Engineering
+                                nyy4@cornell.edu
+                            </p>
+                        </div>
+                    </picture>
+
+                </div>
+                <h3 class="profile-name">Natalie Yeung</h3>
+                <p class="profile-bio">Haptics Team Member</p>
+            </div>
+
+            <div class="profile-card" data-teams="software">
+                <div class="profile-image-container">
+                    <picture class="profile-image">
+                        <img src="Website_Headshots\James_Cenawood.png">
+                        <div class="overlay-text">
+                            <p>
+                                Computer Science
+                                jcc463@cornell.edu
+                            </p>
+                        </div>
+                    </picture>
+
+                </div>
+                <h3 class="profile-name">James Cenawood</h3>
+                <p class="profile-bio">Software Team Member</p>
+            </div>
+
+            <div class="profile-card" data-teams="software">
+                <div class="profile-image-container">
+                    <picture class="profile-image">
+                        <img src="Website_Headshots/Yaelin_Hough.png">
+                        <div class="overlay-text">
+                            <p>
+                                Computer Science + Philosophy
+                                yh2299@cornell.edu
+                            </p>
+                        </div>
+                    </picture>
+
+                </div>
+                <h3 class="profile-name">Yaelin Hough</h3>
+                <p class="profile-bio">Software Team Member</p>
+            </div>
+
+            <div class="profile-card" data-teams="game">
+                <div class="profile-image-container">
+                    <picture class="profile-image">
+                        <img src="Assets/placeholder.png">
+                        <div class="overlay-text">
+                            <p>
+                                Design and Environmental Analysis
+                                cw994@cornell.edu
+                            </p>
+                        </div>
+                    </picture>
+
+                </div>
+                <h3 class="profile-name">Chunho (Jerry) Wong</h3>
+                <p class="profile-bio">Game Team Member</p>
+            </div>
+
+            <div class="profile-card" data-teams="software">
+                <div class="profile-image-container">
+                    <picture class="profile-image">
+                        <img src="Website_Headshots/Yanchun_Lai.png">
+                        <div class="overlay-text">
+                            <p>
+                                Computer Science
+                                yl3796@cornell.edu
+                            </p>
+                        </div>
+                    </picture>
+
+                </div>
+                <h3 class="profile-name">Yanchun Lai</h3>
+                <p class="profile-bio">Software Team Member</p>
+            </div>
+
+            <div class="profile-card" data-teams="haptics">
+                <div class="profile-image-container">
+                    <picture class="profile-image">
+                        <img src="Website_Headshots\Selena_Zhang.png">
+                        <div class="overlay-text">
+                            <p>
+                                Electrical and Computer Engineering
+                                scz6@cornell.edu
+                            </p>
+                        </div>
+                    </picture>
+
+                </div>
+                <h3 class="profile-name">Selena Zhang</h3>
+                <p class="profile-bio">Haptics Team Member</p>
+            </div>
+
+
+
+            <div class="profile-card" data-teams="software">
+                <div class="profile-image-container">
+                    <picture class="profile-image">
+                        <img src="Website_Headshots\Ezra_Koreen.png">
+                        <div class="overlay-text">
+                            <p>
+                                Computer Science
+                                elk97@cornell.edu
+                            </p>
+                        </div>
+                    </picture>
+
+                </div>
+                <h3 class="profile-name">Ezra Koreen</h3>
+                <p class="profile-bio">Software Team Member</p>
+            </div>
+
+            <div class="profile-card" data-teams="haptics">
+                <div class="profile-image-container">
+                    <picture class="profile-image">
+                        <img src="Website_Headshots\Felicity_Wu.png">
+                        <div class="overlay-text">
+                            <p>
+                                Mechanical Engineering
+                                fyw5@cornell.edu
+                            </p>
+                        </div>
+                    </picture>
+
+                </div>
+                <h3 class="profile-name">Felicity Wu</h3>
+                <p class="profile-bio">Haptics Team Member</p>
+            </div>
+
+            <div class="profile-card" data-teams="bci">
+                <div class="profile-image-container">
+                    <picture class="profile-image">
+                        <img src="Website_Headshots\Michelle_Dong.png">
+                        <div class="overlay-text">
+                            <p>
+                                Electrical and Computer Engineering
+                                md2236@cornell.edu
+                            </p>
+                        </div>
+                    </picture>
+
+                </div>
+                <h3 class="profile-name">Michelle Dong</h3>
+                <p class="profile-bio">BCI Team Member</p>
+            </div>
+
+            <div class="profile-card" data-teams="haptics">
+                <div class="profile-image-container">
+                    <picture class="profile-image">
+                        <img src="Website_Headshots\Ronald_Qu.png">
+                        <div class="overlay-text">
+                            <p>
+                                Electrical and Computer Engineering
+                                rq36@cornell.edu
+                            </p>
+                        </div>
+                    </picture>
+
+                </div>
+                <h3 class="profile-name">Ronald Qu</h3>
+                <p class="profile-bio">Haptics Team Member</p>
+            </div>
+
+            <div class="profile-card" data-teams="haptics">
+                <div class="profile-image-container">
+                    <picture class="profile-image">
+                        <img src="Website_Headshots\Allison_Rowe.png">
+                        <div class="overlay-text">
+                            <p>
+                                Applied and Engineering Physics
+                                asr322@cornell.edu
+                            </p>
+                        </div>
+                    </picture>
+
+                </div>
+                <h3 class="profile-name">Allison Rowe</h3>
+                <p class="profile-bio">Haptics Team Member</p>
+            </div>
+
+            <div class="profile-card" data-teams="software">
+                <div class="profile-image-container">
+                    <picture class="profile-image">
+                        <img src="Website_Headshots\Ethan_Ngai.png">
+                        <div class="overlay-text">
+                            <p>
+                                emn65@cornell.edu
+                            </p>
+                        </div>
+                    </picture>
+
+                </div>
+                <h3 class="profile-name">Ethan Ngai</h3>
+                <p class="profile-bio">Software Team Member</p>
+            </div>
+            <div class="profile-card" data-teams="haptics">
+                <div class="profile-image-container">
+                    <picture class="profile-image">
+                        <img src="Website_Headshots\Kevin_Zhou.png">
+                        <div class="overlay-text">
+                            <p>
+                                Electrical and Computer Engineering
+                                kz363@cornell.edu
+                            </p>
+                        </div>
+                    </picture>
+
+                </div>
+                <h3 class="profile-name">Kevin Zhou</h3>
+                <p class="profile-bio">Haptics Team Member</p>
+            </div>
+
+            <div class="profile-card" data-teams="bci">
+                <div class="profile-image-container">
+                    <picture class="profile-image">
+                        <img src="Website_Headshots\Spencer_Liang.png">
+                        <div class="overlay-text">
+                            <p>
+                                Computer Science
+                                sl3595@cornell.edu
+                            </p>
+                        </div>
+                    </picture>
+                </div>
+                <h3 class="profile-name">Spencer Liang</h3>
+                <p class="profile-bio">BCI Team Member</p>
+            </div>
+
+            <div class="profile-card" data-teams="business">
+                <div class="profile-image-container">
+                    <picture class="profile-image">
+                        <img src="Assets/placeholder.png">
+                        <div class="overlay-text">
+                            <p>
+                                Applied Economics and Management
+                                rk838@cornell.edu
+                            </p>
+                        </div>
+                    </picture>
+
+                </div>
+                <h3 class="profile-name">Reese Kim</h3>
+                <p class="profile-bio">Business Team Member</p>
+            </div>
+
+            <div class="profile-card" data-teams="business">
+                <div class="profile-image-container">
+                    <picture class="profile-image">
+                        <img src="Assets/placeholder.png">
+                        <div class="overlay-text">
+                            <p>
+                                Information Science
+                                scc273@cornell.edu
+                            </p>
+                        </div>
+                    </picture>
+
+                </div>
+                <h3 class="profile-name">Sydney Chin</h3>
+                <p class="profile-bio">Business Team Member</p>
+            </div>
+
+            <div class="profile-card" data-teams="game">
+                <div class="profile-image-container">
+                    <picture class="profile-image">
+                        <img src="Website_Headshots\Sophie_Bai.png">
+                        <div class="overlay-text">
+                            <p>
+                                Design and Environmental Analysis
+                                zb84@cornell.edu
+                            </p>
+                        </div>
+                    </picture>
+
+                </div>
+                <h3 class="profile-name">Sophie Bai</h3>
+                <p class="profile-bio">Game Team Member</p>
+            </div>
+
+            <div class="profile-card" data-teams="haptics">
+                <div class="profile-image-container">
+                    <picture class="profile-image">
+                        <img src="Website_Headshots\Fiona_Lin.png">
+                        <div class="overlay-text">
+                            <p>
+                                Electrical and Computer Engineering
+                                fyl8@cornell.edu
+                            </p>
+                        </div>
+                    </picture>
+
+                </div>
+                <h3 class="profile-name">Fiona Lin</h3>
+                <p class="profile-bio">Haptics Team Member</p>
+            </div>
+
+            <div class="profile-card" data-teams="game">
+                <div class="profile-image-container">
+                    <picture class="profile-image">
+                        <img src="Website_Headshots\Summer_Shen.png">
+                        <div class="overlay-text">
+                            <p>
+                                Information Science, Systems, and Technology
+                                sqs4@cornell.edu
+                            </p>
+                        </div>
+                    </picture>
+
+                </div>
+                <h3 class="profile-name">Summer Shen</h3>
+                <p class="profile-bio">Game Team Member</p>
+            </div>
+
+            <div class="profile-card" data-teams="software">
+                <div class="profile-image-container">
+                    <picture class="profile-image">
+                        <img src="Website_Headshots\Claire_Cheng.png">
+                        <div class="overlay-text">
+                            <p>
+                                cqc6@cornell.edu
+                            </p>
+                        </div>
+                    </picture>
+
+                </div>
+                <h3 class="profile-name">Claire Cheng</h3>
+                <p class="profile-bio">Software Team Member</p>
+            </div>
+
+            <div class="profile-card" data-teams="software">
+                <div class="profile-image-container">
+                    <picture class="profile-image">
+                        <img src="Assets/placeholder.png">
+                        <div class="overlay-text">
+                            <p>
+                                Computer Science
+                                ek779@cornell.edu
+                            </p>
+                        </div>
+                    </picture>
+
+                </div>
+                <h3 class="profile-name">Erim Keresteci</h3>
+                <p class="profile-bio">Software Team Member</p>
+            </div>
+        </div>
         </div>
 
-        <!-- Team Section -->
+    </section>
 
-
-        <!-- Business Team Section -->
-        <div class="mb-16">
-            <div class="text-center mb-8">
-                <h2 class="text-3xl font-bold text-white mb-4">Business Team</h2>
-                <p class="text-lg text-gray-300 max-w-4xl mx-auto">The Business Team is in charge of managing team
-                    logistics, social media, organizing events, and reaching out to corporate sponsors.</p>
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-logo">
+                <a href="index.html">
+                    <img src="Assets/CUXR_logo.png" alt="CUXR Logo">
+                </a>
             </div>
-            <div class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Liliane Wu -->
-                <div class="text-center bg-gray-800 p-6 rounded-lg shadow-lg group relative overflow-hidden">
-                    <img class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-red-500"
-                        src="https://placehold.co/128x128/718096/FFFFFF?text=LW" alt="Liliane Wu">
-                    <h3 class="text-xl font-bold text-white">Liliane Wu</h3>
-                    <p class="text-red-400">Business Lead</p>
-
-                    <!-- Hover overlay -->
-                    <div
-                        class="absolute inset-0 bg-black/90 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <p class="text-white text-lg font-semibold mb-2">Major: ORIE</p>
-                        <p class="text-white text-lg font-semibold mb-2">Junior</p>
-                        <p class="text-red-400 text-base">yw2542@cornell.edu</p>
-                    </div>
-                </div>
-
-                <!-- Fairooz Tahsin -->
-                <div class="text-center bg-gray-800 p-6 rounded-lg shadow-lg group relative overflow-hidden">
-                    <img class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-red-500"
-                        src="https://placehold.co/128x128/718096/FFFFFF?text=FT" alt="Fairooz Tahsin">
-                    <h3 class="text-xl font-bold text-white">Fairooz Tahsin</h3>
-                    <p class="text-red-400">Business Team Member</p>
-
-                    <!-- Hover overlay -->
-                    <div
-                        class="absolute inset-0 bg-black/90 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <p class="text-white text-lg font-semibold mb-2">Major: IS</p>
-                        <p class="text-white text-lg font-semibold mb-2">Sophomore</p>
-                        <p class="text-red-400 text-base">ft255@cornell.edu</p>
-                    </div>
-                </div>
+            <div class="footer-text">
+                <p>&copy; 2026 CUXR. All rights reserved.</p>
+                <p>Registered student organization of Cornell University.</p>
+                <p><a href="https://www.cornell.edu/equity/equal-opportunity/" target="_blank" class="footer-link">Equal Education and Employment</a></p>
             </div>
-        </div>
-
-        <!-- Haptics Team Section -->
-        <div class="mb-16">
-            <div class="text-center mb-8">
-                <h2 class="text-3xl font-bold text-white mb-4">Haptics Team</h2>
-                <p class="text-lg text-gray-300 max-w-4xl mx-auto">The Haptics Team is working towards making XR
-                    experiences as immersive as possible through the development of various haptic devices <strong
-                        class="text-red-400">that will eventually integrate into one unified system</strong>.</p>
-            </div>
-            <div class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Peter He -->
-                <div class="text-center bg-gray-800 p-6 rounded-lg shadow-lg group relative overflow-hidden">
-                    <img class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-red-500"
-                        src="https://placehold.co/128x128/718096/FFFFFF?text=PH" alt="Peter He">
-                    <h3 class="text-xl font-bold text-white">Peter He</h3>
-                    <p class="text-red-400">Full Team + Hardware Lead</p>
-
-                    <!-- Hover overlay -->
-                    <div
-                        class="absolute inset-0 bg-black/90 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <p class="text-white text-lg font-semibold mb-2">Major: ECE + CS</p>
-                        <p class="text-white text-lg font-semibold mb-2">Junior</p>
-                        <p class="text-red-400 text-base">ph475@cornell.edu</p>
-                    </div>
-                </div>
-
-                <!-- Isabella Frank -->
-                <div class="text-center bg-gray-800 p-6 rounded-lg shadow-lg group relative overflow-hidden">
-                    <img class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-red-500"
-                        src="https://placehold.co/128x128/718096/FFFFFF?text=IF" alt="Isabella Frank">
-                    <h3 class="text-xl font-bold text-white">Isabella Frank</h3>
-                    <p class="text-red-400">Haptics Team Member</p>
-
-                    <!-- Hover overlay -->
-                    <div
-                        class="absolute inset-0 bg-black/90 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <p class="text-white text-lg font-semibold mb-2">Major: ECE</p>
-                        <p class="text-white text-lg font-semibold mb-2">Junior</p>
-                        <p class="text-red-400 text-base">isf9@cornell.edu</p>
-                    </div>
-                </div>
-
-
-
-                <!-- Zach Riiff -->
-                <div class="text-center bg-gray-800 p-6 rounded-lg shadow-lg group relative overflow-hidden">
-                    <img class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-red-500"
-                        src="https://placehold.co/128x128/718096/FFFFFF?text=ZR" alt="Zach Riiff">
-                    <h3 class="text-xl font-bold text-white">Zach Riiff</h3>
-                    <p class="text-red-400">Haptics Team Member</p>
-
-                    <!-- Hover overlay -->
-                    <div
-                        class="absolute inset-0 bg-black/90 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <p class="text-white text-lg font-semibold mb-2">Major: ECE</p>
-                        <p class="text-white text-lg font-semibold mb-2">Sophomore</p>
-                        <p class="text-red-400 text-base">zcr5@cornell.edu</p>
-                    </div>
-                </div>
-
-                <!-- Eric Seo -->
-                <div class="text-center bg-gray-800 p-6 rounded-lg shadow-lg group relative overflow-hidden">
-                    <img class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-red-500"
-                        src="https://placehold.co/128x128/718096/FFFFFF?text=ES" alt="Eric Seo">
-                    <h3 class="text-xl font-bold text-white">Eric Seo</h3>
-                    <p class="text-red-400">Haptics Team Member</p>
-
-                    <!-- Hover overlay -->
-                    <div
-                        class="absolute inset-0 bg-black/90 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <p class="text-white text-lg font-semibold mb-2">Major: ECE</p>
-                        <p class="text-white text-lg font-semibold mb-2">Sophomore</p>
-                        <p class="text-red-400 text-base">eys39@cornell.edu</p>
-                    </div>
-                </div>
-
-                <!-- Alan Wu -->
-                <div class="text-center bg-gray-800 p-6 rounded-lg shadow-lg group relative overflow-hidden">
-                    <img class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-red-500"
-                        src="https://placehold.co/128x128/718096/FFFFFF?text=AW" alt="Alan Wu">
-                    <h3 class="text-xl font-bold text-white">Alan Wu</h3>
-                    <p class="text-red-400">Haptics Team Member</p>
-
-                    <!-- Hover overlay -->
-                    <div
-                        class="absolute inset-0 bg-black/90 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <p class="text-white text-lg font-semibold mb-2">Major: Neuro + Bio</p>
-                        <p class="text-white text-lg font-semibold mb-2">Sophomore</p>
-                        <p class="text-red-400 text-base">ayw34@cornell.edu</p>
-                    </div>
-                </div>
-
-                <!-- Carmen Lin -->
-                <div class="text-center bg-gray-800 p-6 rounded-lg shadow-lg group relative overflow-hidden">
-                    <img class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-red-500"
-                        src="https://placehold.co/128x128/718096/FFFFFF?text=CL" alt="Carmen Lin">
-                    <h3 class="text-xl font-bold text-white">Carmen Lin</h3>
-                    <p class="text-red-400">Haptics Team Member</p>
-
-                    <!-- Hover overlay -->
-                    <div
-                        class="absolute inset-0 bg-black/90 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <p class="text-white text-lg font-semibold mb-2">Major: MAE</p>
-                        <p class="text-white text-lg font-semibold mb-2">Junior</p>
-                        <p class="text-red-400 text-base">cl2624@cornell.edu</p>
-                    </div>
-                </div>
-
-                <!-- Ashee B Bansaal -->
-                <div class="text-center bg-gray-800 p-6 rounded-lg shadow-lg group relative overflow-hidden">
-                    <img class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-red-500"
-                        src="https://placehold.co/128x128/718096/FFFFFF?text=AB" alt="Ashee B Bansaal">
-                    <h3 class="text-xl font-bold text-white">Ashee B Bansaal</h3>
-                    <p class="text-red-400">Haptics Team Member</p>
-
-                    <!-- Hover overlay -->
-                    <div
-                        class="absolute inset-0 bg-black/90 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <p class="text-white text-lg font-semibold mb-2">Major: CS</p>
-                        <p class="text-white text-lg font-semibold mb-2">Sophomore</p>
-                        <p class="text-red-400 text-base">Ab3235@cornell.edu</p>
-                    </div>
-                </div>
-
-                <!-- Natalie Yeung -->
-                <div class="text-center bg-gray-800 p-6 rounded-lg shadow-lg group relative overflow-hidden">
-                    <img class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-red-500"
-                        src="https://placehold.co/128x128/718096/FFFFFF?text=NY" alt="Natalie Yeung">
-                    <h3 class="text-xl font-bold text-white">Natalie Yeung</h3>
-                    <p class="text-red-400">Haptics Team Member</p>
-
-                    <!-- Hover overlay -->
-                    <div
-                        class="absolute inset-0 bg-black/90 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <p class="text-white text-lg font-semibold mb-2">Major: ECE</p>
-                        <p class="text-white text-lg font-semibold mb-2">Sophomore</p>
-                        <p class="text-red-400 text-base">nyy4@cornell.edu</p>
-                    </div>
-                </div>
-
-                <!-- Selena Zhang -->
-                <div class="text-center bg-gray-800 p-6 rounded-lg shadow-lg group relative overflow-hidden">
-                    <img class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-red-500"
-                        src="https://placehold.co/128x128/718096/FFFFFF?text=SZ" alt="Selena Zhang">
-                    <h3 class="text-xl font-bold text-white">Selena Zhang</h3>
-                    <p class="text-red-400">Haptics Team Member</p>
-
-                    <!-- Hover overlay -->
-                    <div
-                        class="absolute inset-0 bg-black/90 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <p class="text-white text-lg font-semibold mb-2">Major: ECE</p>
-                        <p class="text-red-400 text-base">scz6@cornell.edu</p>
-                    </div>
-                </div>
-
-                <!-- Gina Liu -->
-                <div class="text-center bg-gray-800 p-6 rounded-lg shadow-lg group relative overflow-hidden">
-                    <img class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-red-500"
-                        src="https://placehold.co/128x128/718096/FFFFFF?text=GL" alt="Gina Liu">
-                    <h3 class="text-xl font-bold text-white">Gina Liu</h3>
-                    <p class="text-red-400">Haptics Team Member</p>
-
-                    <!-- Hover overlay -->
-                    <div
-                        class="absolute inset-0 bg-black/90 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <p class="text-white text-lg font-semibold mb-2">Major: MAE</p>
-                        <p class="text-red-400 text-base">gl528@cornell.edu</p>
-                    </div>
-                </div>
-
-                <!-- Felicity Wu -->
-                <div class="text-center bg-gray-800 p-6 rounded-lg shadow-lg group relative overflow-hidden">
-                    <img class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-red-500"
-                        src="https://placehold.co/128x128/718096/FFFFFF?text=FW" alt="Felicity Wu">
-                    <h3 class="text-xl font-bold text-white">Felicity Wu</h3>
-                    <p class="text-red-400">Haptics Team Member</p>
-
-                    <!-- Hover overlay -->
-                    <div
-                        class="absolute inset-0 bg-black/90 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <p class="text-white text-lg font-semibold mb-2">Major: MAE</p>
-                        <p class="text-red-400 text-base">fyw5@cornell.edu</p>
-                    </div>
-                </div>
-
-                <!-- Michelle Dong -->
-                <div class="text-center bg-gray-800 p-6 rounded-lg shadow-lg group relative overflow-hidden">
-                    <img class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-red-500"
-                        src="https://placehold.co/128x128/718096/FFFFFF?text=MD" alt="Michelle Dong">
-                    <h3 class="text-xl font-bold text-white">Michelle Dong</h3>
-                    <p class="text-red-400">Haptics Team Member</p>
-
-                    <!-- Hover overlay -->
-                    <div
-                        class="absolute inset-0 bg-black/90 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <p class="text-white text-lg font-semibold mb-2">Major: ECE</p>
-                        <p class="text-red-400 text-base">md2236@cornell.edu</p>
-                    </div>
-                </div>
-
-                <!-- Ronald Qu -->
-                <div class="text-center bg-gray-800 p-6 rounded-lg shadow-lg group relative overflow-hidden">
-                    <img class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-red-500"
-                        src="https://placehold.co/128x128/718096/FFFFFF?text=RQ" alt="Ronald Qu">
-                    <h3 class="text-xl font-bold text-white">Ronald Qu</h3>
-                    <p class="text-red-400">Haptics Team Member</p>
-
-                    <!-- Hover overlay -->
-                    <div
-                        class="absolute inset-0 bg-black/90 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <p class="text-white text-lg font-semibold mb-2">Major: ECE</p>
-                        <p class="text-red-400 text-base">rq36@cornell.edu</p>
-                    </div>
-                </div>
-
-                <!-- Saejoon Park -->
-                <div class="text-center bg-gray-800 p-6 rounded-lg shadow-lg group relative overflow-hidden">
-                    <img class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-red-500"
-                        src="https://placehold.co/128x128/718096/FFFFFF?text=SP" alt="Saejoon Park">
-                    <h3 class="text-xl font-bold text-white">Saejoon Park</h3>
-                    <p class="text-red-400">Haptics Team Member</p>
-
-                    <!-- Hover overlay -->
-                    <div
-                        class="absolute inset-0 bg-black/90 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <p class="text-white text-lg font-semibold mb-2">Major: ECE</p>
-                        <p class="text-red-400 text-base">spp68@cornell.edu</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Game Team Section -->
-        <div class="mb-16">
-            <div class="text-center mb-8">
-                <h2 class="text-3xl font-bold text-white mb-4">Game Team</h2>
-                <p class="text-lg text-gray-300 max-w-4xl mx-auto">The Games Team creates immersive XR games and
-                    interactive experiences that push the boundaries of virtual storytelling and user immersion.</p>
-            </div>
-            <div class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Rachel (Xinqing) Lin -->
-                <div class="text-center bg-gray-800 p-6 rounded-lg shadow-lg group relative overflow-hidden">
-                    <img class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-red-500"
-                        src="https://placehold.co/128x128/718096/FFFFFF?text=RL" alt="Rachel (Xinqing) Lin">
-                    <h3 class="text-xl font-bold text-white">Rachel (Xinqing) Lin</h3>
-                    <p class="text-red-400">Logistics Lead + Game Team Member</p>
-
-                    <!-- Hover overlay -->
-                    <div
-                        class="absolute inset-0 bg-black/90 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <p class="text-white text-lg font-semibold mb-2">Major: CS</p>
-                        <p class="text-white text-lg font-semibold mb-2">Junior</p>
-                        <p class="text-red-400 text-base">xl892@cornell.edu</p>
-                    </div>
-                </div>
-
-                <!-- George Margono -->
-                <div class="text-center bg-gray-800 p-6 rounded-lg shadow-lg group relative overflow-hidden">
-                    <img class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-red-500"
-                        src="https://placehold.co/128x128/718096/FFFFFF?text=GM" alt="George Margono">
-                    <h3 class="text-xl font-bold text-white">George Margono</h3>
-                    <p class="text-red-400">Game Team Member</p>
-
-                    <!-- Hover overlay -->
-                    <div
-                        class="absolute inset-0 bg-black/90 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <p class="text-white text-lg font-semibold mb-2">Major: CS</p>
-                        <p class="text-white text-lg font-semibold mb-2">Junior</p>
-                        <p class="text-red-400 text-base">gm564@cornell.edu</p>
-                    </div>
-                </div>
-
-                <!-- Annabelle Ford -->
-                <div class="text-center bg-gray-800 p-6 rounded-lg shadow-lg group relative overflow-hidden">
-                    <img class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-red-500"
-                        src="https://placehold.co/128x128/718096/FFFFFF?text=AF" alt="Annabelle Ford">
-                    <h3 class="text-xl font-bold text-white">Annabelle Ford</h3>
-                    <p class="text-red-400">Game Team Member</p>
-
-                    <!-- Hover overlay -->
-                    <div
-                        class="absolute inset-0 bg-black/90 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <p class="text-white text-lg font-semibold mb-2">Major: CS</p>
-                        <p class="text-white text-lg font-semibold mb-2">Sophomore</p>
-                        <p class="text-red-400 text-base">atf52@cornell.edu</p>
-                    </div>
-                </div>
-
-                <!-- Jerry Wong -->
-                <div class="text-center bg-gray-800 p-6 rounded-lg shadow-lg group relative overflow-hidden">
-                    <img class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-red-500"
-                        src="https://placehold.co/128x128/718096/FFFFFF?text=JW" alt="Jerry Wong">
-                    <h3 class="text-xl font-bold text-white">Jerry Wong</h3>
-                    <p class="text-red-400">Game Team Member</p>
-
-                    <!-- Hover overlay -->
-                    <div
-                        class="absolute inset-0 bg-black/90 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <p class="text-white text-lg font-semibold mb-2">Major: DEA</p>
-                        <p class="text-white text-lg font-semibold mb-2">Sophomore</p>
-                        <p class="text-red-400 text-base">cw994@cornell.edu</p>
-                    </div>
-                </div>
-
-                <!-- Andy Pang -->
-                <div class="text-center bg-gray-800 p-6 rounded-lg shadow-lg group relative overflow-hidden">
-                    <img class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-red-500"
-                        src="https://placehold.co/128x128/718096/FFFFFF?text=AP" alt="Andy Pang">
-                    <h3 class="text-xl font-bold text-white">Andy Pang</h3>
-                    <p class="text-red-400">Alumni Mentor</p>
-
-                    <!-- Hover overlay -->
-                    <div
-                        class="absolute inset-0 bg-black/90 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <p class="text-white text-lg font-semibold mb-2">Major: CS</p>
-                        <p class="text-white text-lg font-semibold mb-2">Class of 2025</p>
-                        <p class="text-red-400 text-base">cp487@cornell.edu</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Software Team Section -->
-        <div class="mb-16">
-            <div class="text-center mb-8">
-                <h2 class="text-3xl font-bold text-white mb-4">Software Team</h2>
-                <p class="text-lg text-gray-300 max-w-4xl mx-auto">The Software Team develops XR software solutions
-                    using Unity and Computer Vision for the Cornell community with real-world applications.</p>
-            </div>
-            <div class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Grace Jin -->
-                <div class="text-center bg-gray-800 p-6 rounded-lg shadow-lg group relative overflow-hidden">
-                    <img class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-red-500"
-                        src="https://placehold.co/128x128/718096/FFFFFF?text=GJ" alt="Grace Jin">
-                    <h3 class="text-xl font-bold text-white">Grace Jin</h3>
-                    <p class="text-red-400">Design + Software Lead</p>
-
-                    <!-- Hover overlay -->
-                    <div
-                        class="absolute inset-0 bg-black/90 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <p class="text-white text-lg font-semibold mb-2">Major: CS</p>
-                        <p class="text-white text-lg font-semibold mb-2">Junior</p>
-                        <p class="text-red-400 text-base">gsj33@cornell.edu</p>
-                    </div>
-                </div>
-
-                <!-- Wei-Che (Harry) Lin -->
-                <div class="text-center bg-gray-800 p-6 rounded-lg shadow-lg group relative overflow-hidden">
-                    <img class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-red-500"
-                        src="https://placehold.co/128x128/718096/FFFFFF?text=HL" alt="Wei-Che (Harry) Lin">
-                    <h3 class="text-xl font-bold text-white">Wei-Che (Harry) Lin</h3>
-                    <p class="text-red-400">Software Lead</p>
-
-                    <!-- Hover overlay -->
-                    <div
-                        class="absolute inset-0 bg-black/90 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <p class="text-white text-lg font-semibold mb-2">Major: IS</p>
-                        <p class="text-white text-lg font-semibold mb-2">Junior</p>
-                        <p class="text-red-400 text-base">wl725@cornell.edu</p>
-                    </div>
-                </div>
-
-                <!-- Ethan Coskay -->
-                <div class="text-center bg-gray-800 p-6 rounded-lg shadow-lg group relative overflow-hidden">
-                    <img class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-red-500"
-                        src="https://placehold.co/128x128/718096/FFFFFF?text=EC" alt="Ethan Coskay">
-                    <h3 class="text-xl font-bold text-white">Ethan Coskay</h3>
-                    <p class="text-red-400">Software Team Member</p>
-
-                    <!-- Hover overlay -->
-                    <div
-                        class="absolute inset-0 bg-black/90 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <p class="text-white text-lg font-semibold mb-2">Major: CS</p>
-                        <p class="text-white text-lg font-semibold mb-2">Junior</p>
-                        <p class="text-red-400 text-base">enc33@cornell.edu</p>
-                    </div>
-                </div>
-
-                <!-- James Cenawood -->
-                <div class="text-center bg-gray-800 p-6 rounded-lg shadow-lg group relative overflow-hidden">
-                    <img class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-red-500"
-                        src="https://placehold.co/128x128/718096/FFFFFF?text=JC" alt="James Cenawood">
-                    <h3 class="text-xl font-bold text-white">James Cenawood</h3>
-                    <p class="text-red-400">Software Team Member</p>
-
-                    <!-- Hover overlay -->
-                    <div
-                        class="absolute inset-0 bg-black/90 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <p class="text-white text-lg font-semibold mb-2">Major: CS</p>
-                        <p class="text-white text-lg font-semibold mb-2">Junior</p>
-                        <p class="text-red-400 text-base">jcc463@cornell.edu</p>
-                    </div>
-                </div>
-
-                <!-- Yaelin Hough -->
-                <div class="text-center bg-gray-800 p-6 rounded-lg shadow-lg group relative overflow-hidden">
-                    <img class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-red-500"
-                        src="https://placehold.co/128x128/718096/FFFFFF?text=YH" alt="Yaelin Hough">
-                    <h3 class="text-xl font-bold text-white">Yaelin Hough</h3>
-                    <p class="text-red-400">Software Team Member</p>
-
-                    <!-- Hover overlay -->
-                    <div
-                        class="absolute inset-0 bg-black/90 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <p class="text-white text-lg font-semibold mb-2">Major: CS + Philosophy</p>
-                        <p class="text-white text-lg font-semibold mb-2">Junior</p>
-                        <p class="text-red-400 text-base">yh2299@cornell.edu</p>
-                    </div>
-                </div>
-
-                <!-- Yanchun Lai -->
-                <div class="text-center bg-gray-800 p-6 rounded-lg shadow-lg group relative overflow-hidden">
-                    <img class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-red-500"
-                        src="https://placehold.co/128x128/718096/FFFFFF?text=YL" alt="Yanchun Lai">
-                    <h3 class="text-xl font-bold text-white">Yanchun Lai</h3>
-                    <p class="text-red-400">Software Team Member</p>
-
-                    <!-- Hover overlay -->
-                    <div
-                        class="absolute inset-0 bg-black/90 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <p class="text-white text-lg font-semibold mb-2">Major: CS</p>
-                        <p class="text-white text-lg font-semibold mb-2">Junior</p>
-                        <p class="text-red-400 text-base">yl3796@cornell.edu</p>
-                    </div>
-                </div>
-
-                <!-- Ezra Koreen -->
-                <div class="text-center bg-gray-800 p-6 rounded-lg shadow-lg group relative overflow-hidden">
-                    <img class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-red-500"
-                        src="https://placehold.co/128x128/718096/FFFFFF?text=EK" alt="Ezra Koreen">
-                    <h3 class="text-xl font-bold text-white">Ezra Koreen</h3>
-                    <p class="text-red-400">Software Team Member</p>
-
-                    <!-- Hover overlay -->
-                    <div
-                        class="absolute inset-0 bg-black/90 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <p class="text-white text-lg font-semibold mb-2">Major: CS</p>
-                        <p class="text-white text-lg font-semibold mb-2">Junior</p>
-                        <p class="text-red-400 text-base">elk97@cornell.edu</p>
-                    </div>
-                </div>
-
-                <!-- Henry Toll -->
-                <div class="text-center bg-gray-800 p-6 rounded-lg shadow-lg group relative overflow-hidden">
-                    <img class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-red-500"
-                        src="https://placehold.co/128x128/718096/FFFFFF?text=HT" alt="Henry Toll">
-                    <h3 class="text-xl font-bold text-white">Henry Toll</h3>
-                    <p class="text-red-400">Senior Advisor + Software Team Member</p>
-
-                    <!-- Hover overlay -->
-                    <div
-                        class="absolute inset-0 bg-black/90 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <p class="text-white text-lg font-semibold mb-2">Major: CS + Math</p>
-                        <p class="text-white text-lg font-semibold mb-2">Senior</p>
-                        <p class="text-red-400 text-base">hht26@cornell.edu</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </main>
-
-    <!-- Footer -->
-    <footer class="bg-black mt-16 border-t border-white/20">
-        <div class="container mx-auto px-6 py-8">
-            <div class="text-center mb-6">
-                <p class="text-sm text-white">This organization is a registered student organization of Cornell
-                    University.</p>
-                <p class="text-sm text-white mt-1">Contact: <a href="mailto:cuxr@cornell.edu"
-                        class="text-red-500 hover:underline">cuxr@cornell.edu</a></p>
-                <a href="https://hr.cornell.edu/about/workplace-rights/equal-education-and-employment" target="_blank"
-                    class="text-sm text-white underline mt-2 block">Equal Education and Employment</a>
-            </div>
-            <div class="flex justify-center space-x-6 mb-6">
-                <a href="https://www.instagram.com/cornellxr/" target="_blank"
-                    class="flex items-center justify-center"><img src="assets/img/instagram.svg" alt="Instagram"
-                        class="w-6 h-6"></a>
-                <a href="https://github.com/CUXR" target="_blank" class="flex items-center justify-center"><img
-                        src="assets/img/github-icon.svg" alt="GitHub" class="w-5 h-5"></a>
-                <a href="https://www.linkedin.com/company/cornell-xr/" target="_blank"
-                    class="flex items-center justify-center"><img src="assets/img/linkedin-icon.svg" alt="LinkedIn"
-                        class="w-6 h-6"></a>
-            </div>
-            <div class="text-center">
-                <p class="text-sm text-white">&copy; 2025 CUXR. All rights reserved.</p>
+            <div class="footer-socials">
+                <a href="https://www.instagram.com/cornellxr/" target="_blank"><img src="Assets/instagram.svg" alt="Instagram"></a>
+                <a href="https://www.linkedin.com/company/cornell-xr/" target="_blank"><img src="Assets/linkedin.svg" alt="LinkedIn"></a>
+                <a href="mailto:cuxr@cornell.edu"><img src="Assets/email.svg" alt="Email"></a>
             </div>
         </div>
     </footer>
-
-    <script>
-        // Mobile menu toggle
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-    </script>
-
+    <script src="team_app.js"></script>
 </body>
 
 </html>

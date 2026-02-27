@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="assets/img/CUXR_Logo_Ico.ico">
+
+    <!-- SEO Meta Tags -->
+    <title>Cornell XR Team - Meet Our XR, VR, AR & HCI Engineers</title>
+    <meta name="description"
+        content="Meet the talented Cornell XR team members working on Extended Reality projects. Our diverse team includes hardware engineers, software developers, and HCI researchers specializing in VR, AR, smart glasses, and haptic technology.">
+    <meta name="keywords"
+        content="Cornell XR Team, XR Engineers, VR Developers, AR Developers, HCI Researchers, Smart Glasses Engineers, Haptic Technology, Cornell University Students, Engineering Project Team, Hardware Engineers, Software Developers, Computer Vision, Unity Developers, Brain-Computer Interface, Haptic Gloves, Force Feedback">
+    <meta name="author" content="Cornell XR">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="English">
+    <meta name="revisit-after" content="7 days">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Cornell XR Team - Meet Our XR, VR, AR & HCI Engineers">
+    <meta property="og:description"
+        content="Meet the talented Cornell XR team members working on Extended Reality projects. Our diverse team includes hardware engineers, software developers, and HCI researchers specializing in VR, AR, smart glasses, and haptic technology.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://cuxr.github.io/team.html">
+    <meta property="og:image" content="https://cuxr.github.io/assets/img/CUXR_Logo_Transparent.png">
+    <meta property="og:site_name" content="Cornell XR">
+    <meta property="og:locale" content="en_US">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Cornell XR Team - Meet Our XR, VR, AR & HCI Engineers">
+    <meta name="twitter:description"
+        content="Meet the talented Cornell XR team members working on Extended Reality projects. Our diverse team includes hardware engineers, software developers, and HCI researchers specializing in VR, AR, smart glasses, and haptic technology.">
+    <meta name="twitter:image" content="https://cuxr.github.io/assets/img/CUXR_Logo_Transparent.png">
+
+    <!-- Additional SEO Meta Tags -->
+    <meta name="theme-color" content="#E74C3C">
+    <meta name="msapplication-TileColor" content="#E74C3C">
+    <meta name="application-name" content="Cornell XR">
+    <meta name="apple-mobile-web-app-title" content="Cornell XR">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://cuxr.github.io/team.html">
+
+    <!-- Structured Data for Team -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "AboutPage",
+        "name": "Cornell XR Team",
+        "description": "Meet the talented Cornell XR team members working on cutting-edge Extended Reality projects including VR, AR, smart glasses, and haptic technology.",
+        "url": "https://cuxr.github.io/team.html",
+        "mainEntity": {
+            "@type": "Organization",
+            "name": "Cornell XR",
+            "description": "Cornell University's Extended Reality engineering project team",
+            "member": [
+                {
+                    "@type": "Person",
+                    "name": "Peter He",
+                    "jobTitle": "Full Team + Hardware Lead",
+                    "alumniOf": "Cornell University",
+                    "knowsAbout": ["Extended Reality", "Hardware Engineering", "Haptic Technology"]
+                },
+                {
+                    "@type": "Person",
+                    "name": "Isabella Frank", 
+                    "jobTitle": "Hardware Member",
+                    "alumniOf": "Cornell University",
+                    "knowsAbout": ["Hardware Engineering", "Extended Reality", "Haptic Devices"]
+                },
+                {
+                    "@type": "Person",
+                    "name": "Grace Jin",
+                    "jobTitle": "Design + Software Lead", 
+                    "alumniOf": "Cornell University",
+                    "knowsAbout": ["Software Development", "Design", "Extended Reality"]
+                },
+                {
+                    "@type": "Person",
+                    "name": "Wei-Che (Harry) Lin",
+                    "jobTitle": "Software Lead",
+                    "alumniOf": "Cornell University", 
+                    "knowsAbout": ["Software Development", "Extended Reality", "Computer Vision"]
+                }
+            ]
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Cornell XR",
+            "url": "https://cuxr.github.io/"
+        }
+    }
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* Custom red color overrides */
+        .text-red-400,
+        .text-red-500 {
+            color: #E74C3C !important;
+        }
+
+        .bg-red-500,
+        .bg-red-600,
+        .bg-red-700 {
+            background-color: #E74C3C !important;
+        }
+
+        .border-red-500 {
+            border-color: #E74C3C !important;
+        }
+
+        .hover\:text-red-500:hover {
+            color: #E74C3C !important;
+        }
+
+        .hover\:bg-red-700:hover {
+            background-color: #E74C3C !important;
+        }
+    </style>
+</head>
+
+<body class="bg-black text-white">
+
+    <!-- Header -->
+    <header class="bg-black/80 backdrop-blur-md sticky top-0 z-50 border-b border-white/20">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <a href="/" class="flex items-center space-x-2">
+                    <img src="assets/img/CUXR_Logo_Transparent.png" alt="CUXR Logo" class="h-10">
+                    <span class="text-2xl font-bold text-white">CUXR</span>
+                </a>
+
+                <!-- Desktop Nav -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="/" class="text-white hover:text-red-500 transition duration-300">Home</a>
+                    <a href="/projects" class="text-white hover:text-red-500 transition duration-300">Projects</a>
+                    <a href="/team" class="text-white font-semibold border-b-2 border-red-500 pb-1">Team</a>
+                    <a href="/contact" class="text-white hover:text-red-500 transition duration-300">Contact</a>
+                </div>
+
+                <div class="hidden md:flex items-center space-x-4">
+                    <a href="https://bit.ly/sp2026cuxr" target="_blank"
+                        class="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-lg transition duration-300">Apply
+                        to Join</a>
+                </div>
+
+                <!-- Mobile Nav Button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-white focus:outline-none">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16m-7 6h7"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Nav -->
+            <div id="mobile-menu" class="hidden md:hidden mt-4">
+                <a href="/" class="block py-2 px-4 text-sm text-white hover:bg-black rounded">Home</a>
+                <a href="/projects" class="block py-2 px-4 text-sm text-white hover:bg-black rounded">Projects</a>
+                <a href="/team" class="block py-2 px-4 text-sm text-white">Team</a>
+                <a href="/contact" class="block py-2 px-4 text-sm text-white hover:bg-black rounded">Contact</a>
+                <a href="https://bit.ly/sp2026cuxr" target="_blank"
+                    class="block mt-2 bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-lg transition duration-300 text-center">Apply
+                    to Join</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-6 py-16">
+        <div class="text-center mb-12">
+            <h1 class="text-4xl md:text-5xl font-extrabold text-white">Meet the Team</h1>
+            <p class="text-lg text-red-400 mt-2">Page Under Construction</p>
+            <br>
+            <!-- <p class="text-white mb-6">
+                <strong>If you want to schedule a coffee chat, please fill out: <a
+                        href="https://forms.gle/vMZERwftmqJyaUGaA" target="_blank"
+                        class="text-red-500 hover:underline">https://forms.gle/vMZERwftmqJyaUGaA</a></strong>
+            </p> -->
+        </div>
+
+        <!-- Team Section -->
+
+
+        <!-- Business Team Section -->
+        <div class="mb-16">
+            <div class="text-center mb-8">
+                <h2 class="text-3xl font-bold text-white mb-4">Business Team</h2>
+                <p class="text-lg text-gray-300 max-w-4xl mx-auto">The Business Team is in charge of managing team
+                    logistics, social media, organizing events, and reaching out to corporate sponsors.</p>
+            </div>
+            <div class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Liliane Wu -->
+                <div class="text-center bg-gray-800 p-6 rounded-lg shadow-lg group relative overflow-hidden">
+                    <img class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-red-500"
+                        src="https://placehold.co/128x128/718096/FFFFFF?text=LW" alt="Liliane Wu">
+                    <h3 class="text-xl font-bold text-white">Liliane Wu</h3>
+                    <p class="text-red-400">Business Lead</p>
+
+                    <!-- Hover overlay -->
+                    <div
+                        class="absolute inset-0 bg-black/90 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <p class="text-white text-lg font-semibold mb-2">Major: ORIE</p>
+                        <p class="text-white text-lg font-semibold mb-2">Junior</p>
+                        <p class="text-red-400 text-base">yw2542@cornell.edu</p>
+                    </div>
+                </div>
+
+                <!-- Fairooz Tahsin -->
+                <div class="text-center bg-gray-800 p-6 rounded-lg shadow-lg group relative overflow-hidden">
+                    <img class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-red-500"
+                        src="https://placehold.co/128x128/718096/FFFFFF?text=FT" alt="Fairooz Tahsin">
+                    <h3 class="text-xl font-bold text-white">Fairooz Tahsin</h3>
+                    <p class="text-red-400">Business Team Member</p>
+
+                    <!-- Hover overlay -->
+                    <div
+                        class="absolute inset-0 bg-black/90 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <p class="text-white text-lg font-semibold mb-2">Major: IS</p>
+                        <p class="text-white text-lg font-semibold mb-2">Sophomore</p>
+                        <p class="text-red-400 text-base">ft255@cornell.edu</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Haptics Team Section -->
+        <div class="mb-16">
+            <div class="text-center mb-8">
+                <h2 class="text-3xl font-bold text-white mb-4">Haptics Team</h2>
+                <p class="text-lg text-gray-300 max-w-4xl mx-auto">The Haptics Team is working towards making XR
+                    experiences as immersive as possible through the development of various haptic devices <strong
+                        class="text-red-400">that will eventually integrate into one unified system</strong>.</p>
+            </div>
+            <div class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Peter He -->
+                <div class="text-center bg-gray-800 p-6 rounded-lg shadow-lg group relative overflow-hidden">
+                    <img class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-red-500"
+                        src="https://placehold.co/128x128/718096/FFFFFF?text=PH" alt="Peter He">
+                    <h3 class="text-xl font-bold text-white">Peter He</h3>
+                    <p class="text-red-400">Full Team + Hardware Lead</p>
+
+                    <!-- Hover overlay -->
+                    <div
+                        class="absolute inset-0 bg-black/90 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <p class="text-white text-lg font-semibold mb-2">Major: ECE + CS</p>
+                        <p class="text-white text-lg font-semibold mb-2">Junior</p>
+                        <p class="text-red-400 text-base">ph475@cornell.edu</p>
+                    </div>
+                </div>
+
+                <!-- Isabella Frank -->
+                <div class="text-center bg-gray-800 p-6 rounded-lg shadow-lg group relative overflow-hidden">
+                    <img class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-red-500"
+                        src="https://placehold.co/128x128/718096/FFFFFF?text=IF" alt="Isabella Frank">
+                    <h3 class="text-xl font-bold text-white">Isabella Frank</h3>
+                    <p class="text-red-400">Haptics Team Member</p>
+
+                    <!-- Hover overlay -->
+                    <div
+                        class="absolute inset-0 bg-black/90 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <p class="text-white text-lg font-semibold mb-2">Major: ECE</p>
+                        <p class="text-white text-lg font-semibold mb-2">Junior</p>
+                        <p class="text-red-400 text-base">isf9@cornell.edu</p>
+                    </div>
+                </div>
+
+
+
+                <!-- Zach Riiff -->
+                <div class="text-center bg-gray-800 p-6 rounded-lg shadow-lg group relative overflow-hidden">
+                    <img class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-red-500"
+                        src="https://placehold.co/128x128/718096/FFFFFF?text=ZR" alt="Zach Riiff">
+                    <h3 class="text-xl font-bold text-white">Zach Riiff</h3>
+                    <p class="text-red-400">Haptics Team Member</p>
+
+                    <!-- Hover overlay -->
+                    <div
+                        class="absolute inset-0 bg-black/90 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <p class="text-white text-lg font-semibold mb-2">Major: ECE</p>
+                        <p class="text-white text-lg font-semibold mb-2">Sophomore</p>
+                        <p class="text-red-400 text-base">zcr5@cornell.edu</p>
+                    </div>
+                </div>
+
+                <!-- Eric Seo -->
+                <div class="text-center bg-gray-800 p-6 rounded-lg shadow-lg group relative overflow-hidden">
+                    <img class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-red-500"
+                        src="https://placehold.co/128x128/718096/FFFFFF?text=ES" alt="Eric Seo">
+                    <h3 class="text-xl font-bold text-white">Eric Seo</h3>
+                    <p class="text-red-400">Haptics Team Member</p>
+
+                    <!-- Hover overlay -->
+                    <div
+                        class="absolute inset-0 bg-black/90 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <p class="text-white text-lg font-semibold mb-2">Major: ECE</p>
+                        <p class="text-white text-lg font-semibold mb-2">Sophomore</p>
+                        <p class="text-red-400 text-base">eys39@cornell.edu</p>
+                    </div>
+                </div>
+
+                <!-- Alan Wu -->
+                <div class="text-center bg-gray-800 p-6 rounded-lg shadow-lg group relative overflow-hidden">
+                    <img class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-red-500"
+                        src="https://placehold.co/128x128/718096/FFFFFF?text=AW" alt="Alan Wu">
+                    <h3 class="text-xl font-bold text-white">Alan Wu</h3>
+                    <p class="text-red-400">Haptics Team Member</p>
+
+                    <!-- Hover overlay -->
+                    <div
+                        class="absolute inset-0 bg-black/90 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <p class="text-white text-lg font-semibold mb-2">Major: Neuro + Bio</p>
+                        <p class="text-white text-lg font-semibold mb-2">Sophomore</p>
+                        <p class="text-red-400 text-base">ayw34@cornell.edu</p>
+                    </div>
+                </div>
+
+                <!-- Carmen Lin -->
+                <div class="text-center bg-gray-800 p-6 rounded-lg shadow-lg group relative overflow-hidden">
+                    <img class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-red-500"
+                        src="https://placehold.co/128x128/718096/FFFFFF?text=CL" alt="Carmen Lin">
+                    <h3 class="text-xl font-bold text-white">Carmen Lin</h3>
+                    <p class="text-red-400">Haptics Team Member</p>
+
+                    <!-- Hover overlay -->
+                    <div
+                        class="absolute inset-0 bg-black/90 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <p class="text-white text-lg font-semibold mb-2">Major: MAE</p>
+                        <p class="text-white text-lg font-semibold mb-2">Junior</p>
+                        <p class="text-red-400 text-base">cl2624@cornell.edu</p>
+                    </div>
+                </div>
+
+                <!-- Ashee B Bansaal -->
+                <div class="text-center bg-gray-800 p-6 rounded-lg shadow-lg group relative overflow-hidden">
+                    <img class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-red-500"
+                        src="https://placehold.co/128x128/718096/FFFFFF?text=AB" alt="Ashee B Bansaal">
+                    <h3 class="text-xl font-bold text-white">Ashee B Bansaal</h3>
+                    <p class="text-red-400">Haptics Team Member</p>
+
+                    <!-- Hover overlay -->
+                    <div
+                        class="absolute inset-0 bg-black/90 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <p class="text-white text-lg font-semibold mb-2">Major: CS</p>
+                        <p class="text-white text-lg font-semibold mb-2">Sophomore</p>
+                        <p class="text-red-400 text-base">Ab3235@cornell.edu</p>
+                    </div>
+                </div>
+
+                <!-- Natalie Yeung -->
+                <div class="text-center bg-gray-800 p-6 rounded-lg shadow-lg group relative overflow-hidden">
+                    <img class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-red-500"
+                        src="https://placehold.co/128x128/718096/FFFFFF?text=NY" alt="Natalie Yeung">
+                    <h3 class="text-xl font-bold text-white">Natalie Yeung</h3>
+                    <p class="text-red-400">Haptics Team Member</p>
+
+                    <!-- Hover overlay -->
+                    <div
+                        class="absolute inset-0 bg-black/90 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <p class="text-white text-lg font-semibold mb-2">Major: ECE</p>
+                        <p class="text-white text-lg font-semibold mb-2">Sophomore</p>
+                        <p class="text-red-400 text-base">nyy4@cornell.edu</p>
+                    </div>
+                </div>
+
+                <!-- Selena Zhang -->
+                <div class="text-center bg-gray-800 p-6 rounded-lg shadow-lg group relative overflow-hidden">
+                    <img class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-red-500"
+                        src="https://placehold.co/128x128/718096/FFFFFF?text=SZ" alt="Selena Zhang">
+                    <h3 class="text-xl font-bold text-white">Selena Zhang</h3>
+                    <p class="text-red-400">Haptics Team Member</p>
+
+                    <!-- Hover overlay -->
+                    <div
+                        class="absolute inset-0 bg-black/90 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <p class="text-white text-lg font-semibold mb-2">Major: ECE</p>
+                        <p class="text-red-400 text-base">scz6@cornell.edu</p>
+                    </div>
+                </div>
+
+                <!-- Gina Liu -->
+                <div class="text-center bg-gray-800 p-6 rounded-lg shadow-lg group relative overflow-hidden">
+                    <img class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-red-500"
+                        src="https://placehold.co/128x128/718096/FFFFFF?text=GL" alt="Gina Liu">
+                    <h3 class="text-xl font-bold text-white">Gina Liu</h3>
+                    <p class="text-red-400">Haptics Team Member</p>
+
+                    <!-- Hover overlay -->
+                    <div
+                        class="absolute inset-0 bg-black/90 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <p class="text-white text-lg font-semibold mb-2">Major: MAE</p>
+                        <p class="text-red-400 text-base">gl528@cornell.edu</p>
+                    </div>
+                </div>
+
+                <!-- Felicity Wu -->
+                <div class="text-center bg-gray-800 p-6 rounded-lg shadow-lg group relative overflow-hidden">
+                    <img class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-red-500"
+                        src="https://placehold.co/128x128/718096/FFFFFF?text=FW" alt="Felicity Wu">
+                    <h3 class="text-xl font-bold text-white">Felicity Wu</h3>
+                    <p class="text-red-400">Haptics Team Member</p>
+
+                    <!-- Hover overlay -->
+                    <div
+                        class="absolute inset-0 bg-black/90 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <p class="text-white text-lg font-semibold mb-2">Major: MAE</p>
+                        <p class="text-red-400 text-base">fyw5@cornell.edu</p>
+                    </div>
+                </div>
+
+                <!-- Michelle Dong -->
+                <div class="text-center bg-gray-800 p-6 rounded-lg shadow-lg group relative overflow-hidden">
+                    <img class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-red-500"
+                        src="https://placehold.co/128x128/718096/FFFFFF?text=MD" alt="Michelle Dong">
+                    <h3 class="text-xl font-bold text-white">Michelle Dong</h3>
+                    <p class="text-red-400">Haptics Team Member</p>
+
+                    <!-- Hover overlay -->
+                    <div
+                        class="absolute inset-0 bg-black/90 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <p class="text-white text-lg font-semibold mb-2">Major: ECE</p>
+                        <p class="text-red-400 text-base">md2236@cornell.edu</p>
+                    </div>
+                </div>
+
+                <!-- Ronald Qu -->
+                <div class="text-center bg-gray-800 p-6 rounded-lg shadow-lg group relative overflow-hidden">
+                    <img class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-red-500"
+                        src="https://placehold.co/128x128/718096/FFFFFF?text=RQ" alt="Ronald Qu">
+                    <h3 class="text-xl font-bold text-white">Ronald Qu</h3>
+                    <p class="text-red-400">Haptics Team Member</p>
+
+                    <!-- Hover overlay -->
+                    <div
+                        class="absolute inset-0 bg-black/90 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <p class="text-white text-lg font-semibold mb-2">Major: ECE</p>
+                        <p class="text-red-400 text-base">rq36@cornell.edu</p>
+                    </div>
+                </div>
+
+                <!-- Saejoon Park -->
+                <div class="text-center bg-gray-800 p-6 rounded-lg shadow-lg group relative overflow-hidden">
+                    <img class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-red-500"
+                        src="https://placehold.co/128x128/718096/FFFFFF?text=SP" alt="Saejoon Park">
+                    <h3 class="text-xl font-bold text-white">Saejoon Park</h3>
+                    <p class="text-red-400">Haptics Team Member</p>
+
+                    <!-- Hover overlay -->
+                    <div
+                        class="absolute inset-0 bg-black/90 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <p class="text-white text-lg font-semibold mb-2">Major: ECE</p>
+                        <p class="text-red-400 text-base">spp68@cornell.edu</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Game Team Section -->
+        <div class="mb-16">
+            <div class="text-center mb-8">
+                <h2 class="text-3xl font-bold text-white mb-4">Game Team</h2>
+                <p class="text-lg text-gray-300 max-w-4xl mx-auto">The Games Team creates immersive XR games and
+                    interactive experiences that push the boundaries of virtual storytelling and user immersion.</p>
+            </div>
+            <div class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Rachel (Xinqing) Lin -->
+                <div class="text-center bg-gray-800 p-6 rounded-lg shadow-lg group relative overflow-hidden">
+                    <img class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-red-500"
+                        src="https://placehold.co/128x128/718096/FFFFFF?text=RL" alt="Rachel (Xinqing) Lin">
+                    <h3 class="text-xl font-bold text-white">Rachel (Xinqing) Lin</h3>
+                    <p class="text-red-400">Logistics Lead + Game Team Member</p>
+
+                    <!-- Hover overlay -->
+                    <div
+                        class="absolute inset-0 bg-black/90 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <p class="text-white text-lg font-semibold mb-2">Major: CS</p>
+                        <p class="text-white text-lg font-semibold mb-2">Junior</p>
+                        <p class="text-red-400 text-base">xl892@cornell.edu</p>
+                    </div>
+                </div>
+
+                <!-- George Margono -->
+                <div class="text-center bg-gray-800 p-6 rounded-lg shadow-lg group relative overflow-hidden">
+                    <img class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-red-500"
+                        src="https://placehold.co/128x128/718096/FFFFFF?text=GM" alt="George Margono">
+                    <h3 class="text-xl font-bold text-white">George Margono</h3>
+                    <p class="text-red-400">Game Team Member</p>
+
+                    <!-- Hover overlay -->
+                    <div
+                        class="absolute inset-0 bg-black/90 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <p class="text-white text-lg font-semibold mb-2">Major: CS</p>
+                        <p class="text-white text-lg font-semibold mb-2">Junior</p>
+                        <p class="text-red-400 text-base">gm564@cornell.edu</p>
+                    </div>
+                </div>
+
+                <!-- Annabelle Ford -->
+                <div class="text-center bg-gray-800 p-6 rounded-lg shadow-lg group relative overflow-hidden">
+                    <img class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-red-500"
+                        src="https://placehold.co/128x128/718096/FFFFFF?text=AF" alt="Annabelle Ford">
+                    <h3 class="text-xl font-bold text-white">Annabelle Ford</h3>
+                    <p class="text-red-400">Game Team Member</p>
+
+                    <!-- Hover overlay -->
+                    <div
+                        class="absolute inset-0 bg-black/90 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <p class="text-white text-lg font-semibold mb-2">Major: CS</p>
+                        <p class="text-white text-lg font-semibold mb-2">Sophomore</p>
+                        <p class="text-red-400 text-base">atf52@cornell.edu</p>
+                    </div>
+                </div>
+
+                <!-- Jerry Wong -->
+                <div class="text-center bg-gray-800 p-6 rounded-lg shadow-lg group relative overflow-hidden">
+                    <img class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-red-500"
+                        src="https://placehold.co/128x128/718096/FFFFFF?text=JW" alt="Jerry Wong">
+                    <h3 class="text-xl font-bold text-white">Jerry Wong</h3>
+                    <p class="text-red-400">Game Team Member</p>
+
+                    <!-- Hover overlay -->
+                    <div
+                        class="absolute inset-0 bg-black/90 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <p class="text-white text-lg font-semibold mb-2">Major: DEA</p>
+                        <p class="text-white text-lg font-semibold mb-2">Sophomore</p>
+                        <p class="text-red-400 text-base">cw994@cornell.edu</p>
+                    </div>
+                </div>
+
+                <!-- Andy Pang -->
+                <div class="text-center bg-gray-800 p-6 rounded-lg shadow-lg group relative overflow-hidden">
+                    <img class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-red-500"
+                        src="https://placehold.co/128x128/718096/FFFFFF?text=AP" alt="Andy Pang">
+                    <h3 class="text-xl font-bold text-white">Andy Pang</h3>
+                    <p class="text-red-400">Alumni Mentor</p>
+
+                    <!-- Hover overlay -->
+                    <div
+                        class="absolute inset-0 bg-black/90 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <p class="text-white text-lg font-semibold mb-2">Major: CS</p>
+                        <p class="text-white text-lg font-semibold mb-2">Class of 2025</p>
+                        <p class="text-red-400 text-base">cp487@cornell.edu</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Software Team Section -->
+        <div class="mb-16">
+            <div class="text-center mb-8">
+                <h2 class="text-3xl font-bold text-white mb-4">Software Team</h2>
+                <p class="text-lg text-gray-300 max-w-4xl mx-auto">The Software Team develops XR software solutions
+                    using Unity and Computer Vision for the Cornell community with real-world applications.</p>
+            </div>
+            <div class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Grace Jin -->
+                <div class="text-center bg-gray-800 p-6 rounded-lg shadow-lg group relative overflow-hidden">
+                    <img class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-red-500"
+                        src="https://placehold.co/128x128/718096/FFFFFF?text=GJ" alt="Grace Jin">
+                    <h3 class="text-xl font-bold text-white">Grace Jin</h3>
+                    <p class="text-red-400">Design + Software Lead</p>
+
+                    <!-- Hover overlay -->
+                    <div
+                        class="absolute inset-0 bg-black/90 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <p class="text-white text-lg font-semibold mb-2">Major: CS</p>
+                        <p class="text-white text-lg font-semibold mb-2">Junior</p>
+                        <p class="text-red-400 text-base">gsj33@cornell.edu</p>
+                    </div>
+                </div>
+
+                <!-- Wei-Che (Harry) Lin -->
+                <div class="text-center bg-gray-800 p-6 rounded-lg shadow-lg group relative overflow-hidden">
+                    <img class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-red-500"
+                        src="https://placehold.co/128x128/718096/FFFFFF?text=HL" alt="Wei-Che (Harry) Lin">
+                    <h3 class="text-xl font-bold text-white">Wei-Che (Harry) Lin</h3>
+                    <p class="text-red-400">Software Lead</p>
+
+                    <!-- Hover overlay -->
+                    <div
+                        class="absolute inset-0 bg-black/90 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <p class="text-white text-lg font-semibold mb-2">Major: IS</p>
+                        <p class="text-white text-lg font-semibold mb-2">Junior</p>
+                        <p class="text-red-400 text-base">wl725@cornell.edu</p>
+                    </div>
+                </div>
+
+                <!-- Ethan Coskay -->
+                <div class="text-center bg-gray-800 p-6 rounded-lg shadow-lg group relative overflow-hidden">
+                    <img class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-red-500"
+                        src="https://placehold.co/128x128/718096/FFFFFF?text=EC" alt="Ethan Coskay">
+                    <h3 class="text-xl font-bold text-white">Ethan Coskay</h3>
+                    <p class="text-red-400">Software Team Member</p>
+
+                    <!-- Hover overlay -->
+                    <div
+                        class="absolute inset-0 bg-black/90 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <p class="text-white text-lg font-semibold mb-2">Major: CS</p>
+                        <p class="text-white text-lg font-semibold mb-2">Junior</p>
+                        <p class="text-red-400 text-base">enc33@cornell.edu</p>
+                    </div>
+                </div>
+
+                <!-- James Cenawood -->
+                <div class="text-center bg-gray-800 p-6 rounded-lg shadow-lg group relative overflow-hidden">
+                    <img class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-red-500"
+                        src="https://placehold.co/128x128/718096/FFFFFF?text=JC" alt="James Cenawood">
+                    <h3 class="text-xl font-bold text-white">James Cenawood</h3>
+                    <p class="text-red-400">Software Team Member</p>
+
+                    <!-- Hover overlay -->
+                    <div
+                        class="absolute inset-0 bg-black/90 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <p class="text-white text-lg font-semibold mb-2">Major: CS</p>
+                        <p class="text-white text-lg font-semibold mb-2">Junior</p>
+                        <p class="text-red-400 text-base">jcc463@cornell.edu</p>
+                    </div>
+                </div>
+
+                <!-- Yaelin Hough -->
+                <div class="text-center bg-gray-800 p-6 rounded-lg shadow-lg group relative overflow-hidden">
+                    <img class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-red-500"
+                        src="https://placehold.co/128x128/718096/FFFFFF?text=YH" alt="Yaelin Hough">
+                    <h3 class="text-xl font-bold text-white">Yaelin Hough</h3>
+                    <p class="text-red-400">Software Team Member</p>
+
+                    <!-- Hover overlay -->
+                    <div
+                        class="absolute inset-0 bg-black/90 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <p class="text-white text-lg font-semibold mb-2">Major: CS + Philosophy</p>
+                        <p class="text-white text-lg font-semibold mb-2">Junior</p>
+                        <p class="text-red-400 text-base">yh2299@cornell.edu</p>
+                    </div>
+                </div>
+
+                <!-- Yanchun Lai -->
+                <div class="text-center bg-gray-800 p-6 rounded-lg shadow-lg group relative overflow-hidden">
+                    <img class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-red-500"
+                        src="https://placehold.co/128x128/718096/FFFFFF?text=YL" alt="Yanchun Lai">
+                    <h3 class="text-xl font-bold text-white">Yanchun Lai</h3>
+                    <p class="text-red-400">Software Team Member</p>
+
+                    <!-- Hover overlay -->
+                    <div
+                        class="absolute inset-0 bg-black/90 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <p class="text-white text-lg font-semibold mb-2">Major: CS</p>
+                        <p class="text-white text-lg font-semibold mb-2">Junior</p>
+                        <p class="text-red-400 text-base">yl3796@cornell.edu</p>
+                    </div>
+                </div>
+
+                <!-- Ezra Koreen -->
+                <div class="text-center bg-gray-800 p-6 rounded-lg shadow-lg group relative overflow-hidden">
+                    <img class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-red-500"
+                        src="https://placehold.co/128x128/718096/FFFFFF?text=EK" alt="Ezra Koreen">
+                    <h3 class="text-xl font-bold text-white">Ezra Koreen</h3>
+                    <p class="text-red-400">Software Team Member</p>
+
+                    <!-- Hover overlay -->
+                    <div
+                        class="absolute inset-0 bg-black/90 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <p class="text-white text-lg font-semibold mb-2">Major: CS</p>
+                        <p class="text-white text-lg font-semibold mb-2">Junior</p>
+                        <p class="text-red-400 text-base">elk97@cornell.edu</p>
+                    </div>
+                </div>
+
+                <!-- Henry Toll -->
+                <div class="text-center bg-gray-800 p-6 rounded-lg shadow-lg group relative overflow-hidden">
+                    <img class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-red-500"
+                        src="https://placehold.co/128x128/718096/FFFFFF?text=HT" alt="Henry Toll">
+                    <h3 class="text-xl font-bold text-white">Henry Toll</h3>
+                    <p class="text-red-400">Senior Advisor + Software Team Member</p>
+
+                    <!-- Hover overlay -->
+                    <div
+                        class="absolute inset-0 bg-black/90 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <p class="text-white text-lg font-semibold mb-2">Major: CS + Math</p>
+                        <p class="text-white text-lg font-semibold mb-2">Senior</p>
+                        <p class="text-red-400 text-base">hht26@cornell.edu</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-black mt-16 border-t border-white/20">
+        <div class="container mx-auto px-6 py-8">
+            <div class="text-center mb-6">
+                <p class="text-sm text-white">This organization is a registered student organization of Cornell
+                    University.</p>
+                <p class="text-sm text-white mt-1">Contact: <a href="mailto:cuxr@cornell.edu"
+                        class="text-red-500 hover:underline">cuxr@cornell.edu</a></p>
+                <a href="https://hr.cornell.edu/about/workplace-rights/equal-education-and-employment" target="_blank"
+                    class="text-sm text-white underline mt-2 block">Equal Education and Employment</a>
+            </div>
+            <div class="flex justify-center space-x-6 mb-6">
+                <a href="https://www.instagram.com/cornellxr/" target="_blank"
+                    class="flex items-center justify-center"><img src="assets/img/instagram.svg" alt="Instagram"
+                        class="w-6 h-6"></a>
+                <a href="https://github.com/CUXR" target="_blank" class="flex items-center justify-center"><img
+                        src="assets/img/github-icon.svg" alt="GitHub" class="w-5 h-5"></a>
+                <a href="https://www.linkedin.com/company/cornell-xr/" target="_blank"
+                    class="flex items-center justify-center"><img src="assets/img/linkedin-icon.svg" alt="LinkedIn"
+                        class="w-6 h-6"></a>
+            </div>
+            <div class="text-center">
+                <p class="text-sm text-white">&copy; 2025 CUXR. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+
+</body>
+
+</html>
