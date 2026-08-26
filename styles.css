@@ -98,6 +98,44 @@ h3, p {
     opacity: 0.8;
 }
 
+/* ===== Application Banner ===== */
+.apply-banner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 14px;
+    background-color: #000000;
+    padding: 10px 16px;
+    text-decoration: none;
+    border-bottom: 3px solid #ffffff;
+}
+
+.apply-banner-text {
+    font-family: 'new-science', sans-serif;
+    font-weight: bold;
+    font-size: 18px;
+    color: #ffffff;
+    text-align: center;
+}
+
+.apply-banner-button {
+    font-family: 'new-science', sans-serif;
+    font-weight: bold;
+    font-size: 15px;
+    color: #ffffff;
+    background-color: #000000;
+    border: 3px solid #ffffff;
+    padding: 4px 16px;
+    border-radius: 999px;
+    white-space: nowrap;
+    transition: opacity 0.2s ease;
+}
+
+.apply-banner:hover .apply-banner-button {
+    opacity: 0.85;
+}
+
 .nav-button {
     color: #f7f7f7;
     position: relative;
