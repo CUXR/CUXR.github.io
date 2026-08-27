@@ -108,7 +108,6 @@ h3, p {
     background-color: #000000;
     padding: 10px 16px;
     text-decoration: none;
-    border-bottom: 3px solid #ffffff;
 }
 
 .apply-banner-text {
@@ -123,16 +122,17 @@ h3, p {
     font-family: 'new-science', sans-serif;
     font-weight: bold;
     font-size: 15px;
-    color: #ffffff;
-    background-color: #000000;
+    color: #000000;
+    background-color: #ffffff;
     border: 3px solid #ffffff;
     padding: 4px 16px;
-    border-radius: 999px;
+    border-radius: 8px;
     white-space: nowrap;
+    text-decoration: none;
     transition: opacity 0.2s ease;
 }
 
-.apply-banner:hover .apply-banner-button {
+.apply-banner-button:hover {
     opacity: 0.85;
 }
 
@@ -379,6 +379,25 @@ h3, p {
     margin: 0;
     padding: 0 48px;
     text-align: left;
+}
+
+/* Coffee chat button */
+.coffee-chat-button {
+    display: inline-block;
+    margin-top: 16px;
+    padding: 12px 32px;
+    font-family: 'new-science', sans-serif;
+    font-weight: bold;
+    font-size: 18px;
+    color: #ffffff;
+    background-color: #e53935;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+}
+
+.coffee-chat-button:hover {
+    opacity: 0.85;
 }
 
 /* Team Navigation (filter buttons) */
