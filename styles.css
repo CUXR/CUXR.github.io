@@ -98,6 +98,24 @@ h3, p {
     opacity: 0.8;
 }
 
+#main-nav a.active {
+    border-bottom: 2px solid #ffffff;
+}
+
+.nav-toggle,
+.nav-toggle-label {
+    display: none;
+}
+
+.nav-toggle-label span {
+    display: block;
+    width: 26px;
+    height: 3px;
+    background-color: #ffffff;
+    border-radius: 2px;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
 /* ===== Application Banner ===== */
 .apply-banner {
     display: flex;
@@ -108,6 +126,10 @@ h3, p {
     background-color: #000000;
     padding: 10px 16px;
     text-decoration: none;
+}
+
+.apply-banner-underline {
+    border-bottom: 2px solid #ffffff;
 }
 
 .apply-banner-text {
@@ -1029,22 +1051,56 @@ h3, p {
 
 @media (max-width: 900px) {
     #header {
-        grid-template-columns: 1fr;
-        row-gap: 8px;
-        justify-items: center;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        padding: 8px 16px;
     }
-    #logo {
-        justify-content: center;
+    .nav-toggle {
+        display: block;
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        margin: 0;
+        opacity: 0;
+        pointer-events: none;
+    }
+    .nav-toggle-label {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        padding: 8px;
+        cursor: pointer;
+    }
+    .nav-toggle:focus-visible + .nav-toggle-label {
+        outline: 2px solid #ffffff;
+        border-radius: 4px;
+    }
+    .nav-toggle:checked + .nav-toggle-label span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    .nav-toggle:checked + .nav-toggle-label span:nth-child(2) {
+        opacity: 0;
+    }
+    .nav-toggle:checked + .nav-toggle-label span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
     }
     #main-nav {
+        display: none;
+        flex: 0 0 100%;
         width: 100%;
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 1.5rem;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.25rem;
         height: auto;
+        padding: 16px 0 8px;
+    }
+    .nav-toggle:checked ~ #main-nav {
+        display: flex;
     }
     #main-nav a {
-        font-size: 16px;
+        font-size: 18px;
     }
 
     .cuxr-hero {
@@ -1266,12 +1322,6 @@ h3, p {
     }
     #logo img {
         width: 112px;
-    }
-    #main-nav {
-        gap: 0.75rem;
-    }
-    #main-nav a {
-        font-size: 14px;
     }
 
     .cuxr-hero-words {
