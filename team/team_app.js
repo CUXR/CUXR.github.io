@@ -1,4 +1,4 @@
-const pages = ['full-team', 'lead','haptics', 'bci', 'software', 'game', 'business'];
+const pages = ['full-team', 'lead','haptics', 'bci', 'software', 'game', 'business', 'alumni'];
 let currentPage = 'full-team';
 const FADE_DURATION = 400;
 
@@ -48,7 +48,7 @@ function fadeTransition(targetPage) {
     setTimeout(() => {
         cards.forEach(card => {
             const teams = card.getAttribute('data-teams');
-            const shouldShow = targetPage === 'full-team' || teams.includes(targetPage);
+            const shouldShow = targetPage === 'full-team' ? !teams.includes('alumni') : teams.includes(targetPage);
 
             if (shouldShow) {
                 card.classList.remove('hidden');
@@ -81,7 +81,7 @@ function showPage(pageName, instant = false) {
 
     cards.forEach(card => {
         const teams = card.getAttribute('data-teams');
-        const shouldShow = pageName === 'full-team' || teams.includes(pageName);
+        const shouldShow = pageName === 'full-team' ? !teams.includes('alumni') : teams.includes(pageName);
 
         if (shouldShow) {
             card.classList.remove('fade-out', 'hidden');
