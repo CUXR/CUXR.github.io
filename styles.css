@@ -514,7 +514,7 @@ h3, p {
     text-align: center;
     display: -webkit-box;
     font-size: 12px;
-    color: #666;
+    color: #b3b3b3;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
@@ -578,6 +578,7 @@ h3, p {
     transform: translate(-50%, -50%);
     text-align: center;
     opacity: 0;
+    pointer-events: none;
     transition: opacity 0.3s ease;
 }
 
@@ -587,12 +588,43 @@ h3, p {
     font-size: 16px;
 }
 
-.profile-card:hover .overlay-text {
+.profile-card:hover .overlay-text,
+.profile-card:focus-within .overlay-text {
     opacity: 1;
+    pointer-events: auto;
 }
 
 .overlay-text h4 {
     margin: 0;
+}
+
+.overlay-text .profile-year {
+    margin-top: 10px;
+    font-size: 14px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    opacity: 0.85;
+}
+
+.overlay-text .profile-linkedin {
+    display: inline-block;
+    width: 28px;
+    height: 28px;
+    margin-top: 10px;
+    opacity: 0.85;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.overlay-text .profile-linkedin:hover,
+.overlay-text .profile-linkedin:focus-visible {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+.overlay-text .profile-linkedin img {
+    width: 100%;
+    height: 100%;
+    display: block;
 }
 
 
