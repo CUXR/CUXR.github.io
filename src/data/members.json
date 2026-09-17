@@ -7,7 +7,6 @@
       "haptics",
       "lead"
     ],
-    "image": "/team/Website_Headshots/Eric_Seo.webp",
     "major": "Electrical and Computer Engineering",
     "year": "2028",
     "email": "eys39@cornell.edu",
@@ -21,7 +20,6 @@
       "business",
       "lead"
     ],
-    "image": "/team/Website_Headshots/Fairooz_Tahsin.webp",
     "major": "Information Science",
     "year": "2028",
     "email": "ft255@cornell.edu",
@@ -35,7 +33,6 @@
       "haptics",
       "lead"
     ],
-    "image": "/team/Website_Headshots/Peter_He.webp",
     "major": "Electrical and Computer Engineering",
     "year": "2027",
     "email": "ph475@cornell.edu",
@@ -49,7 +46,6 @@
       "software",
       "lead"
     ],
-    "image": "/team/Website_Headshots/Ethan_Coskay.webp",
     "major": "Computer Science",
     "year": "2027",
     "email": "enc33@cornell.edu",
@@ -63,7 +59,6 @@
       "software",
       "lead"
     ],
-    "image": "/team/Website_Headshots/Ezra_Koreen.webp",
     "major": "Computer Science",
     "year": "2028",
     "email": "elk97@cornell.edu",
@@ -77,7 +72,6 @@
       "haptics",
       "lead"
     ],
-    "image": "/team/Website_Headshots/Zach_Riiff.webp",
     "major": "Electrical and Computer Engineering",
     "year": "2028",
     "email": "zcr5@cornell.edu",
@@ -91,7 +85,6 @@
       "haptics",
       "lead"
     ],
-    "image": "/team/Website_Headshots/Sam_Keamy.webp",
     "major": "Electrical and Computer Engineering",
     "year": "2027",
     "email": "swk57@cornell.edu",
@@ -105,7 +98,6 @@
       "haptics",
       "lead"
     ],
-    "image": "/team/Website_Headshots/Gina_Liu.webp",
     "major": "Mechanical Engineering",
     "year": "2027",
     "email": "gl528@cornell.edu",
@@ -119,7 +111,6 @@
       "game",
       "lead"
     ],
-    "image": "/team/Website_Headshots/Annabelle_Ford.webp",
     "major": "Computer Science",
     "year": "2028",
     "email": "atf52@cornell.edu",
@@ -133,7 +124,6 @@
       "bci",
       "lead"
     ],
-    "image": "/team/Website_Headshots/Ashee_Bansal.webp",
     "major": "Computer Science",
     "year": "2028",
     "email": "ab3235@cornell.edu",
@@ -145,7 +135,6 @@
     "teams": [
       "bci"
     ],
-    "image": "/team/Website_Headshots/Alan_Wu.webp",
     "major": "Biology",
     "year": "2028",
     "email": "ayw34@cornell.edu",
@@ -157,7 +146,6 @@
     "teams": [
       "game"
     ],
-    "image": "/team/Website_Headshots/Xinqing_Rachel_Lin.webp",
     "major": "Computer Science",
     "year": "2027",
     "email": "xl892@cornell.edu",
@@ -169,7 +157,6 @@
     "teams": [
       "game"
     ],
-    "image": "/team/Website_Headshots/George_Margono.webp",
     "major": "Computer Science",
     "year": "2027",
     "email": "gm564@cornell.edu",
@@ -181,7 +168,6 @@
     "teams": [
       "haptics"
     ],
-    "image": "/team/Website_Headshots/Natalie_Yeung.webp",
     "major": "Electrical and Computer Engineering",
     "year": "2028",
     "email": "nyy4@cornell.edu",
@@ -193,7 +179,6 @@
     "teams": [
       "software"
     ],
-    "image": "/team/Website_Headshots/James_Cenawood.webp",
     "major": "Computer Science",
     "year": "2028",
     "email": "jcc463@cornell.edu",
@@ -205,7 +190,6 @@
     "teams": [
       "software"
     ],
-    "image": "/team/Website_Headshots/Yaelin_Hough.webp",
     "major": "Computer Science + Philosophy",
     "year": "2028",
     "email": "yh2299@cornell.edu",
@@ -217,7 +201,6 @@
     "teams": [
       "software"
     ],
-    "image": "/team/Website_Headshots/Yanchun_Lai.webp",
     "major": "Computer Science",
     "year": "2028",
     "email": "yl3796@cornell.edu",
@@ -229,7 +212,6 @@
     "teams": [
       "haptics"
     ],
-    "image": "/team/Website_Headshots/Selena_Zhang.webp",
     "major": "Electrical and Computer Engineering",
     "year": "2027",
     "email": "scz6@cornell.edu",
@@ -241,7 +223,6 @@
     "teams": [
       "haptics"
     ],
-    "image": "/team/Website_Headshots/Felicity_Wu.webp",
     "major": "Mechanical Engineering",
     "year": "2028",
     "email": "fyw5@cornell.edu",
@@ -253,7 +234,6 @@
     "teams": [
       "bci"
     ],
-    "image": "/team/Website_Headshots/Michelle_Dong.webp",
     "major": "Electrical and Computer Engineering",
     "year": "2027",
     "email": "md2236@cornell.edu",
@@ -265,7 +245,6 @@
     "teams": [
       "haptics"
     ],
-    "image": "/team/Website_Headshots/Ronald_Qu.webp",
     "major": "Electrical and Computer Engineering",
     "year": "2027",
     "email": "rq36@cornell.edu",
@@ -277,7 +256,6 @@
     "teams": [
       "haptics"
     ],
-    "image": "/team/Website_Headshots/Allison_Rowe.webp",
     "major": "Applied and Engineering Physics",
     "year": "2029",
     "email": "asr322@cornell.edu",
@@ -289,11 +267,11 @@
     "teams": [
       "software"
     ],
-    "image": "/team/Website_Headshots/Ethan_Ngai.webp",
-    "major": "",
-    "year": "2029",
+    "major": "Computer Science",
+    "year": "2028",
     "email": "emn65@cornell.edu",
-    "linkedin": "https://www.linkedin.com/in/ethanmngai/"
+    "linkedin": "https://www.linkedin.com/in/ethanmngai/",
+    "portfolio": "https://ethanngai.com"
   },
   {
     "id": "kevin-zhou",
@@ -301,7 +279,6 @@
     "teams": [
       "haptics"
     ],
-    "image": "/team/Website_Headshots/Kevin_Zhou.webp",
     "major": "Electrical and Computer Engineering",
     "year": "2029",
     "email": "kz363@cornell.edu",
@@ -313,7 +290,6 @@
     "teams": [
       "bci"
     ],
-    "image": "/team/Website_Headshots/Spencer_Liang.webp",
     "major": "Computer Science",
     "year": "2029",
     "email": "sl3595@cornell.edu",
@@ -325,7 +301,6 @@
     "teams": [
       "business"
     ],
-    "image": "/team/Website_Headshots/Reese_Kim.webp",
     "major": "Applied Economics and Management",
     "year": "2029",
     "email": "rk838@cornell.edu",
@@ -337,7 +312,6 @@
     "teams": [
       "business"
     ],
-    "image": "/team/Website_Headshots/Sydney_Chin.webp",
     "major": "Information Science",
     "year": "2028",
     "email": "scc273@cornell.edu",
@@ -349,7 +323,6 @@
     "teams": [
       "game"
     ],
-    "image": "/team/Website_Headshots/Sophie_Bai.webp",
     "major": "Design and Environmental Analysis",
     "year": "2029",
     "email": "zb84@cornell.edu",
@@ -361,7 +334,6 @@
     "teams": [
       "haptics"
     ],
-    "image": "/team/Website_Headshots/Fiona_Lin.webp",
     "major": "Electrical and Computer Engineering",
     "year": "2029",
     "email": "fyl8@cornell.edu",
@@ -373,7 +345,6 @@
     "teams": [
       "game"
     ],
-    "image": "/team/Website_Headshots/Summer_Shen.webp",
     "major": "Information Science, Systems, and Technology",
     "year": "2029",
     "email": "sqs4@cornell.edu",
@@ -385,8 +356,7 @@
     "teams": [
       "software"
     ],
-    "image": "/team/Website_Headshots/Claire_Cheng.webp",
-    "major": "",
+    "major": "Computer Science",
     "year": "2029",
     "email": "cqc6@cornell.edu",
     "linkedin": "https://www.linkedin.com/in/claire-cheng-a98203353/"
@@ -397,7 +367,6 @@
     "teams": [
       "software"
     ],
-    "image": "/team/Website_Headshots/Erim_Keresteci.webp",
     "major": "Computer Science",
     "year": "2029",
     "email": "ek779@cornell.edu",
@@ -409,7 +378,6 @@
     "teams": [
       "alumni"
     ],
-    "image": "/team/Website_Headshots/Harry_Lin.webp",
     "major": "Information Science",
     "year": "2027",
     "email": "wl725@cornell.edu",
@@ -425,7 +393,6 @@
     "teams": [
       "alumni"
     ],
-    "image": "/team/Website_Headshots/Carmen_Lin.webp",
     "major": "Mechanical Engineering",
     "year": "2027",
     "email": "cl2624@cornell.edu",
@@ -440,7 +407,6 @@
     "teams": [
       "alumni"
     ],
-    "image": "/team/Website_Headshots/Liliane_Wu.webp",
     "major": "Operations Research and Information Engineering",
     "year": "2027",
     "email": "yw2542@cornell.edu",

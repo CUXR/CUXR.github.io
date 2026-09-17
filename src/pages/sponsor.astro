@@ -18,25 +18,25 @@ const areas = [
 <Layout title="Sponsors" description="Support student-built XR. Help CUXR turn ideas into hardware, software, and immersive experiences at Cornell.">
   <div class="sponsorship">
     <section id="support" class="sponsor-support container" aria-labelledby="support-title">
-      <div class="sponsor-support__intro" data-reveal><h1 id="support-title">What your<br /><span>support enables.</span></h1><div><p class="lede">Your support puts equipment and materials in students’ hands—and gives them space to experiment.</p><a class="text-link sponsor-support__link" href="/projects/">Explore the work</a></div></div>
+      <div class="sponsor-support__intro"><h1 id="support-title">What your<br /><span>support enables.</span></h1><div><p class="lede">Your support puts equipment and materials in students’ hands—and gives them space to experiment.</p><a class="text-link sponsor-support__link" href="/projects/">Explore the work</a></div></div>
       <div class="sponsor-support__body">
-        <figure class="sponsor-session" data-reveal><img src="/Assets/info_session.webp" alt="Students attending a CUXR information session" width="1600" height="1200" loading="lazy" /><figcaption>Learning together. Building at Cornell.</figcaption></figure>
-        <div class="sponsor-areas">{areas.map((area) => <div class="sponsor-area" data-reveal><h3>{area.title}</h3><p>{area.copy}</p></div>)}</div>
+        <figure class="sponsor-session"><img src="/media/info-session.webp" alt="Students attending a CUXR information session" width="1600" height="1200" loading="lazy" /><figcaption>Learning together. Building at Cornell.</figcaption></figure>
+        <div class="sponsor-areas">{areas.map((area) => <div class="sponsor-area"><h3>{area.title}</h3><p>{area.copy}</p></div>)}</div>
       </div>
-      <div class="sponsor-collaboration" data-reveal><h3>More than funding.</h3><p>Equipment donations, technical feedback, and opportunities to collaborate also help move the work forward.</p></div>
+      <div class="sponsor-collaboration"><h3>More than funding.</h3><p>Equipment donations, technical feedback, and opportunities to collaborate also help move the work forward.</p></div>
     </section>
 
     <section class="sponsor-packet container" aria-labelledby="packet-title">
-      <div class="sponsor-packet__heading" data-reveal><h2 id="packet-title">Sponsorship packet.</h2><a class="text-link" href={sponsorship.packet.href} download>{sponsorship.packet.label}</a></div>
-      <div class="packet-reader" data-reveal>
+      <div class="sponsor-packet__heading"><h2 id="packet-title">Sponsorship packet.</h2><a class="text-link" href={sponsorship.packet.href} download>{sponsorship.packet.label}</a></div>
+      <div class="packet-reader">
         <div class="packet-reader__pages" id="packet-pages" tabindex="0" role="region" aria-label="Selected sponsorship packet pages">
-          {previews.map((preview) => <figure class="packet-page" data-page><img src={`/Assets/sponsor/packet-${preview.page}.webp`} alt={`Sponsorship packet, page ${preview.page}: ${preview.title}`} width="1500" height="1159" loading="lazy" /><figcaption><strong>{preview.title}</strong><p>{preview.description}</p></figcaption></figure>)}
+          {previews.map((preview) => <figure class="packet-page" data-page><img src={`/media/sponsor/packet-${preview.page}.webp`} alt={`Sponsorship packet, page ${preview.page}: ${preview.title}`} width="1500" height="1159" loading="lazy" /><figcaption><strong>{preview.title}</strong><p>{preview.description}</p></figcaption></figure>)}
         </div>
         <div class="packet-reader__controls" hidden><p aria-live="polite" aria-atomic="true" data-packet-status>01 / 04</p><div><button type="button" data-packet-prev aria-label="Previous packet page" aria-controls="packet-pages" disabled>←</button><button type="button" data-packet-next aria-label="Next packet page" aria-controls="packet-pages">→</button></div></div>
       </div>
     </section>
 
-    <section class="sponsor-invitation container" aria-labelledby="contact-title" data-reveal><h2 id="contact-title">Let’s build<br /><span>what’s next.</span></h2><div><p class="lede">Have equipment to share, an idea to explore, or an interest in supporting CUXR?</p><a class="button" href={`mailto:${sponsorship.email}`}>Start a conversation</a></div></section>
+    <section class="sponsor-invitation container" aria-labelledby="contact-title"><h2 id="contact-title">Let’s build<br /><span>what’s next.</span></h2><div><p class="lede">Have equipment to share, an idea to explore, or an interest in supporting CUXR?</p><a class="button" href={`mailto:${sponsorship.email}`}>Start a conversation</a></div></section>
   </div>
 </Layout>
 

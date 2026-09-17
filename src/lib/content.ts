@@ -2,7 +2,6 @@ import { z } from 'zod';
 import projectData from '../data/projects.json';
 import memberData from '../data/members.json';
 import subteamData from '../data/subteams.json';
-import companyData from '../data/companies.json';
 
 const slug = z.string().regex(/^[a-z0-9-]+$/);
 const image = z.string().startsWith('/');
@@ -14,12 +13,12 @@ const projectSchema = z.object({
 });
 const memberSchema = z.object({
   id: slug, name: z.string().min(1), role: z.string().optional(), teams: z.array(z.enum(['lead', 'haptics', 'bci', 'software', 'game', 'business', 'alumni'])),
-  image: z.string(), major: z.string(), year: z.string(),
+  major: z.string(), year: z.string(),
   email: z.union([z.email(), z.literal('')]),
   formerTeams: z.array(z.string().min(1)).default([]),
   portfolio: z.union([z.url().startsWith('https://'), z.literal('')]).optional(),
   linkedin: z.union([z.url().startsWith('https://'), z.literal('')]),
-});
+}).transform((member) => ({ ...member, image: `/team/headshots/${member.id}.webp` }));
 
 /** Duplicate anchors silently break navigation; reject them during builds. */
 function uniqueById<T extends { id: string }>(items: T[]): T[] {
@@ -32,4 +31,3 @@ export type Member = z.infer<typeof memberSchema>;
 export const projects = uniqueById(z.array(projectSchema).parse(projectData)).filter((project) => project.status !== 'hidden');
 export const members = uniqueById(z.array(memberSchema).parse(memberData));
 export const subteams = uniqueById(z.array(z.object({ id: slug, name: z.string(), description: z.string() })).parse(subteamData));
-export const companies = z.array(z.object({ name: z.string().min(1) })).parse(companyData);

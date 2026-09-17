@@ -1,7 +1,7 @@
 @import '@fontsource-variable/geist';
 @import '@fontsource-variable/geist-mono';
 
-@font-face { font-family: 'Geist Pixel Square'; src: url('/fonts/GeistPixel-Square.woff2') format('woff2'); font-weight: 400; font-display: swap; }
+@font-face { font-family: 'Geist Pixel Square'; src: url('/fonts/geist-pixel-square.woff2') format('woff2'); font-weight: 400; font-display: swap; }
 
 :root {
   color-scheme: dark;
@@ -94,8 +94,22 @@ p + p { margin-top: var(--space-md); }
 .footer-bottom a { display: inline-flex; align-items: center; gap: 8px; min-height: 32px; transition: color var(--duration-fast) var(--ease-out); }
 .footer-bottom a::after { font-size: .875rem; transition: transform var(--duration-fast) var(--ease-out); }
 .footer-bottom a:hover { color: var(--color-text); }
-[data-reveal].is-revealing { animation: reveal var(--duration-hero) var(--ease-spring) both; }
-@keyframes reveal { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: none; } }
+@supports (animation-timeline: view()) and (-webkit-background-clip: text) {
+  @media (prefers-reduced-motion: no-preference) {
+    .lede {
+      background-image: radial-gradient(ellipse 25% 80% at 50% 50%, var(--color-text) 0 65%, var(--color-muted) 100%);
+      background-size: 350% 100%;
+      background-repeat: no-repeat;
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: ink-exposure linear both;
+      animation-timeline: view();
+      animation-range: entry 0% exit 100%;
+    }
+  }
+}
+@keyframes ink-exposure { from { background-position: 100% 50%; } to { background-position: 0% 50%; } }
 @media (max-width: 760px) {
   .section { padding-block: 80px; }
   .header-inner { min-height: 80px; flex-wrap: wrap; }
@@ -120,5 +134,4 @@ p + p { margin-top: var(--space-md); }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; scroll-behavior: auto !important; }
-  [data-reveal] { transform: none !important; opacity: 1 !important; }
 }

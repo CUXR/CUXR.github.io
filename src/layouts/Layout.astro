@@ -25,7 +25,7 @@ const organization = {
     name: "CUXR",
     alternateName: "Cornell XR",
     url: "https://cornellxr.com",
-    logo: "https://cornellxr.com/Assets/CUXR_logo.png",
+    logo: "https://cornellxr.com/media/cuxr-logo.png",
     email: "cuxr@cornell.edu",
     sameAs: [
         "https://github.com/CUXR",
@@ -44,7 +44,7 @@ const organization = {
         <title>{pageTitle}</title>
         <meta name="description" content={description} />
         <link rel="canonical" href={canonical} />
-        <link rel="icon" href="/Assets/CUXR.ico" />
+        <link rel="icon" href="/media/cuxr.ico" />
         <link rel="sitemap" href="/sitemap-index.xml" />
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="CUXR" />
@@ -53,7 +53,7 @@ const organization = {
         <meta property="og:url" content={canonical} />
         <meta
             property="og:image"
-            content="https://cornellxr.com/Assets/team_photo.webp"
+            content="https://cornellxr.com/media/team-photo.webp"
         />
         <meta property="og:image:alt" content="The CUXR student project team" />
         <meta name="twitter:card" content="summary_large_image" />
@@ -257,22 +257,6 @@ const organization = {
             refreshSchedule();
             document.addEventListener("visibilitychange", refreshSchedule);
             window.addEventListener("pageshow", refreshSchedule);
-
-            if (!matchMedia("(prefers-reduced-motion: reduce)").matches) {
-                const observer = new IntersectionObserver(
-                    (entries) =>
-                        entries.forEach((entry) => {
-                            if (entry.isIntersecting) {
-                                entry.target.classList.add("is-revealing");
-                                observer.unobserve(entry.target);
-                            }
-                        }),
-                    { threshold: 0.12 },
-                );
-                document
-                    .querySelectorAll("[data-reveal]")
-                    .forEach((element) => observer.observe(element));
-            }
         </script>
     </body>
 </html>

@@ -16,8 +16,10 @@ vp run build
 
 ## Content
 
-Edit pages in `src/pages/` and structured content in `src/data/`. Put static media in `public/`; its paths are served from the site root. Recruitment dates and links live in `src/data/recruitment.json`.
+Edit pages in `src/pages/` and structured content in `src/data/`. Put shared static assets in `public/media/`; its paths are served from `/media/`. Recruitment dates and links live in `src/data/recruitment.json`.
+
+Member portraits live at `public/team/headshots/<member-id>.webp`. Set the member's `id` in `src/data/members.json`; the image URL is derived from it.
 
 ## GitHub Pages
 
-In repository **Settings → Pages**, set the source to **GitHub Actions**. The workflow in `.github/workflows/pages.yml` validates pull requests and deploys `dist/` from `main`. Its hourly rebuild updates time-sensitive recruitment content. The custom domain is set by `astro.config.mjs` and `public/CNAME`.
+In repository **Settings → Pages**, set the source to **GitHub Actions**. The workflow in `.github/workflows/pages.yml` validates pull requests and deploys `dist/` from `main` when files change. The custom domain is set by `astro.config.mjs` and `public/CNAME`.

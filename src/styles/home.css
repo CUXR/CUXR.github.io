@@ -6,12 +6,11 @@
 .home-team-photo { margin: 0; }
 .home-team-photo img { width: 100%; max-height: 580px; object-fit: cover; object-position: center 40%; border-radius: 0; }
 .home-team-photo figcaption { display: flex; justify-content: space-between; gap: 16px; color: var(--color-muted); font: .75rem/1.5 var(--font-mono); margin-top: 16px; }
-.company-strip { margin-top: 96px; display: flex; align-items: center; justify-content: space-between; gap: 48px; }
+.company-strip { margin-top: 96px; display: flex; flex-direction: column; align-items: flex-start; gap: 24px; }
 .company-strip > p { font-size: .875rem; color: var(--color-muted); }
-.company-strip ul { display: flex; flex-wrap: wrap; align-items: center; gap: 64px; margin: 0; padding: 0; list-style: none; }
-.company-strip li { display: flex; align-items: center; gap: 10px; font-size: 1.6rem; font-weight: 500; letter-spacing: -.04em; }
-.microsoft-mark { display: grid; grid-template-columns: repeat(2, 10px); gap: 2px; }
-.microsoft-mark i { height: 10px; background: var(--color-muted); }
+.company-strip ul { display: flex; width: 100%; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 32px; margin: 0; padding: 0; list-style: none; }
+.company-strip li { display: flex; align-items: center; justify-content: center; min-height: 50px; }
+.company-strip img { display: block; max-width: min(100%, 202px); height: auto; }
 .home-industry { border-top: 1px solid var(--color-border); padding-block: var(--space-xxl); }
 .home-industry-inner { display: grid; grid-template-columns: 1fr 2fr; gap: var(--space-xxl); align-items: baseline; }
 .home-industry h2 { font-size: 1.25rem; line-height: 1.5; letter-spacing: -.02em; }
@@ -28,8 +27,8 @@
 @media(max-width: 760px) {
   .home-team-intro, .home-next-inner, .home-industry-inner { grid-template-columns: 1fr; gap: 16px; }
   .home-team-photo img { min-height: 260px; }
-  .company-strip { flex-direction: column; align-items: flex-start; gap: 24px; margin-top: 64px; }
+  .company-strip { margin-top: 64px; }
   .company-strip ul { gap: 24px; }
-  .company-strip li { font-size: 1.3rem; }
+  .company-strip li { max-width: 100%; }
   .home-next-inner { gap: 32px; }
 }
