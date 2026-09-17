@@ -1,0 +1,24 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
+import FeaturedProjects from '../components/FeaturedProjects';
+import { projects, companies } from '../lib/content';
+import '../styles/home.css';
+const featured = projects.filter((project) => project.featured && project.status === 'active');
+---
+<Layout title="CUXR" description="CUXR is a student-led project team building immersive software, haptic devices, and new ways to interact with computers. Explore our projects and join the team.">
+  <Hero />
+  <FeaturedProjects projects={featured} client:visible />
+  <section class="home-team section" aria-labelledby="home-team-title">
+    <div class="container">
+      <div class="home-team-intro" data-reveal>
+        <h2 id="home-team-title">About CUXR</h2><div><p class="lede">Founded in 2024, CUXR is a student-led project team working across haptics, brain-computer interfaces, software, and VR games.</p><a class="text-link" href="/team/">Meet the team</a></div>
+      </div>
+      <figure class="home-team-photo" data-reveal><img src="/Assets/team_photo.webp" alt="CUXR members together on campus" width="6258" height="2699" loading="lazy" /><figcaption><span>CUXR</span><span>Student-led. Since 2024.</span></figcaption></figure>
+      <div class="company-strip" data-reveal><p>Where our members have worked</p><ul aria-label="Member and alumni employers">{companies.map((company) => <li>{company.name === 'Microsoft' && <span class="microsoft-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>}<span>{company.name}</span></li>)}</ul></div>
+    </div>
+  </section>
+  <section class="home-next section" aria-labelledby="home-next-title">
+    <div class="container home-next-inner" data-reveal><div><h2 id="home-next-title">Join CUXR</h2></div><div><p class="lede">Learn about our subteams and recruitment process, or support our projects through sponsorship.</p><div class="home-next-actions"><a class="button" href="/recruitment/">Join the team</a><a class="text-link" href="/sponsor/">Support our work</a></div></div></div>
+  </section>
+</Layout>

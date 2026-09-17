@@ -1,0 +1,12 @@
+---
+import { recruitment, isRecruiting, deadlineLabel } from '../lib/recruitment';
+---
+<aside class="recruit-banner" aria-label="Recruitment announcement" data-recruitment="open" hidden={!isRecruiting(recruitment)}>
+  <div class="container recruit-banner-inner">
+    <p class="banner-copy"><strong>{recruitment.audience} recruitment</strong><span class="banner-deadline">Applications close {deadlineLabel(recruitment)}</span></p>
+    <div class="banner-actions">
+      <a class="banner-button" href={recruitment.applicationUrl}>Apply</a>
+      <a class="banner-button banner-button--secondary" href={recruitment.coffeeChatUrl}>Coffee chat</a>
+    </div>
+  </div>
+</aside>

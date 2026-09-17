@@ -1,0 +1,27 @@
+[
+  {
+    "id": "haptics",
+    "name": "Haptics",
+    "description": "Build hardware systems that bring touch, force, scent, and movement into XR experiences, including wearable gloves, force-feedback arms, olfactory displays, and omnidirectional treadmills."
+  },
+  {
+    "id": "bci",
+    "name": "BCI",
+    "description": "Explore brain-computer interfaces as alternative input methods for VR, including a more generalizable BCI controller."
+  },
+  {
+    "id": "software",
+    "name": "Software",
+    "description": "Develop software experiences and companion systems for XR, including smart-glasses applications that use persistent memory and computer vision to help users recall where objects were seen."
+  },
+  {
+    "id": "game",
+    "name": "Game",
+    "description": "Create VR games in Unity, including experimental stealth-horror experiences that test novel mechanics."
+  },
+  {
+    "id": "business",
+    "name": "Business",
+    "description": "Coordinate CUXR's logistics and business operations."
+  }
+]

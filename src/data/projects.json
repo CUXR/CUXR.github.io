@@ -1,0 +1,79 @@
+[
+  {
+    "id": "glove",
+    "title": "Haptic Glove",
+    "category": "Haptics",
+    "summary": "Wearable finger tracking and force feedback for tactile VR interaction.",
+    "description": "A wearable glove designed to track each finger's pose with Hall-effect sensors and provide force feedback through low-power servos. The design connects a microcontroller to a PC driver, with the goal of letting users feel an object's firmness as they pick it up in VR.",
+    "image": "/Assets/project-gloves.png",
+    "imageAlt": "Haptic glove",
+    "status": "active",
+    "featured": true
+  },
+  {
+    "id": "glasses",
+    "title": "Persistent-Memory Glasses",
+    "category": "Software",
+    "summary": "Smart glasses and an Android app that help users recall where objects were seen.",
+    "description": "A Rokid smart-glasses and Android companion app that helps users find lost items by recalling when they were seen and describing their surroundings. The system uses persistent memory and a YOLO model to track hand movements and identify where objects are placed.",
+    "image": "/Assets/project-glasses.png",
+    "imageAlt": "XR glasses",
+    "status": "active",
+    "featured": true
+  },
+  {
+    "id": "awake",
+    "title": "Awake",
+    "category": "VR Game",
+    "summary": "An experimental Unity stealth-horror game exploring novel VR mechanics.",
+    "description": "An experimental stealth-horror game made in Unity that tests different novel mechanics.",
+    "image": "/Assets/project-game.png",
+    "imageAlt": "VR game headset",
+    "status": "active",
+    "featured": true
+  },
+  {
+    "id": "treadmill",
+    "title": "Omnidirectional Treadmill",
+    "category": "Haptics",
+    "summary": "A device that mimics natural movement while keeping the user in place.",
+    "description": "An all-in-one device responsible for mimicking natural movements while keeping its user in place.",
+    "image": "/Assets/project-treadmill.png",
+    "imageAlt": "Omnidirectional VR treadmill",
+    "status": "active",
+    "featured": true
+  },
+  {
+    "id": "bci",
+    "title": "BCI Controller",
+    "category": "BCI",
+    "summary": "An exploration of brain-computer input as an alternative controller for VR.",
+    "description": "This project explores alternative VR input methods while developing a more generalizable BCI controller for VR applications.",
+    "image": "/Assets/project-bci.png",
+    "imageAlt": "BCI controller",
+    "status": "active",
+    "featured": true
+  },
+  {
+    "id": "arm",
+    "title": "Force-Feedback Arm",
+    "category": "Haptics",
+    "summary": "A force-feedback arm that restricts movement when virtual environments are touched.",
+    "description": "An arm designed to restrict movement in certain VR scenarios. When a user touches a virtual wall, for example, the arm reacts to the environment and can restrict the user's arm to provide realistic feedback.",
+    "image": "/Assets/project-arm.png",
+    "imageAlt": "Force-feedback arm",
+    "status": "active",
+    "featured": false
+  },
+  {
+    "id": "olfactory",
+    "title": "Olfactory Display",
+    "category": "Haptics",
+    "summary": "A wearable display that synchronizes scents with virtual reality environments.",
+    "description": "A wearable device mounted beneath a VR headset that delivers scents directly to the user's nose. Electronically controlled fans and atomizers convert liquid into vapor and synchronize smelling with the virtual reality environment in real time.",
+    "image": "/Assets/project-olfactory.png",
+    "imageAlt": "Olfactory display",
+    "status": "active",
+    "featured": false
+  }
+]

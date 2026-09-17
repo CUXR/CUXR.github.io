@@ -1,0 +1,62 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { projects } from '../lib/content';
+import '../styles/pages.css';
+
+const visibleProjects = projects.filter((project) => project.status !== 'hidden');
+const activeProjects = visibleProjects.filter((project) => project.status === 'active');
+const archivedProjects = visibleProjects.filter((project) => project.status === 'archived');
+---
+
+<Layout
+  title="Projects"
+  description="Explore CUXR projects across haptics, BCI, software, and game development."
+>
+  <div class="page-shell projects-page">
+    <header class="page-intro" data-reveal>
+      <h1 class="pages-title">Projects</h1>
+      <p class="lede">Explore our work in extended reality, haptics, and human-computer interaction.</p>
+    </header>
+
+    <section class="project-gallery section" aria-labelledby="active-projects-heading">
+      <div class="section-heading" data-reveal>
+        <h2 id="active-projects-heading">Current projects</h2>
+      </div>
+
+      <div class="project-list">
+        {activeProjects.map((project, index) => (
+          <article class:list={["project-feature", index % 2 === 1 && "project-feature--reverse"]} id={project.id} data-reveal>
+            <div class="project-feature__media">
+              <img src={project.image} alt={project.imageAlt} loading={index === 0 ? 'eager' : 'lazy'} decoding="async" />
+            </div>
+            <div class="project-feature__copy">
+              <p class="project-feature__category">{project.category}</p>
+              <h3>{project.title}</h3>
+              <p class="project-feature__title">{project.summary}</p>
+              <p class="project-feature__description">{project.description}</p>
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    {archivedProjects.length > 0 && (
+      <section class="project-archive section" aria-labelledby="archived-projects-heading" data-reveal>
+        <div class="section-heading">
+          <h2 id="archived-projects-heading">Past projects</h2>
+        </div>
+        <div class="archive-list">
+          {archivedProjects.map((project) => (
+            <article class="archive-item" id={project.id}>
+              <div>
+                <p class="project-feature__category">{project.category}</p>
+                <h3>{project.title}</h3>
+              </div>
+              <p>{project.description}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+    )}
+  </div>
+</Layout>

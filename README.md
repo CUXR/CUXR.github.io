@@ -1,26 +1,23 @@
-# CUXR.github.io
+# Cornell XR
 
-Website for CUXR
+Astro static site for CUXR. Requires Node 24; dependencies use the pinned pnpm version in `package.json`.
 
-10/15/2024
+## Local development
 
-brown face:
-#96501e
+```sh
+vp install
+vp run dev
+vp run check
+vp run test
+vp run build
+```
 
-inside ear:
-#e7a866
+`vp run build` writes the deployable site to `dist/`. Run browser tests with `vp exec playwright install chromium` and `vp run test:browser`.
 
-nose:
-#412616
+## Content
 
-red:
-#E74C3C
+Edit pages in `src/pages/` and structured content in `src/data/`. Put static media in `public/`; its paths are served from the site root. Recruitment dates and links live in `src/data/recruitment.json`.
 
-mask light:
-#ededed
+## GitHub Pages
 
-mask dark three:
-#6d6d6d
-
-mask outline:
-#c4c4c4# Cornell XR Github
+In repository **Settings → Pages**, set the source to **GitHub Actions**. The workflow in `.github/workflows/pages.yml` validates pull requests and deploys `dist/` from `main`. Its hourly rebuild updates time-sensitive recruitment content. The custom domain is set by `astro.config.mjs` and `public/CNAME`.

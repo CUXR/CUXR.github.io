@@ -1,0 +1,49 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { z } from 'zod';
+import sponsorshipData from '../data/sponsorship.json';
+import '../styles/pages.css';
+
+const sponsorshipSchema = z.object({
+  heading: z.string().min(1),
+  supportAreas: z.array(z.string().min(1)).min(1),
+  paragraphs: z.array(z.string().min(1)).min(1),
+  email: z.email(),
+  packet: z.object({ label: z.string().min(1), href: z.string().startsWith('/') }),
+});
+const sponsorship = sponsorshipSchema.parse(sponsorshipData);
+---
+
+<Layout
+  title="Sponsors"
+  description="Support CUXR's equipment, prototyping, events, and collaborations."
+>
+  <div class="page-shell sponsor-page">
+    <header class="page-intro sponsor-intro" data-reveal>
+      <h1 class="pages-title">Sponsor CUXR</h1>
+      <p class="lede">Support student projects through equipment, prototyping materials, and events.</p>
+    </header>
+
+    <section class="sponsor-story section" aria-labelledby="sponsor-story-heading">
+      <div class="sponsor-story__media" data-reveal>
+        <img src="/Assets/info_session.webp" alt="Students attending a CUXR information session" loading="lazy" decoding="async" />
+      </div>
+      <div class="sponsor-story__copy" data-reveal>
+        <h2 id="sponsor-story-heading">{sponsorship.heading}</h2>
+        {sponsorship.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+        <ul class="sponsor-support-list" aria-label="What sponsorship supports">
+          {sponsorship.supportAreas.map((area) => <li>{area}</li>)}
+        </ul>
+        <div class="sponsor-story__actions">
+          <a class="button" href={`mailto:${sponsorship.email}`}>Start a conversation</a>
+          <a class="button button--secondary" href={sponsorship.packet.href} download>{sponsorship.packet.label}</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="sponsor-contact section" aria-labelledby="sponsor-contact-heading" data-reveal>
+      <h2 id="sponsor-contact-heading">Contact us</h2>
+      <a class="text-link link--external sponsor-contact__email" href={`mailto:${sponsorship.email}`}>{sponsorship.email}</a>
+    </section>
+  </div>
+</Layout>

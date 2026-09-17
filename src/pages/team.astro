@@ -1,0 +1,44 @@
+---
+import Layout from '../layouts/Layout.astro';
+import TeamDirectory from '../components/TeamDirectory';
+import { members, subteams } from '../lib/content';
+import '../styles/pages.css';
+---
+
+<Layout
+  title="Team"
+  description="Meet the students building CUXR projects across hardware, software, games, BCI, and business."
+>
+  <div class="page-shell team-page">
+    <header class="page-intro" data-reveal>
+      <h1 class="pages-title">Our team</h1>
+      <p class="lede">Cornell undergraduates working across hardware, software, game development, and business.</p>
+    </header>
+
+    <section class="subteam-overview section" aria-labelledby="subteam-heading">
+      <div class="section-heading" data-reveal>
+        <h2 id="subteam-heading">Subteams</h2>
+      </div>
+      <div class="subteam-list">
+        {subteams.map((subteam) => (
+          <article class="subteam-item" id={`team-${subteam.id}`} data-reveal>
+            <div>
+              <h3>{subteam.name}</h3>
+              <p>{subteam.description}</p>
+              <a class="text-link" href={`#directory-${subteam.id}`}>
+                Meet the team
+              </a>
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <section class="team-directory-section section" id="directory" aria-labelledby="directory-heading">
+      <div class="section-heading" data-reveal>
+        <h2 id="directory-heading">Members</h2>
+      </div>
+      <TeamDirectory members={members} client:visible />
+    </section>
+  </div>
+</Layout>
