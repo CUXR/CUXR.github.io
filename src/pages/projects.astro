@@ -1,0 +1,49 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ProjectIndex from '../components/ProjectIndex.astro';
+import { projects } from '../lib/content';
+import '../styles/pages.css';
+
+const visibleProjects = projects.filter((project) => project.status !== 'hidden');
+const activeProjects = visibleProjects.filter((project) => project.status === 'active');
+const archivedProjects = visibleProjects.filter((project) => project.status === 'archived');
+---
+
+<Layout
+  title="Projects"
+  description="Explore CUXR projects—from haptic hardware and BCI to immersive applications and game development."
+>
+  <div class="page-shell projects-page">
+    <header class="page-intro">
+      <h1 class="pages-title">Projects</h1>
+      <p class="lede">Explore our work in extended reality, haptics, and human-computer interaction.</p>
+    </header>
+
+    <ProjectIndex projects={activeProjects} />
+
+    {archivedProjects.length > 0 && (
+      <section class="project-archive section" aria-labelledby="archived-projects-heading">
+        <div class="section-heading">
+          <h2 id="archived-projects-heading">Past projects</h2>
+        </div>
+        <div class="archive-list">
+          {archivedProjects.map((project) => (
+            <article class="archive-item" id={project.id}>
+              <div>
+                <p class="project-feature__category">{project.category}</p>
+                <h3>{project.title}</h3>
+              </div>
+              <p>{project.description}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+    )}
+  </div>
+</Layout>
+
+<style>
+  .projects-page { padding-block: var(--space-xxl); }
+  .projects-page .page-intro { padding-bottom: var(--space-xl); }
+  .projects-page .pages-title { font-size: clamp(3.25rem, 6vw, 6rem); margin-top: 0; margin-bottom: var(--space-md); }
+</style>

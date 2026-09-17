@@ -1,0 +1,15 @@
+{
+  "enabled": true,
+  "season": "Fall 2026",
+  "audience": "Freshmen & transfers",
+  "opensAt": "2026-09-16T00:00:00-04:00",
+  "closesAt": "2026-10-15T23:59:00-04:00",
+  "upperclassmenClosesAt": "2026-09-03T23:59:00-04:00",
+  "timeZone": "America/New_York",
+  "applicationUrl": "https://forms.gle/iWNyc7sH8Pd1Cv3d7",
+  "coffeeChatUrl": "https://forms.gle/hd9tabqzkSpLi6tR8",
+  "events": [
+    { "id": "september-session", "title": "Meet CUXR", "startsAt": "2026-09-21T18:00:00-04:00", "endsAt": "2026-09-21T19:00:00-04:00", "location": "Phillips 307" },
+    { "id": "october-session", "title": "Meet CUXR", "startsAt": "2026-10-02T18:30:00-04:00", "endsAt": "2026-10-02T19:30:00-04:00", "location": "Hollister 401" }
+  ]
+}
