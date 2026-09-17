@@ -1,49 +1,74 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { z } from 'zod';
-import sponsorshipData from '../data/sponsorship.json';
-import '../styles/pages.css';
+import sponsorship from '../data/sponsorship.json';
+import '../styles/sponsor.css';
 
-const sponsorshipSchema = z.object({
-  heading: z.string().min(1),
-  supportAreas: z.array(z.string().min(1)).min(1),
-  paragraphs: z.array(z.string().min(1)).min(1),
-  email: z.email(),
-  packet: z.object({ label: z.string().min(1), href: z.string().startsWith('/') }),
-});
-const sponsorship = sponsorshipSchema.parse(sponsorshipData);
+const previews = [
+  { page: 1, title: 'The packet', description: 'An introduction to sponsoring CUXR.' },
+  { page: 3, title: 'Our story', description: 'Founded in 2024, CUXR brings Cornell undergraduates together to build hardware, software, and interactive experiences beyond the classroom.' },
+  { page: 4, title: 'How we build', description: 'Our haptics and software teams develop physical feedback systems and the software behind immersive experiences.' },
+  { page: 6, title: 'Your support', description: 'Equipment, development resources, and workshops help students build and test their ideas. We also welcome equipment donations and collaboration.' },
+];
+const areas = [
+  { title: 'Equipment', copy: 'XR headsets, smart glasses, and the hardware to develop and test immersive experiences.' },
+  { title: 'Physical prototyping', copy: 'Materials and components that turn designs into devices students can build, test, and refine.' },
+  { title: 'Community events', copy: 'Workshops, industry conversations, and opportunities to share what we’re learning.' },
+];
 ---
-
-<Layout
-  title="Sponsors"
-  description="Support CUXR's equipment, prototyping, events, and collaborations."
->
-  <div class="page-shell sponsor-page">
-    <header class="page-intro sponsor-intro" data-reveal>
-      <h1 class="pages-title">Sponsor CUXR</h1>
-      <p class="lede">Support student projects through equipment, prototyping materials, and events.</p>
-    </header>
-
-    <section class="sponsor-story section" aria-labelledby="sponsor-story-heading">
-      <div class="sponsor-story__media" data-reveal>
-        <img src="/Assets/info_session.webp" alt="Students attending a CUXR information session" loading="lazy" decoding="async" />
+<Layout title="Sponsors" description="Support student-built XR. Help CUXR turn ideas into hardware, software, and immersive experiences at Cornell.">
+  <div class="sponsorship">
+    <section id="support" class="sponsor-support container" aria-labelledby="support-title">
+      <div class="sponsor-support__intro" data-reveal><h1 id="support-title">What your<br /><span>support enables.</span></h1><div><p class="lede">Your support puts equipment and materials in students’ hands—and gives them space to experiment.</p><a class="text-link sponsor-support__link" href="/projects/">Explore the work</a></div></div>
+      <div class="sponsor-support__body">
+        <figure class="sponsor-session" data-reveal><img src="/Assets/info_session.webp" alt="Students attending a CUXR information session" width="1600" height="1200" loading="lazy" /><figcaption>Learning together. Building at Cornell.</figcaption></figure>
+        <div class="sponsor-areas">{areas.map((area) => <div class="sponsor-area" data-reveal><h3>{area.title}</h3><p>{area.copy}</p></div>)}</div>
       </div>
-      <div class="sponsor-story__copy" data-reveal>
-        <h2 id="sponsor-story-heading">{sponsorship.heading}</h2>
-        {sponsorship.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
-        <ul class="sponsor-support-list" aria-label="What sponsorship supports">
-          {sponsorship.supportAreas.map((area) => <li>{area}</li>)}
-        </ul>
-        <div class="sponsor-story__actions">
-          <a class="button" href={`mailto:${sponsorship.email}`}>Start a conversation</a>
-          <a class="button button--secondary" href={sponsorship.packet.href} download>{sponsorship.packet.label}</a>
+      <div class="sponsor-collaboration" data-reveal><h3>More than funding.</h3><p>Equipment donations, technical feedback, and opportunities to collaborate also help move the work forward.</p></div>
+    </section>
+
+    <section class="sponsor-packet container" aria-labelledby="packet-title">
+      <div class="sponsor-packet__heading" data-reveal><h2 id="packet-title">Sponsorship packet.</h2><a class="text-link" href={sponsorship.packet.href} download>{sponsorship.packet.label}</a></div>
+      <div class="packet-reader" data-reveal>
+        <div class="packet-reader__pages" id="packet-pages" tabindex="0" role="region" aria-label="Selected sponsorship packet pages">
+          {previews.map((preview) => <figure class="packet-page" data-page><img src={`/Assets/sponsor/packet-${preview.page}.webp`} alt={`Sponsorship packet, page ${preview.page}: ${preview.title}`} width="1500" height="1159" loading="lazy" /><figcaption><strong>{preview.title}</strong><p>{preview.description}</p></figcaption></figure>)}
         </div>
+        <div class="packet-reader__controls" hidden><p aria-live="polite" aria-atomic="true" data-packet-status>01 / 04</p><div><button type="button" data-packet-prev aria-label="Previous packet page" aria-controls="packet-pages" disabled>←</button><button type="button" data-packet-next aria-label="Next packet page" aria-controls="packet-pages">→</button></div></div>
       </div>
     </section>
 
-    <section class="sponsor-contact section" aria-labelledby="sponsor-contact-heading" data-reveal>
-      <h2 id="sponsor-contact-heading">Contact us</h2>
-      <a class="text-link link--external sponsor-contact__email" href={`mailto:${sponsorship.email}`}>{sponsorship.email}</a>
-    </section>
+    <section class="sponsor-invitation container" aria-labelledby="contact-title" data-reveal><h2 id="contact-title">Let’s build<br /><span>what’s next.</span></h2><div><p class="lede">Have equipment to share, an idea to explore, or an interest in supporting CUXR?</p><a class="button" href={`mailto:${sponsorship.email}`}>Start a conversation</a></div></section>
   </div>
 </Layout>
+
+<script>
+  const reader = document.querySelector<HTMLElement>('.packet-reader');
+  if (reader) {
+    const track = reader.querySelector<HTMLElement>('.packet-reader__pages')!;
+    const pages = Array.from(track.querySelectorAll<HTMLElement>('[data-page]'));
+    const previous = reader.querySelector<HTMLButtonElement>('[data-packet-prev]')!;
+    const next = reader.querySelector<HTMLButtonElement>('[data-packet-next]')!;
+    const status = reader.querySelector<HTMLElement>('[data-packet-status]')!;
+    reader.querySelector<HTMLElement>('.packet-reader__controls')!.hidden = false;
+    let current = 0;
+    const update = () => {
+      current = Math.max(0, Math.min(pages.length - 1, Math.round(track.scrollLeft / track.clientWidth)));
+      status.textContent = `${String(current + 1).padStart(2, '0')} / ${String(pages.length).padStart(2, '0')}`;
+      previous.disabled = current === 0;
+      next.disabled = current === pages.length - 1;
+    };
+    const go = (index: number, smooth: boolean) => {
+      const target = Math.max(0, Math.min(pages.length - 1, index));
+      track.scrollTo({ left: target * track.clientWidth, behavior: smooth && !matchMedia('(prefers-reduced-motion: reduce)').matches ? 'smooth' : 'instant' });
+    };
+    previous.addEventListener('click', (event) => go(current - 1, event.detail > 0));
+    next.addEventListener('click', (event) => go(current + 1, event.detail > 0));
+    track.addEventListener('keydown', (event) => {
+      if (!['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) return;
+      event.preventDefault();
+      go(event.key === 'Home' ? 0 : event.key === 'End' ? pages.length - 1 : current + (event.key === 'ArrowRight' ? 1 : -1), false);
+    });
+    track.addEventListener('scroll', update, { passive: true });
+    new ResizeObserver(() => go(current, false)).observe(track);
+  }
+
+</script>

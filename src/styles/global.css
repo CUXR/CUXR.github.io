@@ -60,11 +60,13 @@ p + p { margin-top: var(--space-md); }
 .skip-link:focus { transform: none; }
 .site-header { position: relative; z-index: 20; border-bottom: 1px solid var(--color-border); }
 .header-inner { display: flex; justify-content: space-between; align-items: center; min-height: 96px; gap: 24px; }
+.wordmark { white-space: nowrap; color: var(--color-text); }
+.wordmark-xr { color: var(--color-brand); }
+.brand-cu { filter: brightness(0) invert(1); }
 .brand { display: block; width: 154px; height: 42px; flex-shrink: 0; }
 .site-nav { display: flex; align-items: center; gap: 32px; font-size: .875rem; }
 .site-nav a { display: inline-flex; min-height: 44px; align-items: center; color: var(--color-muted); transition: color var(--duration-fast); }
 .site-nav a:hover, .site-nav a[aria-current] { color: var(--color-text); }
-.site-nav .nav-recruit { color: var(--color-text); }
 .menu-toggle { display: none; align-items: center; justify-content: center; width: 44px; height: 44px; padding: 10px; border: 0; background: transparent; color: var(--color-text); }
 .menu-icon { display: flex; flex-direction: column; gap: 7px; width: 24px; }
 .menu-icon::before, .menu-icon::after { content: ""; height: 1.5px; width: 24px; background: currentColor; transition: transform 180ms var(--ease-out); }
@@ -108,6 +110,8 @@ p + p { margin-top: var(--space-md); }
   .banner-actions { flex-shrink: 0; }
 }
 @media (max-width: 600px) {
+  .recruit-banner-inner { flex-wrap: wrap; }
+  .banner-actions { flex-shrink: 1; width: 100%; }
   .site-footer { padding-top: 40px; }
 }
 @media (max-width: 420px) {

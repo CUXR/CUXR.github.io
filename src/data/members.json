@@ -3,7 +3,10 @@
     "id": "eric-seo",
     "name": "Eric Seo",
     "role": "Technical Full Team Lead",
-    "teams": ["haptics", "lead"],
+    "teams": [
+      "haptics",
+      "lead"
+    ],
     "image": "/team/Website_Headshots/Eric_Seo.webp",
     "major": "Electrical and Computer Engineering",
     "year": "2028",
@@ -14,7 +17,10 @@
     "id": "fairooz-tahsin",
     "name": "Fairooz Tahsin",
     "role": "Logistics Full Team Lead",
-    "teams": ["business", "lead"],
+    "teams": [
+      "business",
+      "lead"
+    ],
     "image": "/team/Website_Headshots/Fairooz_Tahsin.webp",
     "major": "Information Science",
     "year": "2028",
@@ -25,7 +31,10 @@
     "id": "peter-he",
     "name": "Peter He",
     "role": "Senior Advisor / Founder",
-    "teams": ["haptics", "lead"],
+    "teams": [
+      "haptics",
+      "lead"
+    ],
     "image": "/team/Website_Headshots/Peter_He.webp",
     "major": "Electrical and Computer Engineering",
     "year": "2027",
@@ -36,7 +45,10 @@
     "id": "ethan-coskay",
     "name": "Ethan Coskay",
     "role": "Software Lead",
-    "teams": ["software", "lead"],
+    "teams": [
+      "software",
+      "lead"
+    ],
     "image": "/team/Website_Headshots/Ethan_Coskay.webp",
     "major": "Computer Science",
     "year": "2027",
@@ -47,7 +59,10 @@
     "id": "ezra-koreen",
     "name": "Ezra Koreen",
     "role": "Software Lead",
-    "teams": ["software", "lead"],
+    "teams": [
+      "software",
+      "lead"
+    ],
     "image": "/team/Website_Headshots/Ezra_Koreen.webp",
     "major": "Computer Science",
     "year": "2028",
@@ -58,7 +73,10 @@
     "id": "zach-riiff",
     "name": "Zach Riiff",
     "role": "Electrical Lead",
-    "teams": ["haptics", "lead"],
+    "teams": [
+      "haptics",
+      "lead"
+    ],
     "image": "/team/Website_Headshots/Zach_Riiff.webp",
     "major": "Electrical and Computer Engineering",
     "year": "2028",
@@ -69,7 +87,10 @@
     "id": "sam-keamy",
     "name": "Sam Keamy",
     "role": "Electrical Lead",
-    "teams": ["haptics", "lead"],
+    "teams": [
+      "haptics",
+      "lead"
+    ],
     "image": "/team/Website_Headshots/Sam_Keamy.webp",
     "major": "Electrical and Computer Engineering",
     "year": "2027",
@@ -80,7 +101,10 @@
     "id": "gina-liu",
     "name": "Gina Liu",
     "role": "Mechanical Lead",
-    "teams": ["haptics", "lead"],
+    "teams": [
+      "haptics",
+      "lead"
+    ],
     "image": "/team/Website_Headshots/Gina_Liu.webp",
     "major": "Mechanical Engineering",
     "year": "2027",
@@ -91,7 +115,10 @@
     "id": "annabelle-ford",
     "name": "Annabelle Ford",
     "role": "Game Lead",
-    "teams": ["game", "lead"],
+    "teams": [
+      "game",
+      "lead"
+    ],
     "image": "/team/Website_Headshots/Annabelle_Ford.webp",
     "major": "Computer Science",
     "year": "2028",
@@ -102,7 +129,10 @@
     "id": "ashee-b-bansaal",
     "name": "Ashee B Bansaal",
     "role": "BCI Lead",
-    "teams": ["bci", "lead"],
+    "teams": [
+      "bci",
+      "lead"
+    ],
     "image": "/team/Website_Headshots/Ashee_Bansal.webp",
     "major": "Computer Science",
     "year": "2028",
@@ -112,8 +142,9 @@
   {
     "id": "alan-wu",
     "name": "Alan Wu",
-    "role": "BCI Team Member",
-    "teams": ["bci"],
+    "teams": [
+      "bci"
+    ],
     "image": "/team/Website_Headshots/Alan_Wu.webp",
     "major": "Biology",
     "year": "2028",
@@ -123,8 +154,9 @@
   {
     "id": "xinqing-rachel-lin",
     "name": "Xinqing (Rachel) Lin",
-    "role": "Game Team Member",
-    "teams": ["game"],
+    "teams": [
+      "game"
+    ],
     "image": "/team/Website_Headshots/Xinqing_Rachel_Lin.webp",
     "major": "Computer Science",
     "year": "2027",
@@ -134,8 +166,9 @@
   {
     "id": "george-margono",
     "name": "George Margono",
-    "role": "Game Team Member",
-    "teams": ["game"],
+    "teams": [
+      "game"
+    ],
     "image": "/team/Website_Headshots/George_Margono.webp",
     "major": "Computer Science",
     "year": "2027",
@@ -145,8 +178,9 @@
   {
     "id": "natalie-yeung",
     "name": "Natalie Yeung",
-    "role": "Haptics Team Member",
-    "teams": ["haptics"],
+    "teams": [
+      "haptics"
+    ],
     "image": "/team/Website_Headshots/Natalie_Yeung.webp",
     "major": "Electrical and Computer Engineering",
     "year": "2028",
@@ -156,8 +190,9 @@
   {
     "id": "james-cenawood",
     "name": "James Cenawood",
-    "role": "Software Team Member",
-    "teams": ["software"],
+    "teams": [
+      "software"
+    ],
     "image": "/team/Website_Headshots/James_Cenawood.webp",
     "major": "Computer Science",
     "year": "2028",
@@ -167,8 +202,9 @@
   {
     "id": "yaelin-hough",
     "name": "Yaelin Hough",
-    "role": "Software Team Member",
-    "teams": ["software"],
+    "teams": [
+      "software"
+    ],
     "image": "/team/Website_Headshots/Yaelin_Hough.webp",
     "major": "Computer Science + Philosophy",
     "year": "2028",
@@ -178,8 +214,9 @@
   {
     "id": "yanchun-lai",
     "name": "Yanchun Lai",
-    "role": "Software Team Member",
-    "teams": ["software"],
+    "teams": [
+      "software"
+    ],
     "image": "/team/Website_Headshots/Yanchun_Lai.webp",
     "major": "Computer Science",
     "year": "2028",
@@ -189,8 +226,9 @@
   {
     "id": "selena-zhang",
     "name": "Selena Zhang",
-    "role": "Haptics Team Member",
-    "teams": ["haptics"],
+    "teams": [
+      "haptics"
+    ],
     "image": "/team/Website_Headshots/Selena_Zhang.webp",
     "major": "Electrical and Computer Engineering",
     "year": "2027",
@@ -200,8 +238,9 @@
   {
     "id": "felicity-wu",
     "name": "Felicity Wu",
-    "role": "Haptics Team Member",
-    "teams": ["haptics"],
+    "teams": [
+      "haptics"
+    ],
     "image": "/team/Website_Headshots/Felicity_Wu.webp",
     "major": "Mechanical Engineering",
     "year": "2028",
@@ -211,8 +250,9 @@
   {
     "id": "michelle-dong",
     "name": "Michelle Dong",
-    "role": "BCI Team Member",
-    "teams": ["bci"],
+    "teams": [
+      "bci"
+    ],
     "image": "/team/Website_Headshots/Michelle_Dong.webp",
     "major": "Electrical and Computer Engineering",
     "year": "2027",
@@ -222,8 +262,9 @@
   {
     "id": "ronald-qu",
     "name": "Ronald Qu",
-    "role": "Haptics Team Member",
-    "teams": ["haptics"],
+    "teams": [
+      "haptics"
+    ],
     "image": "/team/Website_Headshots/Ronald_Qu.webp",
     "major": "Electrical and Computer Engineering",
     "year": "2027",
@@ -233,8 +274,9 @@
   {
     "id": "allison-rowe",
     "name": "Allison Rowe",
-    "role": "Haptics Team Member",
-    "teams": ["haptics"],
+    "teams": [
+      "haptics"
+    ],
     "image": "/team/Website_Headshots/Allison_Rowe.webp",
     "major": "Applied and Engineering Physics",
     "year": "2029",
@@ -244,8 +286,9 @@
   {
     "id": "ethan-ngai",
     "name": "Ethan Ngai",
-    "role": "Software Team Member",
-    "teams": ["software"],
+    "teams": [
+      "software"
+    ],
     "image": "/team/Website_Headshots/Ethan_Ngai.webp",
     "major": "",
     "year": "2029",
@@ -255,8 +298,9 @@
   {
     "id": "kevin-zhou",
     "name": "Kevin Zhou",
-    "role": "Haptics Team Member",
-    "teams": ["haptics"],
+    "teams": [
+      "haptics"
+    ],
     "image": "/team/Website_Headshots/Kevin_Zhou.webp",
     "major": "Electrical and Computer Engineering",
     "year": "2029",
@@ -266,8 +310,9 @@
   {
     "id": "spencer-liang",
     "name": "Spencer Liang",
-    "role": "BCI Team Member",
-    "teams": ["bci"],
+    "teams": [
+      "bci"
+    ],
     "image": "/team/Website_Headshots/Spencer_Liang.webp",
     "major": "Computer Science",
     "year": "2029",
@@ -277,8 +322,9 @@
   {
     "id": "reese-kim",
     "name": "Reese Kim",
-    "role": "Business Team Member",
-    "teams": ["business"],
+    "teams": [
+      "business"
+    ],
     "image": "/team/Website_Headshots/Reese_Kim.webp",
     "major": "Applied Economics and Management",
     "year": "2029",
@@ -288,8 +334,9 @@
   {
     "id": "sydney-chin",
     "name": "Sydney Chin",
-    "role": "Business Team Member",
-    "teams": ["business"],
+    "teams": [
+      "business"
+    ],
     "image": "/team/Website_Headshots/Sydney_Chin.webp",
     "major": "Information Science",
     "year": "2028",
@@ -299,8 +346,9 @@
   {
     "id": "sophie-bai",
     "name": "Sophie Bai",
-    "role": "Game Team Member",
-    "teams": ["game"],
+    "teams": [
+      "game"
+    ],
     "image": "/team/Website_Headshots/Sophie_Bai.webp",
     "major": "Design and Environmental Analysis",
     "year": "2029",
@@ -310,8 +358,9 @@
   {
     "id": "fiona-lin",
     "name": "Fiona Lin",
-    "role": "Haptics Team Member",
-    "teams": ["haptics"],
+    "teams": [
+      "haptics"
+    ],
     "image": "/team/Website_Headshots/Fiona_Lin.webp",
     "major": "Electrical and Computer Engineering",
     "year": "2029",
@@ -321,8 +370,9 @@
   {
     "id": "summer-shen",
     "name": "Summer Shen",
-    "role": "Game Team Member",
-    "teams": ["game"],
+    "teams": [
+      "game"
+    ],
     "image": "/team/Website_Headshots/Summer_Shen.webp",
     "major": "Information Science, Systems, and Technology",
     "year": "2029",
@@ -332,8 +382,9 @@
   {
     "id": "claire-cheng",
     "name": "Claire Cheng",
-    "role": "Software Team Member",
-    "teams": ["software"],
+    "teams": [
+      "software"
+    ],
     "image": "/team/Website_Headshots/Claire_Cheng.webp",
     "major": "",
     "year": "2029",
@@ -343,8 +394,9 @@
   {
     "id": "erim-keresteci",
     "name": "Erim Keresteci",
-    "role": "Software Team Member",
-    "teams": ["software"],
+    "teams": [
+      "software"
+    ],
     "image": "/team/Website_Headshots/Erim_Keresteci.webp",
     "major": "Computer Science",
     "year": "2029",
@@ -354,34 +406,47 @@
   {
     "id": "wei-che-harry-lin",
     "name": "Wei-Che (Harry) Lin",
-    "role": "Former Software (Haptics) Lead",
-    "teams": ["alumni"],
+    "teams": [
+      "alumni"
+    ],
     "image": "/team/Website_Headshots/Harry_Lin.webp",
     "major": "Information Science",
     "year": "2027",
     "email": "wl725@cornell.edu",
-    "linkedin": "https://www.linkedin.com/in/wei-che-harry-lin/"
+    "linkedin": "https://www.linkedin.com/in/wei-che-harry-lin/",
+    "formerTeams": [
+      "Software",
+      "Haptics"
+    ]
   },
   {
     "id": "carmen-lin",
     "name": "Carmen Lin",
-    "role": "Former Mechanical Lead",
-    "teams": ["alumni"],
+    "teams": [
+      "alumni"
+    ],
     "image": "/team/Website_Headshots/Carmen_Lin.webp",
     "major": "Mechanical Engineering",
     "year": "2027",
     "email": "cl2624@cornell.edu",
-    "linkedin": "https://www.linkedin.com/in/carmen-lin-5761b9279/"
+    "linkedin": "https://www.linkedin.com/in/carmen-lin-5761b9279/",
+    "formerTeams": [
+      "Mechanical"
+    ]
   },
   {
     "id": "liliane-wu",
     "name": "Liliane Wu",
-    "role": "Former Business Lead",
-    "teams": ["alumni"],
+    "teams": [
+      "alumni"
+    ],
     "image": "/team/Website_Headshots/Liliane_Wu.webp",
     "major": "Operations Research and Information Engineering",
     "year": "2027",
     "email": "yw2542@cornell.edu",
-    "linkedin": "https://www.linkedin.com/in/liliane-wu/"
+    "linkedin": "https://www.linkedin.com/in/liliane-wu/",
+    "formerTeams": [
+      "Business"
+    ]
   }
 ]

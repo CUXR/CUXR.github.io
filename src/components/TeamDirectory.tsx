@@ -1,97 +1,62 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useState } from 'react';
 import type { Member } from '../lib/content';
 
-type TeamId = 'lead' | 'haptics' | 'bci' | 'software' | 'game' | 'business' | 'alumni';
-
-type TeamDirectoryProps = {
-  members: readonly Member[];
-};
-
-const filters: readonly { id: TeamId | 'all'; label: string }[] = [
-  { id: 'all', label: 'All' },
-  { id: 'lead', label: 'Leads' },
-  { id: 'haptics', label: 'Haptics' },
-  { id: 'bci', label: 'BCI' },
-  { id: 'software', label: 'Software' },
-  { id: 'game', label: 'Game' },
-  { id: 'business', label: 'Business' },
-  { id: 'alumni', label: 'Alumni' },
-];
-
+type Props = { members: readonly Member[]; teamId: string; teamName: string };
+const defaultRoles: Record<string, string> = { software: 'Software Engineer', game: 'Game Developer' };
 const initials = (name: string) => name.split(/\s+/).map((part) => part[0]).join('').slice(0, 2).toUpperCase();
-const filterFromHash = (): TeamId | 'all' => {
-  const hash = window.location.hash.replace(/^#directory-?/, '');
-  return filters.some((filter) => filter.id === hash) ? hash as TeamId | 'all' : 'all';
-};
 
-export default function TeamDirectory({ members }: TeamDirectoryProps) {
-  const [activeFilter, setActiveFilter] = useState<TeamId | 'all'>('all');
-  useEffect(() => {
-    const applyHashFilter = () => setActiveFilter(filterFromHash());
-    applyHashFilter();
-    window.addEventListener('hashchange', applyHashFilter);
-    return () => window.removeEventListener('hashchange', applyHashFilter);
-  }, []);
-
-  const filteredMembers = useMemo(
-    () => activeFilter === 'all' ? members : members.filter((member) => member.teams.includes(activeFilter)),
-    [activeFilter, members],
-  );
+function Portrait({ member, teamId, teamName }: { member: Member; teamId: string; teamName: string }) {
+  const [expanded, setExpanded] = useState(false);
+  const linksId = `${teamId}-${member.id}-links`;
+  const detailsId = `${teamId}-${member.id}-details`;
+  const role = teamId === 'alumni'
+    ? member.formerTeams.join(' / ')
+    : member.role?.trim() || (defaultRoles[teamId] || `${teamName} Team Member`);
+  const hasDetails = Boolean(member.major || member.year || member.linkedin || member.portfolio);
 
   return (
-    <div className="directory">
-      <nav className="directory__filters" aria-label="Filter team directory">
-        {filters.map((filter) => (
-          <button
-            className={`directory__filter${activeFilter === filter.id ? ' directory__filter--active' : ''}`}
-            id={`directory-${filter.id}`}
-            type="button"
-            aria-pressed={activeFilter === filter.id}
-            onClick={() => setActiveFilter(filter.id)}
-            key={filter.id}
-          >
-            {filter.label}
-          </button>
-        ))}
-      </nav>
-      <p className="directory__status" role="status" aria-live="polite">
-        Showing {filteredMembers.length} {filteredMembers.length === 1 ? 'member' : 'members'}
-      </p>
-
-      <div className="directory__grid">
-        {filteredMembers.map((member) => (
-          <article className="member-card" id={`member-${member.id}`} key={member.id}>
-            <div className="member-card__portrait">
-              <span className="member-card__initials" aria-hidden="true">{initials(member.name)}</span>
-              {member.image && (
-                <img
-                  src={member.image}
-                  alt={`${member.name}, ${member.role}`}
-                  loading="lazy"
-                  decoding="async"
-                  onError={(event) => {
-                    event.currentTarget.hidden = true;
-                  }}
-                />
-              )}
-            </div>
-            <div className="member-card__body">
-              <h3>{member.name}</h3>
-              <p className="member-card__role">{member.role}</p>
-              <dl className="member-card__details">
-                {member.major && <div><dt>Major</dt><dd>{member.major}</dd></div>}
-                {member.year && <div><dt>Year</dt><dd>{member.year}</dd></div>}
-              </dl>
-              <div className="member-card__links">
-                {member.email && <a className="text-link link--external" href={`mailto:${member.email}`}>Email</a>}
-                {member.linkedin && <a className="text-link link--external" href={member.linkedin} target="_blank" rel="noreferrer">LinkedIn</a>}
-              </div>
-            </div>
-          </article>
-        ))}
+    <article className="team-member" data-expanded={expanded}
+      onPointerEnter={(event) => { if (event.pointerType === 'mouse') setExpanded(true); }}
+      onPointerLeave={(event) => {
+        if (event.pointerType === 'mouse' && !event.currentTarget.contains(document.activeElement)) setExpanded(false);
+      }}
+      onFocus={(event) => { if (event.target.matches(':focus-visible')) setExpanded(true); }}
+      onBlur={(event) => { if (!event.currentTarget.contains(event.relatedTarget)) setExpanded(false); }}
+      onKeyDown={(event) => { if (event.key === 'Escape') setExpanded(false); }}>
+      <button className="team-member__portrait" type="button"
+        aria-label={`Details about ${member.name}`} aria-expanded={hasDetails ? expanded : undefined}
+        aria-controls={hasDetails ? `${detailsId}${member.linkedin || member.portfolio ? ` ${linksId}` : ''}` : undefined} disabled={!hasDetails}
+        onClick={() => setExpanded((value) => !value)}>
+        <span className="team-member__initials" aria-hidden="true">{initials(member.name)}</span>
+        {member.image && <img src={member.image} alt={member.name} loading="lazy" decoding="async"
+          onError={(event) => { event.currentTarget.style.display = 'none'; }} />}
+      </button>
+      <div className="team-member__heading">
+        <h3>{member.name}</h3>
+        {(member.linkedin || member.portfolio) && <div className="team-member__links" id={linksId}>
+          {member.linkedin && <a href={member.linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn" title="LinkedIn">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M20.45 2H3.55C2.69 2 2 2.68 2 3.52v16.96C2 21.32 2.69 22 3.55 22h16.9c.86 0 1.55-.68 1.55-1.52V3.52C22 2.68 21.31 2 20.45 2ZM7.93 18.75H4.98V9.2h2.95v9.55ZM6.45 7.89a1.71 1.71 0 1 1 0-3.42 1.71 1.71 0 0 1 0 3.42Zm12.3 10.86H15.8V14.1c0-1.11-.02-2.54-1.55-2.54-1.55 0-1.79 1.21-1.79 2.46v4.73H9.51V9.2h2.83v1.3h.04c.39-.74 1.36-1.52 2.79-1.52 2.98 0 3.58 1.96 3.58 4.51v5.26Z" />
+            </svg>
+          </a>}
+          {member.portfolio && <a href={member.portfolio} target="_blank" rel="noreferrer" aria-label="Portfolio" title="Portfolio">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
+              <circle cx="12" cy="12" r="9" /><ellipse cx="12" cy="12" rx="4" ry="9" /><path d="M3 12h18M5 6h14M5 18h14" />
+            </svg>
+          </a>}
+        </div>}
       </div>
-
-      {filteredMembers.length === 0 && <p className="directory__empty">No team members are listed in this group yet.</p>}
-    </div>
+      {role && <p className="team-member__role">{role}</p>}
+      <div className="team-member__details" id={detailsId}>
+        {member.major && <p>{member.major}</p>}
+        {member.year && <p>Class of {member.year}</p>}
+      </div>
+    </article>
   );
+}
+
+export default function TeamDirectory({ members, teamId, teamName }: Props) {
+  return <div className="team-portraits">
+    {members.map((member) => <Portrait key={member.id} member={member} teamId={teamId} teamName={teamName} />)}
+  </div>;
 }

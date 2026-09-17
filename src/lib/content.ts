@@ -13,9 +13,11 @@ const projectSchema = z.object({
   status: z.enum(['active', 'archived', 'hidden']), featured: z.boolean(),
 });
 const memberSchema = z.object({
-  id: slug, name: z.string().min(1), role: z.string(), teams: z.array(z.enum(['lead', 'haptics', 'bci', 'software', 'game', 'business', 'alumni'])),
+  id: slug, name: z.string().min(1), role: z.string().optional(), teams: z.array(z.enum(['lead', 'haptics', 'bci', 'software', 'game', 'business', 'alumni'])),
   image: z.string(), major: z.string(), year: z.string(),
   email: z.union([z.email(), z.literal('')]),
+  formerTeams: z.array(z.string().min(1)).default([]),
+  portfolio: z.union([z.url().startsWith('https://'), z.literal('')]).optional(),
   linkedin: z.union([z.url().startsWith('https://'), z.literal('')]),
 });
 

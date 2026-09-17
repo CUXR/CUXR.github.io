@@ -2,7 +2,7 @@
 import '../styles/hero.css';
 ---
 
-<section class="hero" aria-labelledby="hero-title" data-hero>
+<section id="hero" class="hero" aria-labelledby="hero-title" data-hero>
   <div class="container hero__layout">
   <button class="hero__bear" type="button" data-hero-bear aria-label="Play bear animation">
     <video
@@ -38,6 +38,18 @@ import '../styles/hero.css';
   const bear = document.querySelector<HTMLButtonElement>('[data-hero-bear]');
   const dots = document.querySelector<HTMLCanvasElement>('[data-hero-dots]');
   const video = document.querySelector<HTMLVideoElement>('[data-hero-video]');
+
+  if (hero) {
+    const header = document.querySelector<HTMLElement>('.site-header');
+    const banner = document.querySelector<HTMLElement>('.recruit-banner');
+    const updateTopOffset = () => {
+      hero.style.setProperty('--hero-top-offset', `${(header?.offsetHeight ?? 0) + (banner?.offsetHeight ?? 0)}px`);
+    };
+    const topObserver = new ResizeObserver(updateTopOffset);
+    if (header) topObserver.observe(header);
+    if (banner) topObserver.observe(banner);
+    updateTopOffset();
+  }
 
   if (hero && bear && video) {
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');

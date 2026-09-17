@@ -79,12 +79,46 @@ test('carousel advances and pauses only while the carousel is hovered', async ({
   expect(await page.locator('video').evaluate((video: HTMLVideoElement) => video.paused)).toBe(true);
 });
 
-test('team subteam links select the relevant directory filter', async ({ page }) => {
+test('team groups keep portraits and details connected', async ({ page }) => {
+  await page.emulateMedia({ reducedMotion: 'reduce' });
   await page.goto('/team/');
-  await page.locator('#team-haptics').getByRole('link').click();
-  await expect(page.getByRole('button', { name: 'Haptics', exact: true })).toHaveAttribute('aria-pressed', 'true');
-  await page.getByRole('button', { name: 'Alumni', exact: true }).click();
-  await expect(page.locator('.member-card')).toHaveCount(3);
+  await expect(page.locator('astro-island[ssr]')).toHaveCount(0);
+  await page.getByRole('navigation', { name: 'Subteams' }).getByRole('link', { name: 'Software', exact: true }).click();
+  await expect(page).toHaveURL(/#software$/);
+  await expect(page.locator('#software .team-member__role').first()).toHaveText('Software Lead');
+  await expect(page.locator('#software .team-member__role').nth(2)).toHaveText('Software Engineer');
+  await expect(page.locator('#alumni .team-member')).toHaveCount(3);
+  await expect(page.locator('#alumni .team-member__role').first()).toHaveText('Software / Haptics');
+  const member = page.locator('#software .team-member').first();
+  const details = member.locator('.team-member__details');
+  await member.scrollIntoViewIfNeeded();
+  const before = await member.boundingBox();
+  await member.locator('button').hover();
+  await expect(details).toBeVisible();
+  await member.getByRole('link', { name: 'LinkedIn' }).hover();
+  await expect(details).toBeVisible();
+  expect((await member.boundingBox())?.height).toBe(before?.height);
+  await page.mouse.move(0, 0);
+  await expect(details).toBeHidden();
+  await page.keyboard.press('Tab');
+  await member.locator('button').focus();
+  await expect(details).toBeVisible();
+});
+
+test('team portraits toggle on touch without page overflow', async ({ browser }) => {
+  const context = await browser.newContext({ viewport: { width: 390, height: 844 }, hasTouch: true, isMobile: true });
+  const page = await context.newPage();
+  await page.goto('http://127.0.0.1:4321/team/');
+  await expect(page.locator('astro-island[ssr]')).toHaveCount(0);
+  const portrait = page.locator('.team-member__portrait').first();
+  const details = page.locator('.team-member__details').first();
+  await expect(details).toBeHidden();
+  await portrait.tap();
+  await expect(details).toBeVisible();
+  await portrait.tap();
+  await expect(details).toBeHidden();
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+  await context.close();
 });
 
 test('core content and project links work without JavaScript', async ({ browser }) => {
@@ -94,6 +128,7 @@ test('core content and project links work without JavaScript', async ({ browser 
   await expect(page.getByRole('heading', { level: 1 })).toBeVisible();
   await expect(page.getByRole('link', { name: 'Explore the project' })).toBeVisible();
   await page.goto('http://127.0.0.1:4321/team/');
-  await expect(page.locator('.member-card')).toHaveCount(35);
+  await expect(page.locator('.team-member')).toHaveCount(35);
+  await expect(page.locator('.team-member__details').first()).toBeVisible();
   await context.close();
 });

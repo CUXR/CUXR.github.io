@@ -3,42 +3,32 @@ import Layout from '../layouts/Layout.astro';
 import TeamDirectory from '../components/TeamDirectory';
 import { members, subteams } from '../lib/content';
 import '../styles/pages.css';
+import '../styles/team.css';
+
+const groups = [...subteams, { id: 'alumni', name: 'Alumni', description: '' }].map((team) => ({
+  ...team,
+  members: members.filter((member) => member.teams.some((id) => id === team.id)
+    && (team.id === 'alumni' || !member.teams.includes('alumni')))
+    .sort((a, b) => Number(b.teams.includes('lead')) - Number(a.teams.includes('lead'))),
+}));
 ---
-
-<Layout
-  title="Team"
-  description="Meet the students building CUXR projects across hardware, software, games, BCI, and business."
->
+<Layout title="Team" description="Meet the students building CUXR projects across hardware, software, games, BCI, and business.">
   <div class="page-shell team-page">
-    <header class="page-intro" data-reveal>
-      <h1 class="pages-title">Our team</h1>
-      <p class="lede">Cornell undergraduates working across hardware, software, game development, and business.</p>
+    <header class="team-intro">
+      <h1>Meet the team</h1>
+      <nav class="team-jumps" aria-label="Subteams">
+        {groups.map((team) => <a href={`/team/#${team.id}`}>{team.name}</a>)}
+      </nav>
     </header>
-
-    <section class="subteam-overview section" aria-labelledby="subteam-heading">
-      <div class="section-heading" data-reveal>
-        <h2 id="subteam-heading">Subteams</h2>
-      </div>
-      <div class="subteam-list">
-        {subteams.map((subteam) => (
-          <article class="subteam-item" id={`team-${subteam.id}`} data-reveal>
-            <div>
-              <h3>{subteam.name}</h3>
-              <p>{subteam.description}</p>
-              <a class="text-link" href={`#directory-${subteam.id}`}>
-                Meet the team
-              </a>
-            </div>
-          </article>
-        ))}
-      </div>
-    </section>
-
-    <section class="team-directory-section section" id="directory" aria-labelledby="directory-heading">
-      <div class="section-heading" data-reveal>
-        <h2 id="directory-heading">Members</h2>
-      </div>
-      <TeamDirectory members={members} client:visible />
-    </section>
+    {groups.map((team) => (
+      <section class="team-group" id={team.id} aria-labelledby={`heading-${team.id}`}>
+        <header class="team-group__intro">
+          <h2 id={`heading-${team.id}`}>{team.name}</h2>
+          {team.description && <p>{team.description}</p>}
+        </header>
+        <TeamDirectory members={team.members} teamId={team.id} teamName={team.name} client:load />
+      </section>
+    ))}
   </div>
+  <noscript><style>.team-member__details, .team-member__links { visibility: visible !important; opacity: 1 !important; }</style></noscript>
 </Layout>
