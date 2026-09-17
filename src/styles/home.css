@@ -8,9 +8,11 @@
 .home-team-photo figcaption { display: flex; justify-content: space-between; gap: 16px; color: var(--color-muted); font: .75rem/1.5 var(--font-mono); margin-top: 16px; }
 .company-strip { margin-top: 96px; display: flex; flex-direction: column; align-items: flex-start; gap: 24px; }
 .company-strip > p { font-size: .875rem; color: var(--color-muted); }
-.company-strip ul { display: flex; width: 100%; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 32px; margin: 0; padding: 0; list-style: none; }
-.company-strip li { display: flex; align-items: center; justify-content: center; min-height: 50px; }
+.company-strip ul { display: grid; width: 100%; grid-template-columns: repeat(10, minmax(0, 1fr)); gap: 24px 8px; margin: 0; padding: 0; list-style: none; }
+.company-strip li { display: flex; grid-column: span 2; min-width: 0; align-items: center; justify-content: center; min-height: 54px; }
+.company-strip li:nth-child(6) { grid-column: 2 / span 2; }
 .company-strip img { display: block; max-width: min(100%, 202px); height: auto; }
+.company-strip img[src$="avantos.svg"] { filter: brightness(0) invert(1); }
 .home-industry { border-top: 1px solid var(--color-border); padding-block: var(--space-xxl); }
 .home-industry-inner { display: grid; grid-template-columns: 1fr 2fr; gap: var(--space-xxl); align-items: baseline; }
 .home-industry h2 { font-size: 1.25rem; line-height: 1.5; letter-spacing: -.02em; }
@@ -21,6 +23,8 @@
 .home-next h2 { font-size: clamp(3.5rem, 8vw, 8rem); max-width: 9ch; line-height: 1; }
 .home-next-actions { margin-top: 32px; display: flex; gap: 24px; flex-wrap: wrap; align-items: center; }
 @media(max-width: 1000px) {
+  .company-strip ul { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+  .company-strip li, .company-strip li:nth-child(6) { grid-column: auto; }
   .home-next-inner { grid-template-columns: 1fr; gap: var(--space-xl); }
   .home-next h2 { max-width: none; }
 }
@@ -28,7 +32,7 @@
   .home-team-intro, .home-next-inner, .home-industry-inner { grid-template-columns: 1fr; gap: 16px; }
   .home-team-photo img { min-height: 260px; }
   .company-strip { margin-top: 64px; }
-  .company-strip ul { gap: 24px; }
-  .company-strip li { max-width: 100%; }
+  .company-strip ul { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+  .company-strip li:last-child { grid-column: 1 / -1; }
   .home-next-inner { gap: 32px; }
 }

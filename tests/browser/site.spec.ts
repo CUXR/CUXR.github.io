@@ -121,6 +121,30 @@ test('team portraits toggle on touch without page overflow', async ({ browser })
   await context.close();
 });
 
+test('team roster entries reveal on hover', async ({ page }) => {
+  await page.emulateMedia({ reducedMotion: 'reduce' });
+  await page.goto('/team/');
+  const member = page.locator('.team-member--compact').first();
+  const details = member.locator('.team-member__details');
+  await expect(details).toBeHidden();
+  await member.hover();
+  await expect(details).toBeVisible();
+});
+
+test('team roster entries toggle on touch', async ({ browser }) => {
+  const context = await browser.newContext({ viewport: { width: 390, height: 844 }, hasTouch: true, isMobile: true });
+  const page = await context.newPage();
+  await page.goto('http://127.0.0.1:4321/team/');
+  const member = page.locator('.team-member--compact').first();
+  const details = member.locator('.team-member__details');
+  await expect(details).toBeHidden();
+  await member.locator('.team-member__compact-toggle').tap();
+  await expect(details).toBeVisible();
+  await member.locator('.team-member__compact-toggle').tap();
+  await expect(details).toBeHidden();
+  await context.close();
+});
+
 test('core content and project links work without JavaScript', async ({ browser }) => {
   const context = await browser.newContext({ javaScriptEnabled: false });
   const page = await context.newPage();

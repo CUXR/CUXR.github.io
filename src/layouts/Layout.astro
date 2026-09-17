@@ -41,16 +41,25 @@ const organization = {
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="color-scheme" content="dark" />
+        <meta name="supported-color-schemes" content="dark" />
+        <meta name="darkreader-lock" />
         <meta name="theme-color" content="#101113" />
         <title>{pageTitle}</title>
         <meta name="description" content={description} />
         {noindex && <meta name="robots" content="noindex" />}
         <link rel="canonical" href={canonical} />
-        <link rel="icon" href="/media/cuxr.ico" />
+        <link rel="icon" href="/favicon.ico" sizes="16x16 24x24 32x32 48x48 64x64 72x72 96x96 128x128 256x256" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+        <link rel="manifest" href="/site.webmanifest" />
         <link rel="describedby" href="/llms.txt" type="text/plain" />
         <link rel="sitemap" href="/sitemap-index.xml" />
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="CUXR" />
+        <meta property="og:locale" content="en_US" />
         <meta property="og:title" content={pageTitle} />
         <meta property="og:description" content={description} />
         <meta property="og:url" content={canonical} />
@@ -59,6 +68,9 @@ const organization = {
             content="https://cornellxr.com/optimized/media/team-photo-1600.jpg"
         />
         <meta property="og:image:alt" content="The CUXR student project team" />
+        <meta property="og:image:type" content="image/jpeg" />
+        <meta property="og:image:width" content="1600" />
+        <meta property="og:image:height" content="690" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={pageTitle} />
         <meta name="twitter:description" content={description} />

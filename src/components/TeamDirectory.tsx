@@ -1,13 +1,14 @@
 import ResponsiveImage from './ResponsiveImage';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import type { Member } from '../lib/content';
 
 type Props = { members: readonly Member[]; teamId: string; teamName: string };
 const defaultRoles: Record<string, string> = { software: 'Software Engineer', game: 'Game Developer' };
-const initials = (name: string) => name.split(/\s+/).map((part) => part[0]).join('').slice(0, 2).toUpperCase();
 
-function Portrait({ member, teamId, teamName }: { member: Member; teamId: string; teamName: string }) {
+function MemberCard({ member, teamId, teamName }: { member: Member; teamId: string; teamName: string }) {
   const [expanded, setExpanded] = useState(false);
+  const [hydrated, setHydrated] = useState(false);
+  useEffect(() => { setHydrated(true); }, []);
   const linksId = `${teamId}-${member.id}-links`;
   const detailsId = `${teamId}-${member.id}-details`;
   const role = teamId === 'alumni'
@@ -16,7 +17,7 @@ function Portrait({ member, teamId, teamName }: { member: Member; teamId: string
   const hasDetails = Boolean(member.major || member.year || member.email || member.linkedin || member.portfolio);
 
   return (
-    <article className="team-member" data-expanded={expanded}
+    <article className={`team-member${member.image ? '' : ' team-member--compact'}`} data-expanded={!hydrated || expanded}
       onPointerEnter={(event) => { if (event.pointerType === 'mouse') setExpanded(true); }}
       onPointerLeave={(event) => {
         if (event.pointerType === 'mouse' && !event.currentTarget.contains(document.activeElement)) setExpanded(false);
@@ -24,17 +25,19 @@ function Portrait({ member, teamId, teamName }: { member: Member; teamId: string
       onFocus={(event) => { if (event.target.matches(':focus-visible')) setExpanded(true); }}
       onBlur={(event) => { if (!event.currentTarget.contains(event.relatedTarget)) setExpanded(false); }}
       onKeyDown={(event) => { if (event.key === 'Escape') setExpanded(false); }}>
-      <button className="team-member__portrait" type="button"
+      {member.image && <button className="team-member__portrait" type="button"
         aria-label={`Details about ${member.name}`} aria-expanded={hasDetails ? expanded : undefined}
         aria-controls={hasDetails ? `${detailsId}${member.email || member.linkedin || member.portfolio ? ` ${linksId}` : ''}` : undefined} disabled={!hasDetails}
         onClick={() => setExpanded((value) => !value)}>
-        <span className="team-member__initials" aria-hidden="true">{initials(member.name)}</span>
         <ResponsiveImage src={member.image} alt={member.name} preset="portrait" width={711} height={1080}
           sizes="(max-width: 600px) calc((100vw - 64px) / 2), (max-width: 900px) 30vw, (max-width: 1408px) 22vw, 302px"
           onError={(event) => { event.currentTarget.style.display = 'none'; }} />
-      </button>
+      </button>}
       <div className="team-member__heading">
-        <h3>{member.name}</h3>
+        <h3>{member.image ? member.name : <button className="team-member__compact-toggle" type="button"
+          aria-expanded={hasDetails ? expanded : undefined}
+          aria-controls={hasDetails ? `${detailsId}${member.email || member.linkedin || member.portfolio ? ` ${linksId}` : ''}` : undefined}
+          disabled={!hasDetails} onClick={() => setExpanded((value) => !value)}>{member.name}</button>}</h3>
         {(member.email || member.linkedin || member.portfolio) && <div className="team-member__links" id={linksId}>
           {member.email && <a href={`mailto:${member.email}`} aria-label={`Email ${member.name}`} title={`Email ${member.name}`}>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
@@ -63,7 +66,12 @@ function Portrait({ member, teamId, teamName }: { member: Member; teamId: string
 }
 
 export default function TeamDirectory({ members, teamId, teamName }: Props) {
+  const portraits = members.filter((member) => member.image);
+  const compact = members.filter((member) => !member.image);
   return <div className="team-portraits">
-    {members.map((member) => <Portrait key={member.id} member={member} teamId={teamId} teamName={teamName} />)}
+    {portraits.map((member) => <MemberCard key={member.id} member={member} teamId={teamId} teamName={teamName} />)}
+    {compact.length > 0 && <div className="team-roster">
+      {compact.map((member) => <MemberCard key={member.id} member={member} teamId={teamId} teamName={teamName} />)}
+    </div>}
   </div>;
 }

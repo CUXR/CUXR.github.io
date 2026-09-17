@@ -1,3 +1,4 @@
+import { existsSync } from 'node:fs';
 import { z } from 'zod';
 import projectData from '../data/projects.json';
 import memberData from '../data/members.json';
@@ -18,7 +19,10 @@ const memberSchema = z.object({
   formerTeams: z.array(z.string().min(1)).default([]),
   portfolio: z.union([z.url().startsWith('https://'), z.literal('')]).optional(),
   linkedin: z.union([z.url().startsWith('https://'), z.literal('')]),
-}).transform((member) => ({ ...member, image: `/team/headshots/${member.id}.webp` }));
+}).transform((member) => {
+  const image = `/team/headshots/${member.id}.webp`;
+  return { ...member, image: existsSync(`public${image}`) ? image : null };
+});
 
 /** Duplicate anchors silently break navigation; reject them during builds. */
 function uniqueById<T extends { id: string }>(items: T[]): T[] {

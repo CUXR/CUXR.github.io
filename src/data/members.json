@@ -174,50 +174,6 @@
     "linkedin": "https://www.linkedin.com/in/natalie-yeung-b1b908410/"
   },
   {
-    "id": "james-cenawood",
-    "name": "James Cenawood",
-    "teams": [
-      "software"
-    ],
-    "major": "Computer Science",
-    "year": "2028",
-    "email": "jcc463@cornell.edu",
-    "linkedin": "https://www.linkedin.com/in/james-cenawood-8882b6300/"
-  },
-  {
-    "id": "yaelin-hough",
-    "name": "Yaelin Hough",
-    "teams": [
-      "software"
-    ],
-    "major": "Computer Science + Philosophy",
-    "year": "2028",
-    "email": "yh2299@cornell.edu",
-    "linkedin": "https://www.linkedin.com/in/yaelin-hough/"
-  },
-  {
-    "id": "yanchun-lai",
-    "name": "Yanchun Lai",
-    "teams": [
-      "software"
-    ],
-    "major": "Computer Science",
-    "year": "2028",
-    "email": "yl3796@cornell.edu",
-    "linkedin": "https://www.linkedin.com/in/yanchun-lai-5350401b9/"
-  },
-  {
-    "id": "selena-zhang",
-    "name": "Selena Zhang",
-    "teams": [
-      "haptics"
-    ],
-    "major": "Electrical and Computer Engineering",
-    "year": "2027",
-    "email": "scz6@cornell.edu",
-    "linkedin": "https://www.linkedin.com/in/selzhng/"
-  },
-  {
     "id": "felicity-wu",
     "name": "Felicity Wu",
     "teams": [
@@ -227,17 +183,6 @@
     "year": "2028",
     "email": "fyw5@cornell.edu",
     "linkedin": "https://www.linkedin.com/in/felicity-wu-b38604248/"
-  },
-  {
-    "id": "michelle-dong",
-    "name": "Michelle Dong",
-    "teams": [
-      "bci"
-    ],
-    "major": "Electrical and Computer Engineering",
-    "year": "2027",
-    "email": "md2236@cornell.edu",
-    "linkedin": "https://www.linkedin.com/in/michellewdong/"
   },
   {
     "id": "ronald-qu",
@@ -296,28 +241,6 @@
     "linkedin": "https://www.linkedin.com/in/spencerliang0114/"
   },
   {
-    "id": "reese-kim",
-    "name": "Reese Kim",
-    "teams": [
-      "business"
-    ],
-    "major": "Applied Economics and Management",
-    "year": "2029",
-    "email": "rk838@cornell.edu",
-    "linkedin": "https://www.linkedin.com/in/reese-kim-b84158379/"
-  },
-  {
-    "id": "sydney-chin",
-    "name": "Sydney Chin",
-    "teams": [
-      "business"
-    ],
-    "major": "Information Science",
-    "year": "2028",
-    "email": "scc273@cornell.edu",
-    "linkedin": "https://www.linkedin.com/in/sydney-chin/"
-  },
-  {
     "id": "sophie-bai",
     "name": "Sophie Bai",
     "teams": [
@@ -327,17 +250,6 @@
     "year": "2029",
     "email": "zb84@cornell.edu",
     "linkedin": ""
-  },
-  {
-    "id": "fiona-lin",
-    "name": "Fiona Lin",
-    "teams": [
-      "haptics"
-    ],
-    "major": "Electrical and Computer Engineering",
-    "year": "2029",
-    "email": "fyl8@cornell.edu",
-    "linkedin": "https://www.linkedin.com/in/fionalinn/"
   },
   {
     "id": "summer-shen",
@@ -371,6 +283,61 @@
     "year": "2029",
     "email": "ek779@cornell.edu",
     "linkedin": "https://www.linkedin.com/in/erim-keresteci-3252802b0/"
+  },
+  {
+    "id": "emily-chau",
+    "name": "Emily Chau",
+    "teams": [
+      "haptics"
+    ],
+    "major": "Electrical and Computer Engineering",
+    "year": "2029",
+    "email": "etc66@cornell.edu",
+    "linkedin": "https://www.linkedin.com/in/emily-chau-10210b308/"
+  },
+  {
+    "id": "gabriel-hwang",
+    "name": "Gabriel Hwang",
+    "teams": [
+      "haptics"
+    ],
+    "major": "Mechanical Engineering",
+    "year": "2028",
+    "email": "glh85@cornell.edu",
+    "linkedin": "https://www.linkedin.com/in/gabriel-hwang-70a70332a/"
+  },
+  {
+    "id": "tesla-lukow",
+    "name": "Tesla Lukow",
+    "teams": [
+      "game"
+    ],
+    "major": "Electrical and Computer Engineering",
+    "year": "2029",
+    "email": "tjl248@cornell.edu",
+    "linkedin": "https://www.linkedin.com/in/tesla-lukow/"
+  },
+  {
+    "id": "patrick-wang",
+    "name": "Patrick Wang",
+    "teams": [
+      "game"
+    ],
+    "major": "Computer Science",
+    "year": "2028",
+    "email": "pw475@cornell.edu",
+    "linkedin": "https://www.linkedin.com/in/patrick-wang-2a112826b/"
+  },
+  {
+    "id": "elizabeth-pfauth",
+    "name": "Elizabeth Pfauth",
+    "teams": [
+      "haptics"
+    ],
+    "major": "Computer Science",
+    "year": "2029",
+    "email": "ep575@cornell.edu",
+    "linkedin": "https://www.linkedin.com/in/elizabeth-pfauth-103424282/"
   },
   {
     "id": "wei-che-harry-lin",
