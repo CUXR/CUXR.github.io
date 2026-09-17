@@ -18,15 +18,14 @@
 .home-industry h2 { font-size: 1.25rem; line-height: 1.5; letter-spacing: -.02em; }
 .industry-company { white-space: nowrap; color: var(--color-text); }
 .industry-company img { display: inline-block; margin-right: var(--space-sm); vertical-align: middle; }
-.home-next { border-top: 1px solid var(--color-border); }
-.home-next-inner { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: var(--space-xxl); align-items: end; }
-.home-next h2 { font-size: clamp(3.5rem, 8vw, 8rem); max-width: 9ch; line-height: 1; }
-.home-next-actions { margin-top: 32px; display: flex; gap: 24px; flex-wrap: wrap; align-items: center; }
+.home-next.section { border-top: 1px solid var(--color-border); padding-block: var(--space-xxl); }
+.home-next-inner { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: var(--space-xxl); align-items: center; }
+.home-next .lede { max-width: 48ch; }
+.home-next-actions { display: flex; gap: 24px; flex-wrap: wrap; align-items: center; }
 @media(max-width: 1000px) {
   .company-strip ul { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
   .company-strip li, .company-strip li:nth-child(6) { grid-column: auto; }
   .home-next-inner { grid-template-columns: 1fr; gap: var(--space-xl); }
-  .home-next h2 { max-width: none; }
 }
 @media(max-width: 760px) {
   .home-team-intro, .home-next-inner, .home-industry-inner { grid-template-columns: 1fr; gap: 16px; }

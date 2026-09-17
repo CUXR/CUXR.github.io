@@ -55,11 +55,12 @@
   white-space: nowrap;
   margin-bottom: 32px;
 }
+.hero__cu { color: var(--color-brand); font-family: 'Chakra Petch', var(--font-sans); font-weight: 600; }
 .hero__xr {
   align-self: start;
   margin-left: .72em;
   margin-top: -.025em;
-  color: var(--color-brand);
+  color: var(--color-text);
   font-family: var(--font-pixel);
   font-size: 1.35em;
   font-weight: 400;
@@ -80,15 +81,72 @@
 .hero__link::after { content: '→'; font-size: .875em; transition: transform var(--duration-fast) var(--ease-out); }
 .hero__link:hover { color: var(--color-accent); }
 .hero__link:hover::after { transform: translateX(2px); }
-@media (prefers-reduced-motion: no-preference) {
-  .hero__xr span { animation: type-resolve 600ms 140ms var(--ease-out) both; }
-  .hero__xr span:last-child { animation-delay: 220ms; }
-  .hero__bear { animation: hero-arrive 700ms var(--ease-out) both; }
-  .hero__title { animation: hero-arrive 650ms 80ms var(--ease-out) both; }
-  .hero__bottom { animation: hero-arrive 600ms 160ms var(--ease-out) both; }
+.hero__mask { display: block; }
+.hero__glyph {
+  --slice-direction: 1;
+  --slice-delay: 0ms;
+  position: relative;
+  display: block;
 }
-@keyframes type-resolve { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
-@keyframes hero-arrive { from { opacity: 0; translate: 0 16px; } to { opacity: 1; translate: 0 0; } }
+.hero__xr .hero__glyph { --slice-direction: -1; --slice-delay: 80ms; }
+.hero__xr .hero__mask:last-child .hero__glyph { --slice-delay: 160ms; }
+.hero__slice { display: none; }
+.hero-copy { --copy-delay: 460ms; position: relative; display: inline-block; }
+.hero-copy__slice { display: none; }
+@media (prefers-reduced-motion: no-preference) {
+  /* Swap the temporary slices for intact type after registration, avoiding resting seams. */
+  .hero__letter {
+    animation: hero-letter-resolve 600ms var(--slice-delay) steps(1, end) backwards;
+  }
+  .hero__slice {
+    display: block;
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    pointer-events: none;
+    animation: hero-slice-register 600ms var(--slice-delay) var(--ease-out) backwards;
+  }
+  .hero__slice--top { --slice-offset: -.6em; clip-path: inset(-20% -100% 66%); }
+  .hero__slice--middle { --slice-offset: .45em; clip-path: inset(34% -100% 33%); }
+  .hero__slice--bottom { --slice-offset: -.25em; clip-path: inset(67% -100% -20%); }
+  .hero__bear { animation: hero-bear-enter var(--duration-hero) var(--ease-spring) backwards; }
+  .hero-copy__text {
+    animation: hero-letter-resolve calc(var(--duration-fast) * 2) var(--copy-delay) steps(1, end) backwards;
+  }
+  .hero-copy__slice {
+    --slice-direction: 1;
+    display: block;
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    pointer-events: none;
+    animation: hero-slice-register calc(var(--duration-fast) * 2) var(--copy-delay) var(--ease-out) backwards;
+  }
+  .hero-copy__slice--top { --slice-offset: -.3em; clip-path: inset(0 -50% 50%); }
+  .hero-copy__slice--bottom { --slice-offset: .3em; clip-path: inset(50% -50% 0); }
+  .hero__link::after { animation: hero-arrow-enter calc(var(--duration-fast) * 2) 540ms var(--ease-out) backwards; }
+  .hero__link:focus-visible .hero-copy__text,
+  .hero__link:focus-visible .hero-copy__slice,
+  .hero__link:focus-visible::after { animation: none; }
+}
+@keyframes hero-letter-resolve {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes hero-slice-register {
+  0% { opacity: 0; transform: translateX(calc(var(--slice-offset) * var(--slice-direction))); }
+  18% { opacity: 1; }
+  72% { opacity: 1; transform: translateX(calc(var(--slice-offset) * var(--slice-direction) * -.025)); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+@keyframes hero-bear-enter {
+  from { opacity: 0; scale: .96; }
+  to { opacity: 1; scale: 1; }
+}
+@keyframes hero-arrow-enter {
+  from { opacity: 0; translate: -8px 0; }
+  to { opacity: 1; translate: 0 0; }
+}
 @media (max-width: 900px) {
   .hero__layout { column-gap: 16px; }
   .hero__content { padding-top: 32px; }

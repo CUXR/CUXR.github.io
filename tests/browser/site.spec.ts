@@ -1,5 +1,7 @@
 import { test, expect } from '@playwright/test';
 import AxeBuilder from '@axe-core/playwright';
+import members from '../../src/data/members.json' with { type: 'json' };
+import subteams from '../../src/data/subteams.json' with { type: 'json' };
 
 for (const width of [390, 1440]) {
   for (const route of ['/', '/projects/', '/team/', '/sponsor/', '/recruitment/']) {
@@ -152,7 +154,12 @@ test('core content and project links work without JavaScript', async ({ browser 
   await expect(page.getByRole('heading', { level: 1 })).toBeVisible();
   await expect(page.getByRole('link', { name: 'Explore the project' })).toBeVisible();
   await page.goto('http://127.0.0.1:4321/team/');
-  await expect(page.locator('.team-member')).toHaveCount(35);
+  for (const { id } of [...subteams, { id: 'alumni' }]) {
+    const roster = members.filter((member) => member.teams.includes('alumni')
+      ? id === 'alumni'
+      : member.teams.some((team) => team === id));
+    await expect(page.locator(`#${id} .team-member`)).toHaveCount(roster.length);
+  }
   await expect(page.locator('.team-member__details').first()).toBeVisible();
   await context.close();
 });

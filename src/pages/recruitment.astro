@@ -1,6 +1,5 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Wordmark from "../components/Wordmark.astro";
 import {
     recruitment,
     isRecruiting,
@@ -29,64 +28,51 @@ const time = (date: string) =>
     description="Join CUXR. Learn about our subteams, new-member education, coffee chats, information sessions, and freshman and transfer recruitment."
 >
     <section id="introduction" class="container page-heading recruitment-intro">
-        <h1>
-            Join <Wordmark />
-        </h1>
-        <p class="lede">
-            Join student-led XR work spanning physical interfaces, immersive
-            software, and games.
-        </p>
-        <div class="recruitment-live" data-recruitment="open" hidden={!open}>
-            <span class="recruitment-status">
-                {recruitment.season} · {recruitment.audience}
-            </span>
-            <p>
-                Apply by{" "}
-                <strong>
-                    {deadlineLabel(recruitment)}, {time(recruitment.closesAt)}{" "}
-                    Eastern.
-                </strong>
-            </p>
-            <a class="button" href={recruitment.applicationUrl}>
-                Start your application
-            </a>
+        <div class="recruitment-anchor-scene" aria-hidden="true">
+            <svg class="recruitment-anchor" viewBox="0 0 410 294" width="410" height="294" fill="none" focusable="false">
+                <defs>
+                    <filter id="headset-pixels" x="0" y="0" width="410" height="294" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                        <feFlood x="0" y="0" width="2" height="2" flood-opacity="0" result="grid-cell" />
+                        <feFlood x="0" y="0" width="1" height="1" flood-color="white" />
+                        <feComposite in2="grid-cell" operator="over" x="0" y="0" width="2" height="2" />
+                        <feTile x="0" y="0" width="410" height="294" />
+                        <feComposite in="SourceGraphic" operator="in" />
+                        <feMorphology operator="dilate" radius=".65" />
+                    </filter>
+                </defs>
+                <image href="/media/headset-wireframe.svg" width="410" height="294" filter="url(#headset-pixels)" />
+            </svg>
         </div>
-        <div class="recruitment-closed" data-recruitment="closed" hidden={open}>
-            <p>
-                Applications are currently closed. Get to know our projects and
-                subteams, and check back for the next recruitment cycle.
-            </p>
-            <a class="text-link" href="/team/">
-                Explore the team
-            </a>
-        </div>
-    </section>
-    <section
-        id="what-we-look-for"
-        class="container section recruitment-expectations"
-        aria-labelledby="expectations-title"
-    >
-        <div>
-            <h2 id="expectations-title">What we look for</h2>
+        <div class="recruitment-intro-copy">
+            <h1>Recruitment</h1>
             <p class="lede">
-                We value passion and dedication—to XR, or to technology more
-                broadly.
+                Join student-led XR work spanning physical interfaces, immersive
+                software, and games.
             </p>
-            <p>
-                We consider your experience in the context of your year and
-                background, with lower technical expectations for freshmen and
-                new transfers. Bring your curiosity about software, hardware, or
-                the ways people interact with technology.
-            </p>
-            <p>
-                Our new-member education helps you get started. You'll learn
-                alongside students creating haptic hardware, investigating
-                brain-computer input, developing software and games, and running
-                business.
-            </p>
-            <a class="text-link" href="/team/">
-                Explore our subteams
-            </a>
+            <div class="recruitment-live" data-recruitment="open" hidden={!open}>
+                <span class="recruitment-status">
+                    {recruitment.season} · {recruitment.audience}
+                </span>
+                <p>
+                    Apply by{" "}
+                    <strong>
+                        {deadlineLabel(recruitment)}, {time(recruitment.closesAt)}{" "}
+                        Eastern.
+                    </strong>
+                </p>
+                <a class="button" href={recruitment.applicationUrl}>
+                    Start your application
+                </a>
+            </div>
+            <div class="recruitment-closed" data-recruitment="closed" hidden={open}>
+                <p>
+                    Applications are currently closed. Get to know our projects and
+                    subteams, and check back for the next recruitment cycle.
+                </p>
+                <a class="text-link" href="/team/">
+                    Explore the team
+                </a>
+            </div>
         </div>
     </section>
     <section
@@ -94,12 +80,24 @@ const time = (date: string) =>
         class="container section recruitment-process"
         aria-labelledby="process-title"
     >
-        <div>
+        <div class="recruitment-arm-scene" aria-hidden="true">
+            <img
+                class="recruitment-arm"
+                src="/media/recruitment-arm.png"
+                width="1263"
+                height="2286"
+                alt=""
+                loading="lazy"
+                decoding="async"
+            />
+        </div>
+        <div class="recruitment-process-intro">
             <h2 id="process-title">Recruitment process</h2>
             <p class="lede">
                 Recruitment typically runs through early September for
                 upperclassmen and mid-October for freshmen and transfers.
             </p>
+
         </div>
         <ol class="recruitment-steps">
             <li>
@@ -194,5 +192,33 @@ const time = (date: string) =>
                 </div>
             </li>
         </ol>
+    </section>
+    <section
+        id="what-we-look-for"
+        class="container section recruitment-expectations"
+        aria-labelledby="expectations-title"
+    >
+        <h2 id="expectations-title">What we look for</h2>
+        <div>
+            <p class="lede">
+                We value passion and dedication—to XR, or to technology more
+                broadly.
+            </p>
+            <p>
+                We consider your experience in the context of your year and
+                background, with lower technical expectations for freshmen and
+                new transfers. Bring your curiosity about software, hardware, or
+                the ways people interact with technology.
+            </p>
+            <p>
+                Our new-member education helps you get started. You'll learn
+                alongside students creating haptic hardware, investigating
+                brain-computer input, developing software and games, and running
+                business.
+            </p>
+            <a class="text-link" href="/team/">
+                Explore our subteams
+            </a>
+        </div>
     </section>
 </Layout>
