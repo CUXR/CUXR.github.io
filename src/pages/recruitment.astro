@@ -1,0 +1,224 @@
+---
+import Layout from "../layouts/Layout.astro";
+import {
+    recruitment,
+    isRecruiting,
+    upcomingEvents,
+    deadlineLabel,
+} from "../lib/recruitment";
+import "../styles/recruitment.css";
+const open = isRecruiting(recruitment);
+const day = (date: string) =>
+    new Intl.DateTimeFormat("en-US", {
+        timeZone: recruitment.timeZone,
+        weekday: "long",
+        month: "long",
+        day: "numeric",
+    }).format(new Date(date));
+const time = (date: string) =>
+    new Intl.DateTimeFormat("en-US", {
+        timeZone: recruitment.timeZone,
+        hour: "numeric",
+        minute: "2-digit",
+    }).format(new Date(date));
+---
+
+<Layout
+    title="Recruitment"
+    description="Join CUXR. Learn about our subteams, new-member education, coffee chats, information sessions, and freshman and transfer recruitment."
+>
+    <section id="introduction" class="container page-heading recruitment-intro">
+        <div class="recruitment-anchor-scene" aria-hidden="true">
+            <svg class="recruitment-anchor" viewBox="0 0 410 294" width="410" height="294" fill="none" focusable="false">
+                <defs>
+                    <filter id="headset-pixels" x="0" y="0" width="410" height="294" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                        <feFlood x="0" y="0" width="2" height="2" flood-opacity="0" result="grid-cell" />
+                        <feFlood x="0" y="0" width="1" height="1" flood-color="white" />
+                        <feComposite in2="grid-cell" operator="over" x="0" y="0" width="2" height="2" />
+                        <feTile x="0" y="0" width="410" height="294" />
+                        <feComposite in="SourceGraphic" operator="in" />
+                        <feMorphology operator="dilate" radius=".65" />
+                    </filter>
+                </defs>
+                <image href="/media/headset-wireframe.svg" width="410" height="294" filter="url(#headset-pixels)" />
+            </svg>
+        </div>
+        <div class="recruitment-intro-copy">
+            <h1>Recruitment</h1>
+            <p class="lede">
+                Join student-led XR work spanning physical interfaces, immersive
+                software, and games.
+            </p>
+            <div class="recruitment-live" data-recruitment="open" hidden={!open}>
+                <span class="recruitment-status">
+                    {recruitment.season} · {recruitment.audience}
+                </span>
+                <p>
+                    Apply by{" "}
+                    <strong>
+                        {deadlineLabel(recruitment)}, {time(recruitment.closesAt)}{" "}
+                        Eastern.
+                    </strong>
+                </p>
+                <a class="button" href={recruitment.applicationUrl}>
+                    Start your application
+                </a>
+            </div>
+            <div class="recruitment-closed" data-recruitment="closed" hidden={open}>
+                <p>
+                    Applications are currently closed. Get to know our projects and
+                    subteams, and check back for the next recruitment cycle.
+                </p>
+                <a class="text-link" href="/team/">
+                    Explore the team
+                </a>
+            </div>
+        </div>
+    </section>
+    <section
+        id="recruitment-process"
+        class="container section recruitment-process"
+        aria-labelledby="process-title"
+    >
+        <div class="recruitment-arm-scene" aria-hidden="true">
+            <img
+                class="recruitment-arm"
+                src="/media/recruitment-arm.png"
+                width="1263"
+                height="2286"
+                alt=""
+                loading="lazy"
+                decoding="async"
+            />
+        </div>
+        <div class="recruitment-process-intro">
+            <h2 id="process-title">Recruitment process</h2>
+            <p class="lede">
+                Recruitment typically runs through early September for
+                upperclassmen and mid-October for freshmen and transfers.
+            </p>
+
+        </div>
+        <ol class="recruitment-steps">
+            <li>
+                <span class="step-number" aria-hidden="true">
+                    01
+                </span>
+                <div>
+                    <h3>Coffee chats</h3>
+                    <p>
+                        Meet our members, hear about their projects, and ask
+                        what you're curious about.
+                    </p>
+                    <a
+                        class="text-link link--external"
+                        href={recruitment.coffeeChatUrl}
+                        data-recruitment="open"
+                        hidden={!open}
+                    >
+                        Sign up for a coffee chat
+                    </a>
+                </div>
+            </li>
+            <li id="info-sessions">
+                <span class="step-number" aria-hidden="true">
+                    02
+                </span>
+                <div>
+                    <h3>Info sessions</h3>
+                    <p>
+                        Get a closer look at CUXR and the work happening across
+                        our subteams.
+                    </p>
+                    <div
+                        class="session-list"
+                        data-recruitment="open"
+                        hidden={!open}
+                    >
+                        {recruitment.events.map((event) => (
+                            <article
+                                class="session"
+                                data-event-end={event.endsAt}
+                                hidden={Date.parse(event.endsAt) <= Date.now()}
+                            >
+                                <h4>
+                                    <time datetime={event.startsAt}>
+                                        {day(event.startsAt)}
+                                    </time>
+                                </h4>
+                                <p>
+                                    {time(event.startsAt)}–{time(event.endsAt)}{" "}
+                                    Eastern
+                                </p>
+                                <p>{event.location}</p>
+                            </article>
+                        ))}
+                        <p
+                            class="session-empty"
+                            data-events-empty
+                            hidden={upcomingEvents(recruitment).length > 0}
+                        >
+                            No upcoming info sessions are currently listed.
+                            Questions?{" "}
+                            <a
+                                class="text-link link--external"
+                                href="mailto:cuxr@cornell.edu"
+                            >
+                                Email us
+                            </a>
+                            .
+                        </p>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <span class="step-number" aria-hidden="true">
+                    03
+                </span>
+                <div>
+                    <h3>Application</h3>
+                    <p>
+                        Tell us about your interests, your experiences, and what
+                        you'd like to build.
+                    </p>
+                    <a
+                        class="text-link link--external"
+                        href={recruitment.applicationUrl}
+                        data-recruitment="open"
+                        hidden={!open}
+                    >
+                        Apply to CUXR
+                    </a>
+                </div>
+            </li>
+        </ol>
+    </section>
+    <section
+        id="what-we-look-for"
+        class="container section recruitment-expectations"
+        aria-labelledby="expectations-title"
+    >
+        <h2 id="expectations-title">What we look for</h2>
+        <div>
+            <p class="lede">
+                We value passion and dedication—to XR, or to technology more
+                broadly.
+            </p>
+            <p>
+                We consider your experience in the context of your year and
+                background, with lower technical expectations for freshmen and
+                new transfers. Bring your curiosity about software, hardware, or
+                the ways people interact with technology.
+            </p>
+            <p>
+                Our new-member education helps you get started. You'll learn
+                alongside students creating haptic hardware, investigating
+                brain-computer input, developing software and games, and running
+                business.
+            </p>
+            <a class="text-link" href="/team/">
+                Explore our subteams
+            </a>
+        </div>
+    </section>
+</Layout>

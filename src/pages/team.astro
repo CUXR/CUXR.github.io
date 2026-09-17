@@ -1,0 +1,34 @@
+---
+import Layout from '../layouts/Layout.astro';
+import TeamDirectory from '../components/TeamDirectory';
+import { members, subteams } from '../lib/content';
+import '../styles/pages.css';
+import '../styles/team.css';
+
+const groups = [...subteams, { id: 'alumni', name: 'Alumni', description: '' }].map((team) => ({
+  ...team,
+  members: members.filter((member) => member.teams.some((id) => id === team.id)
+    && (team.id === 'alumni' || !member.teams.includes('alumni')))
+    .sort((a, b) => Number(b.teams.includes('lead')) - Number(a.teams.includes('lead'))),
+}));
+---
+<Layout title="Team" description="Meet the students building CUXR projects across hardware, software, games, BCI, and business.">
+  <div class="page-shell team-page">
+    <header class="team-intro">
+      <h1>Meet the team</h1>
+      <nav class="team-jumps" aria-label="Subteams">
+        {groups.map((team) => <a href={`/team/#${team.id}`}>{team.name}</a>)}
+      </nav>
+    </header>
+    {groups.map((team) => (
+      <section class="team-group" id={team.id} aria-labelledby={`heading-${team.id}`}>
+        <header class="team-group__intro">
+          <h2 id={`heading-${team.id}`}>{team.name}</h2>
+          {team.description && <p>{team.description}</p>}
+        </header>
+        <TeamDirectory members={team.members} teamId={team.id} teamName={team.name} client:load />
+      </section>
+    ))}
+  </div>
+  <noscript><style>.team-member__details, .team-member__links { visibility: visible !important; opacity: 1 !important; }</style></noscript>
+</Layout>

@@ -1,0 +1,12 @@
+import { defineConfig } from 'astro/config';
+import react from '@astrojs/react';
+import sitemap from '@astrojs/sitemap';
+import icon from 'astro-icon';
+
+export default defineConfig({
+  site: 'https://cornellxr.com',
+  output: 'static',
+  trailingSlash: 'always',
+  integrations: [react(), sitemap({ filter: (page) => !page.endsWith('/404/') }), icon({ include: { 'fa6-brands': ['instagram', 'linkedin', 'github'] } })],
+  devToolbar: { enabled: false },
+});

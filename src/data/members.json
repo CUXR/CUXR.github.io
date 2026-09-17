@@ -1,0 +1,385 @@
+[
+  {
+    "id": "eric-seo",
+    "name": "Eric Seo",
+    "role": "Technical Full Team Lead",
+    "teams": [
+      "haptics",
+      "lead"
+    ],
+    "major": "Electrical and Computer Engineering",
+    "year": "2028",
+    "email": "eys39@cornell.edu",
+    "linkedin": "https://www.linkedin.com/in/eric-seo-b40282277/"
+  },
+  {
+    "id": "fairooz-tahsin",
+    "name": "Fairooz Tahsin",
+    "role": "Logistics Full Team Lead",
+    "teams": [
+      "business",
+      "lead"
+    ],
+    "major": "Information Science",
+    "year": "2028",
+    "email": "ft255@cornell.edu",
+    "linkedin": "https://www.linkedin.com/in/fairoozt/"
+  },
+  {
+    "id": "peter-he",
+    "name": "Peter He",
+    "role": "Senior Advisor / Founder",
+    "teams": [
+      "haptics",
+      "lead"
+    ],
+    "major": "Electrical and Computer Engineering",
+    "year": "2027",
+    "email": "ph475@cornell.edu",
+    "linkedin": "https://www.linkedin.com/in/ph475/"
+  },
+  {
+    "id": "ethan-coskay",
+    "name": "Ethan Coskay",
+    "role": "Software Lead",
+    "teams": [
+      "software",
+      "lead"
+    ],
+    "major": "Computer Science",
+    "year": "2027",
+    "email": "enc33@cornell.edu",
+    "linkedin": "https://www.linkedin.com/in/ethan-coskay/"
+  },
+  {
+    "id": "ezra-koreen",
+    "name": "Ezra Koreen",
+    "role": "Software Lead",
+    "teams": [
+      "software",
+      "lead"
+    ],
+    "major": "Computer Science",
+    "year": "2028",
+    "email": "elk97@cornell.edu",
+    "linkedin": "https://www.linkedin.com/in/ezra-koreen-125b79274/"
+  },
+  {
+    "id": "zach-riiff",
+    "name": "Zach Riiff",
+    "role": "Electrical Lead",
+    "teams": [
+      "haptics",
+      "lead"
+    ],
+    "major": "Electrical and Computer Engineering",
+    "year": "2028",
+    "email": "zcr5@cornell.edu",
+    "linkedin": "https://www.linkedin.com/in/zach-riiff-828018325/"
+  },
+  {
+    "id": "sam-keamy",
+    "name": "Sam Keamy",
+    "role": "Electrical Lead",
+    "teams": [
+      "haptics",
+      "lead"
+    ],
+    "major": "Electrical and Computer Engineering",
+    "year": "2027",
+    "email": "swk57@cornell.edu",
+    "linkedin": "https://www.linkedin.com/in/samuel-keamy/"
+  },
+  {
+    "id": "gina-liu",
+    "name": "Gina Liu",
+    "role": "Mechanical Lead",
+    "teams": [
+      "haptics",
+      "lead"
+    ],
+    "major": "Mechanical Engineering",
+    "year": "2027",
+    "email": "gl528@cornell.edu",
+    "linkedin": "https://www.linkedin.com/in/gina-liu5/"
+  },
+  {
+    "id": "annabelle-ford",
+    "name": "Annabelle Ford",
+    "role": "Game Lead",
+    "teams": [
+      "game",
+      "lead"
+    ],
+    "major": "Computer Science",
+    "year": "2028",
+    "email": "atf52@cornell.edu",
+    "linkedin": "https://www.linkedin.com/in/annabelle-ford-782433335/"
+  },
+  {
+    "id": "ashee-b-bansaal",
+    "name": "Ashee B Bansaal",
+    "role": "BCI Lead",
+    "teams": [
+      "bci",
+      "lead"
+    ],
+    "major": "Computer Science",
+    "year": "2028",
+    "email": "ab3235@cornell.edu",
+    "linkedin": "https://www.linkedin.com/in/ashee-b-bansaal/"
+  },
+  {
+    "id": "alan-wu",
+    "name": "Alan Wu",
+    "teams": [
+      "bci"
+    ],
+    "major": "Biology",
+    "year": "2028",
+    "email": "ayw34@cornell.edu",
+    "linkedin": "https://www.linkedin.com/in/alanwuyo/"
+  },
+  {
+    "id": "xinqing-rachel-lin",
+    "name": "Xinqing (Rachel) Lin",
+    "teams": [
+      "game"
+    ],
+    "major": "Computer Science",
+    "year": "2027",
+    "email": "xl892@cornell.edu",
+    "linkedin": "https://www.linkedin.com/in/xinqing-rachel-lin/"
+  },
+  {
+    "id": "george-margono",
+    "name": "George Margono",
+    "teams": [
+      "game"
+    ],
+    "major": "Computer Science",
+    "year": "2027",
+    "email": "gm564@cornell.edu",
+    "linkedin": "https://www.linkedin.com/in/georgemargono/"
+  },
+  {
+    "id": "natalie-yeung",
+    "name": "Natalie Yeung",
+    "teams": [
+      "haptics"
+    ],
+    "major": "Electrical and Computer Engineering",
+    "year": "2028",
+    "email": "nyy4@cornell.edu",
+    "linkedin": "https://www.linkedin.com/in/natalie-yeung-b1b908410/"
+  },
+  {
+    "id": "felicity-wu",
+    "name": "Felicity Wu",
+    "teams": [
+      "haptics"
+    ],
+    "major": "Mechanical Engineering",
+    "year": "2028",
+    "email": "fyw5@cornell.edu",
+    "linkedin": "https://www.linkedin.com/in/felicity-wu-b38604248/"
+  },
+  {
+    "id": "ronald-qu",
+    "name": "Ronald Qu",
+    "teams": [
+      "haptics"
+    ],
+    "major": "Electrical and Computer Engineering",
+    "year": "2027",
+    "email": "rq36@cornell.edu",
+    "linkedin": "https://www.linkedin.com/in/ronald-q-705692260/"
+  },
+  {
+    "id": "allison-rowe",
+    "name": "Allison Rowe",
+    "teams": [
+      "haptics"
+    ],
+    "major": "Applied and Engineering Physics",
+    "year": "2029",
+    "email": "asr322@cornell.edu",
+    "linkedin": "https://www.linkedin.com/in/allison-rowe-6887b72b1/"
+  },
+  {
+    "id": "ethan-ngai",
+    "name": "Ethan Ngai",
+    "teams": [
+      "software"
+    ],
+    "major": "Computer Science",
+    "year": "2028",
+    "email": "emn65@cornell.edu",
+    "linkedin": "https://www.linkedin.com/in/ethanmngai/",
+    "portfolio": "https://ethanngai.com"
+  },
+  {
+    "id": "kevin-zhou",
+    "name": "Kevin Zhou",
+    "teams": [
+      "haptics"
+    ],
+    "major": "Electrical and Computer Engineering",
+    "year": "2029",
+    "email": "kz363@cornell.edu",
+    "linkedin": ""
+  },
+  {
+    "id": "spencer-liang",
+    "name": "Spencer Liang",
+    "teams": [
+      "bci"
+    ],
+    "major": "Computer Science",
+    "year": "2029",
+    "email": "sl3595@cornell.edu",
+    "linkedin": "https://www.linkedin.com/in/spencerliang0114/"
+  },
+  {
+    "id": "sophie-bai",
+    "name": "Sophie Bai",
+    "teams": [
+      "game"
+    ],
+    "major": "Design and Environmental Analysis",
+    "year": "2029",
+    "email": "zb84@cornell.edu",
+    "linkedin": ""
+  },
+  {
+    "id": "summer-shen",
+    "name": "Summer Shen",
+    "teams": [
+      "game"
+    ],
+    "major": "Information Science, Systems, and Technology",
+    "year": "2029",
+    "email": "sqs4@cornell.edu",
+    "linkedin": "https://www.linkedin.com/in/summer-shen-15a7b337b/"
+  },
+  {
+    "id": "claire-cheng",
+    "name": "Claire Cheng",
+    "teams": [
+      "software"
+    ],
+    "major": "Computer Science",
+    "year": "2029",
+    "email": "cqc6@cornell.edu",
+    "linkedin": "https://www.linkedin.com/in/claire-cheng-a98203353/"
+  },
+  {
+    "id": "erim-keresteci",
+    "name": "Erim Keresteci",
+    "teams": [
+      "software"
+    ],
+    "major": "Computer Science",
+    "year": "2029",
+    "email": "ek779@cornell.edu",
+    "linkedin": "https://www.linkedin.com/in/erim-keresteci-3252802b0/"
+  },
+  {
+    "id": "emily-chau",
+    "name": "Emily Chau",
+    "teams": [
+      "haptics"
+    ],
+    "major": "Electrical and Computer Engineering",
+    "year": "2029",
+    "email": "etc66@cornell.edu",
+    "linkedin": "https://www.linkedin.com/in/emily-chau-10210b308/"
+  },
+  {
+    "id": "gabriel-hwang",
+    "name": "Gabriel Hwang",
+    "teams": [
+      "haptics"
+    ],
+    "major": "Mechanical Engineering",
+    "year": "2028",
+    "email": "glh85@cornell.edu",
+    "linkedin": "https://www.linkedin.com/in/gabriel-hwang-70a70332a/"
+  },
+  {
+    "id": "tesla-lukow",
+    "name": "Tesla Lukow",
+    "teams": [
+      "game"
+    ],
+    "major": "Electrical and Computer Engineering",
+    "year": "2029",
+    "email": "tjl248@cornell.edu",
+    "linkedin": "https://www.linkedin.com/in/tesla-lukow/"
+  },
+  {
+    "id": "patrick-wang",
+    "name": "Patrick Wang",
+    "teams": [
+      "game"
+    ],
+    "major": "Computer Science",
+    "year": "2028",
+    "email": "pw475@cornell.edu",
+    "linkedin": "https://www.linkedin.com/in/patrick-wang-2a112826b/"
+  },
+  {
+    "id": "elizabeth-pfauth",
+    "name": "Elizabeth Pfauth",
+    "teams": [
+      "haptics"
+    ],
+    "major": "Computer Science",
+    "year": "2029",
+    "email": "ep575@cornell.edu",
+    "linkedin": "https://www.linkedin.com/in/elizabeth-pfauth-103424282/"
+  },
+  {
+    "id": "wei-che-harry-lin",
+    "name": "Wei-Che (Harry) Lin",
+    "teams": [
+      "alumni"
+    ],
+    "major": "Information Science",
+    "year": "2027",
+    "email": "wl725@cornell.edu",
+    "linkedin": "https://www.linkedin.com/in/wei-che-harry-lin/",
+    "formerTeams": [
+      "Software",
+      "Haptics"
+    ]
+  },
+  {
+    "id": "carmen-lin",
+    "name": "Carmen Lin",
+    "teams": [
+      "alumni"
+    ],
+    "major": "Mechanical Engineering",
+    "year": "2027",
+    "email": "cl2624@cornell.edu",
+    "linkedin": "https://www.linkedin.com/in/carmen-lin-5761b9279/",
+    "formerTeams": [
+      "Mechanical"
+    ]
+  },
+  {
+    "id": "liliane-wu",
+    "name": "Liliane Wu",
+    "teams": [
+      "alumni"
+    ],
+    "major": "Operations Research and Information Engineering",
+    "year": "2027",
+    "email": "yw2542@cornell.edu",
+    "linkedin": "https://www.linkedin.com/in/liliane-wu/",
+    "formerTeams": [
+      "Business"
+    ]
+  }
+]
