@@ -20,8 +20,22 @@ for (const route of ['/', '/team/', '/sponsor/']) {
       expect(Number(photo.width)).toBeGreaterThan(0);
       expect(Number(photo.height)).toBeGreaterThan(0);
     }
-    await page.locator('picture source').evaluateAll((sources) => sources.forEach((source) => source.remove()));
-    await expect.poll(() => photos.first().evaluate((element) => (element as HTMLImageElement).currentSrc)).toMatch(/\.jpg$/);
-    await photos.first().evaluate((element) => (element as HTMLImageElement).decode());
+    // Isolate fallback markup so React hydration cannot restore picture sources.
+    const fallbackMarkup = await page.locator('picture').evaluateAll((pictures) => pictures.map((picture) => {
+      const clone = picture.cloneNode(true) as HTMLElement;
+      clone.querySelectorAll('source').forEach((source) => source.remove());
+      return clone.outerHTML;
+    }).join(''));
+    const fallbackPage = await page.context().newPage();
+    await fallbackPage.route(page.url(), (route) => route.fulfill({ contentType: 'text/html', body: fallbackMarkup }));
+    await fallbackPage.goto(page.url());
+    const fallbackSources = await fallbackPage.locator('picture img').evaluateAll(async (images) => Promise.all(images.map(async (element) => {
+      const img = element as HTMLImageElement;
+      img.loading = 'eager';
+      await img.decode();
+      return img.currentSrc;
+    })));
+    for (const src of fallbackSources) expect(src).toMatch(/\.jpg$/);
+    await fallbackPage.close();
   });
 }
