@@ -20,6 +20,16 @@ Edit pages in `src/pages/` and structured content in `src/data/`. Put shared sta
 
 Member portraits live at `public/team/headshots/<member-id>.webp`. Set the member's `id` in `src/data/members.json`; the image URL is derived from it.
 
+## Image delivery
+
+`vp run dev` and `vp run build` generate responsive AVIF, WebP, and JPEG photos in `public/optimized/`. Originals remain in `public/`; generated files are ignored by Git and cached locally. Run `vp run images` after replacing photos during development. `scripts/optimize-images.ts` controls encoding; `src/lib/image.ts` defines shared widths.
+
+The hero uses `public/media/cuxr-hero-optimized.mp4`, encoded from the original with:
+
+```sh
+ffmpeg -i public/media/cuxr-hero.mp4 -an -c:v libx264 -preset slow -crf 24 -pix_fmt yuv420p -movflags +faststart public/media/cuxr-hero-optimized.mp4
+```
+
 ## GitHub Pages
 
 In repository **Settings → Pages**, set the source to **GitHub Actions**. The workflow in `.github/workflows/pages.yml` validates pull requests and deploys `dist/` from `main` when files change. The custom domain is set by `astro.config.mjs` and `public/CNAME`.

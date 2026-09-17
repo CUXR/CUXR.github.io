@@ -21,7 +21,7 @@
 .packet-reader { max-width: 960px; margin-inline: auto; }
 .packet-reader__pages { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: thin; scrollbar-color: var(--color-border) transparent; }
 .packet-page { flex: 0 0 100%; min-width: 0; margin: 0; scroll-snap-align: start; scroll-snap-stop: always; }
-.packet-page img { width: 100%; aspect-ratio: 1500/1159; object-fit: contain; }
+.packet-page img { width: 100%; aspect-ratio: 1500/1160; object-fit: contain; }
 .packet-page figcaption { display: grid; grid-template-columns: 1fr 2fr; gap: 32px; padding: 24px 0; }
 .packet-page strong { font-weight: 500; font-size: 1.25rem; }
 .packet-page p { margin: 0; color: var(--color-muted); }

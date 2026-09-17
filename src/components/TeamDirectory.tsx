@@ -1,3 +1,4 @@
+import ResponsiveImage from './ResponsiveImage';
 import { useState } from 'react';
 import type { Member } from '../lib/content';
 
@@ -28,7 +29,8 @@ function Portrait({ member, teamId, teamName }: { member: Member; teamId: string
         aria-controls={hasDetails ? `${detailsId}${member.email || member.linkedin || member.portfolio ? ` ${linksId}` : ''}` : undefined} disabled={!hasDetails}
         onClick={() => setExpanded((value) => !value)}>
         <span className="team-member__initials" aria-hidden="true">{initials(member.name)}</span>
-        <img src={member.image} alt={member.name} loading="lazy" decoding="async"
+        <ResponsiveImage src={member.image} alt={member.name} preset="portrait" width={711} height={1080}
+          sizes="(max-width: 600px) calc((100vw - 64px) / 2), (max-width: 900px) 30vw, (max-width: 1408px) 22vw, 302px"
           onError={(event) => { event.currentTarget.style.display = 'none'; }} />
       </button>
       <div className="team-member__heading">

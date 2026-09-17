@@ -1,4 +1,5 @@
 ---
+import ResponsiveImage from '../components/ResponsiveImage';
 import Layout from '../layouts/Layout.astro';
 import sponsorship from '../data/sponsorship.json';
 import '../styles/sponsor.css';
@@ -20,7 +21,7 @@ const areas = [
     <section id="support" class="sponsor-support container" aria-labelledby="support-title">
       <div class="sponsor-support__intro"><h1 id="support-title">What your<br /><span>support enables.</span></h1><div><p class="lede">Your support puts equipment and materials in students’ hands—and gives them space to experiment.</p><a class="text-link sponsor-support__link" href="/projects/">Explore the work</a></div></div>
       <div class="sponsor-support__body">
-        <figure class="sponsor-session"><img src="/media/info-session.webp" alt="Students attending a CUXR information session" width="1600" height="1200" loading="lazy" /><figcaption>Learning together. Building at Cornell.</figcaption></figure>
+        <figure class="sponsor-session"><ResponsiveImage preset="photo" sizes="(min-width: 900px) 50vw, calc(100vw - 48px)" src="/media/info-session.webp" alt="Students attending a CUXR information session" width={4032} height={2268} loading="lazy" /><figcaption>Learning together. Building at Cornell.</figcaption></figure>
         <div class="sponsor-areas">{areas.map((area) => <div class="sponsor-area"><h3>{area.title}</h3><p>{area.copy}</p></div>)}</div>
       </div>
       <div class="sponsor-collaboration"><h3>More than funding.</h3><p>Equipment donations, technical feedback, and opportunities to collaborate also help move the work forward.</p></div>
@@ -30,7 +31,7 @@ const areas = [
       <div class="sponsor-packet__heading"><h2 id="packet-title">Sponsorship packet.</h2><a class="text-link" href={sponsorship.packet.href} download>{sponsorship.packet.label}</a></div>
       <div class="packet-reader">
         <div class="packet-reader__pages" id="packet-pages" tabindex="0" role="region" aria-label="Selected sponsorship packet pages">
-          {previews.map((preview) => <figure class="packet-page" data-page><img src={`/media/sponsor/packet-${preview.page}.webp`} alt={`Sponsorship packet, page ${preview.page}: ${preview.title}`} width="1500" height="1159" loading="lazy" /><figcaption><strong>{preview.title}</strong><p>{preview.description}</p></figcaption></figure>)}
+          {previews.map((preview) => <figure class="packet-page" data-page><ResponsiveImage preset="packet" sizes="(min-width: 1408px) 1280px, calc(100vw - 48px)" src={`/media/sponsor/packet-${preview.page}.webp`} alt={`Sponsorship packet, page ${preview.page}: ${preview.title}`} width={1500} height={1160} loading="lazy" /><figcaption><strong>{preview.title}</strong><p>{preview.description}</p></figcaption></figure>)}
         </div>
         <div class="packet-reader__controls" hidden><p aria-live="polite" aria-atomic="true" data-packet-status>01 / 04</p><div><button type="button" data-packet-prev aria-label="Previous packet page" aria-controls="packet-pages" disabled>←</button><button type="button" data-packet-next aria-label="Next packet page" aria-controls="packet-pages">→</button></div></div>
       </div>

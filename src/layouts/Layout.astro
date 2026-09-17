@@ -8,11 +8,12 @@ import { recruitment } from "../lib/recruitment";
 interface Props {
     title: string;
     description: string;
+    noindex?: boolean;
 }
-const { title, description } = Astro.props;
+const { title, description, noindex = false } = Astro.props;
 const canonical = new URL(Astro.url.pathname, Astro.site);
 const pageTitle =
-    title === "CUXR" ? "CUXR — Student-led XR at Cornell" : `${title} | CUXR`;
+    title === "CUXR" ? "CUXR - Project Team at Cornell University" : `${title} - CUXR`;
 const nav = [
     { href: "/projects/", label: "Projects" },
     { href: "/team/", label: "Team" },
@@ -43,8 +44,10 @@ const organization = {
         <meta name="theme-color" content="#101113" />
         <title>{pageTitle}</title>
         <meta name="description" content={description} />
+        {noindex && <meta name="robots" content="noindex" />}
         <link rel="canonical" href={canonical} />
         <link rel="icon" href="/media/cuxr.ico" />
+        <link rel="describedby" href="/llms.txt" type="text/plain" />
         <link rel="sitemap" href="/sitemap-index.xml" />
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="CUXR" />
@@ -53,14 +56,30 @@ const organization = {
         <meta property="og:url" content={canonical} />
         <meta
             property="og:image"
-            content="https://cornellxr.com/media/team-photo.webp"
+            content="https://cornellxr.com/optimized/media/team-photo-1600.jpg"
         />
         <meta property="og:image:alt" content="The CUXR student project team" />
         <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={pageTitle} />
+        <meta name="twitter:description" content={description} />
+        <meta name="twitter:image" content="https://cornellxr.com/optimized/media/team-photo-1600.jpg" />
+        <meta name="twitter:image:alt" content="The CUXR student project team" />
         <script
             type="application/ld+json"
             set:html={JSON.stringify(organization).replace(/</g, "\\u003c")}
         ></script>
+        {Astro.url.pathname === "/" && (
+            <script
+                type="application/ld+json"
+                set:html={JSON.stringify({
+                    "@context": "https://schema.org",
+                    "@type": "WebSite",
+                    name: "CUXR",
+                    alternateName: "Cornell XR",
+                    url: Astro.site?.href,
+                }).replace(/</g, "\\u003c")}
+            ></script>
+        )}
         <script is:inline>
             document.documentElement.classList.add("js");
         </script>

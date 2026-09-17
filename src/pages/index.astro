@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Wordmark from "../components/Wordmark.astro";
+import ResponsiveImage from "../components/ResponsiveImage";
 import Hero from "../components/Hero.astro";
 import FeaturedProjects from "../components/FeaturedProjects";
 import { projects } from "../lib/content";
@@ -12,7 +13,7 @@ const featured = projects.filter(
 
 <Layout
     title="CUXR"
-    description="CUXR is a student-led project team building immersive software, haptic devices, and new ways to interact with computers. Explore our projects and join the team."
+    description="CUXR is a student-led project team at Cornell University building extended reality software, haptic devices, and VR games. Explore our projects and meet the team."
 >
     <Hero />
     <FeaturedProjects projects={featured} client:visible />
@@ -36,11 +37,13 @@ const featured = projects.filter(
                 </div>
             </div>
             <figure class="home-team-photo">
-                <img
+                <ResponsiveImage
+                    preset="photo"
+                    sizes="(min-width: 1408px) 1280px, calc(100vw - 48px)"
                     src="/media/team-photo.webp"
                     alt="CUXR members together on campus"
-                    width="6258"
-                    height="2699"
+                    width={6258}
+                    height={2699}
                     loading="lazy"
                 />
                 <figcaption>

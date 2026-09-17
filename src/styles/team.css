@@ -27,6 +27,7 @@
 .team-member { min-width: 0; }
 .team-member__portrait { display: grid; position: relative; width: 100%; aspect-ratio: 711 / 1080; padding: 0; border: 0; border-radius: 0; background: var(--color-surface); color: var(--color-accent); cursor: pointer; overflow: hidden; }
 .team-member__portrait:disabled { cursor: default; }
+.team-member__portrait picture { display: contents; }
 .team-member__portrait img, .team-member__initials { grid-area: 1 / 1; width: 100%; height: 100%; }
 .team-member__portrait img { position: absolute; inset: 0; object-fit: contain; }
 .team-member__initials { display: grid; place-items: center; font-family: var(--font-mono); font-size: 3rem; }
