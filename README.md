@@ -16,7 +16,7 @@ vp run build
 
 ## Content
 
-Edit pages in `src/pages/` and structured content in `src/data/`. Put shared static assets in `public/media/`; its paths are served from `/media/`. Recruitment dates and links live in `src/data/recruitment.json`.
+Edit pages in `src/pages/` and structured content in `src/data/`. Put shared static assets in `public/media/`; its paths are served from `/media/`. Recruitment dates and links live in `src/data/recruitment.json`. Omit either `applicationUrl` or `coffeeChatUrl` (or set it to `null`) when unavailable; each action appears only while recruitment is open and its URL is supplied.
 
 Member portraits live at `public/team/headshots/<member-id>.webp`. Set the member's `id` in `src/data/members.json`; the image URL is derived from it.
 

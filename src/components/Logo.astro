@@ -1,4 +1,14 @@
+---
+const xrFilterId = `brand-xr-${crypto.randomUUID()}`;
+---
+
 <svg class="brand" viewBox="0 0 154 42" width="154" height="42" aria-hidden="true">
+  <defs>
+    <!-- SVG filters preserve XR recoloring in Safari. -->
+    <filter id={xrFilterId} color-interpolation-filters="sRGB">
+      <feColorMatrix type="matrix" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 1 0" />
+    </filter>
+  </defs>
   <svg x="0" y="0.8" width="50" height="40.4" viewBox="15 8 136 110">
     <image href="/media/cuxr-logo.png" width="338" height="122" />
   </svg>
@@ -6,6 +16,6 @@
     <image href="/media/cuxr-logo.png" width="338" height="122" />
   </svg>
   <svg class="brand-xr" x="106" y="7.8" width="48" height="26.4" viewBox="240 40 82 45">
-    <image href="/media/cuxr-logo.png" width="338" height="122" />
+    <image href="/media/cuxr-logo.png" width="338" height="122" filter={`url(#${xrFilterId})`} />
   </svg>
 </svg>

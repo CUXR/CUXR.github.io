@@ -1,0 +1,28 @@
+---
+import { recruitment } from '../lib/recruitment';
+
+interface Props {
+  url: string | null | undefined;
+}
+
+const { url } = Astro.props;
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex" />
+    <title>Redirecting - CUXR</title>
+    <noscript><meta http-equiv="refresh" content="0;url=/recruitment/" /></noscript>
+  </head>
+  <body data-url={url} data-enabled={String(recruitment.enabled)} data-opens={recruitment.opensAt} data-closes={recruitment.closesAt}>
+    <p>Redirecting… <a href="/recruitment/">View recruitment information</a>.</p>
+    <script is:inline>
+      const { url, enabled, opens, closes } = document.body.dataset;
+      const now = Date.now();
+      const active = enabled === 'true' && now >= Date.parse(opens) && now < Date.parse(closes);
+      window.location.replace(active && url ? url : '/recruitment/');
+    </script>
+  </body>
+</html>

@@ -54,15 +54,15 @@ const time = (date: string) =>
                     {recruitment.season} · {recruitment.audience}
                 </span>
                 <p>
-                    Apply by{" "}
+                    {recruitment.applicationUrl ? "Apply by" : "Recruitment closes"}{" "}
                     <strong>
                         {deadlineLabel(recruitment)}, {time(recruitment.closesAt)}{" "}
                         Eastern.
                     </strong>
                 </p>
-                <a class="button" href={recruitment.applicationUrl}>
+                {recruitment.applicationUrl && <a class="button" href={recruitment.applicationUrl}>
                     Start your application
-                </a>
+                </a>}
             </div>
             <div class="recruitment-closed" data-recruitment="closed" hidden={open}>
                 <p>
@@ -110,14 +110,14 @@ const time = (date: string) =>
                         Meet our members, hear about their projects, and ask
                         what you're curious about.
                     </p>
-                    <a
+                    {recruitment.coffeeChatUrl && <a
                         class="text-link link--external"
                         href={recruitment.coffeeChatUrl}
                         data-recruitment="open"
                         hidden={!open}
                     >
                         Sign up for a coffee chat
-                    </a>
+                    </a>}
                 </div>
             </li>
             <li id="info-sessions">
@@ -181,14 +181,14 @@ const time = (date: string) =>
                         Tell us about your interests, your experiences, and what
                         you'd like to build.
                     </p>
-                    <a
+                    {recruitment.applicationUrl && <a
                         class="text-link link--external"
                         href={recruitment.applicationUrl}
                         data-recruitment="open"
                         hidden={!open}
                     >
                         Apply to CUXR
-                    </a>
+                    </a>}
                 </div>
             </li>
         </ol>

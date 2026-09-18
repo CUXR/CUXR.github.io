@@ -13,7 +13,7 @@ export const recruitmentSchema = z.object({
   timeZone: z.string().refine((value) => {
     try { new Intl.DateTimeFormat('en-US', { timeZone: value }); return true; } catch { return false; }
   }, 'Use an IANA time zone'),
-  applicationUrl: z.url().startsWith('https://'), coffeeChatUrl: z.url().startsWith('https://'),
+  applicationUrl: z.url().startsWith('https://').nullish(), coffeeChatUrl: z.url().startsWith('https://').nullish(),
   events: z.array(eventSchema),
 }).refine((config) => Date.parse(config.closesAt) > Date.parse(config.opensAt), 'Recruitment must close after it opens')
   .refine((config) => new Set(config.events.map((event) => event.id)).size === config.events.length, 'Event ids must be unique');

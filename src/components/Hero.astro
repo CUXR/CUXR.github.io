@@ -6,7 +6,7 @@ const description = 'A student-led project team at Cornell building extended rea
 
 <section id="hero" class="hero" aria-labelledby="hero-title" data-hero>
   <div class="container hero__layout">
-  <button class="hero__bear" type="button" data-hero-bear aria-label="Play bear animation">
+  <button class="hero__bear" type="button" data-hero-bear aria-label="Reveal bear dot effect">
     <video
       class="hero__video"
       data-hero-video
@@ -57,7 +57,7 @@ const description = 'A student-led project team at Cornell building extended rea
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
     const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)');
     let visible = false;
-    let manuallyPaused = false;
+    let dotTimeout = 0;
     let frame = 0;
     let dotFrame = 0;
     let inspecting = false;
@@ -141,36 +141,36 @@ const description = 'A student-led project team at Cornell building extended rea
       drawDots();
     };
     const stopInspecting = () => {
+      window.clearTimeout(dotTimeout);
       inspecting = false;
       cancelAnimationFrame(dotFrame);
       bear.classList.remove('has-dots');
     };
     bear.addEventListener('pointerenter', (event) => {
-      if (!finePointer.matches) return;
+      if (event.pointerType !== 'mouse' || !finePointer.matches) return;
       const bounds = bear.getBoundingClientRect();
       pointerX = (event.clientX - bounds.left) / bounds.width * 480;
       pointerY = (event.clientY - bounds.top) / bounds.height * 480;
       inspect();
     });
-    bear.addEventListener('pointerleave', stopInspecting);
+    bear.addEventListener('pointerleave', (event) => {
+      if (event.pointerType === 'mouse') stopInspecting();
+    });
     bear.addEventListener('focus', () => {
+      if (!bear.matches(':focus-visible')) return;
       pointerX = pointerY = 240;
       inspect();
     });
     bear.addEventListener('blur', stopInspecting);
     reducedMotion.addEventListener('change', stopInspecting);
 
-    const updateLabel = () => {
-      bear.setAttribute('aria-label', video.paused ? 'Play bear animation' : 'Pause bear animation');
-    };
-
     const syncPlayback = () => {
-      if (document.hidden || !visible || reducedMotion.matches || manuallyPaused) {
+      if (document.hidden || !visible || reducedMotion.matches) {
         video.pause();
-        updateLabel();
+        stopInspecting();
         return;
       }
-      void video.play().then(updateLabel).catch(updateLabel);
+      void video.play().catch(() => {});
     };
 
     const observer = new IntersectionObserver(
@@ -182,24 +182,25 @@ const description = 'A student-led project team at Cornell building extended rea
     );
     observer.observe(hero);
 
-    bear.addEventListener('click', () => {
-      if (video.paused) {
-        manuallyPaused = false;
-        if (visible && !document.hidden) void video.play().then(updateLabel).catch(updateLabel);
+    bear.addEventListener('click', (event) => {
+      if (reducedMotion.matches) return;
+      if (event.detail === 0) {
+        pointerX = pointerY = 240;
       } else {
-        manuallyPaused = true;
-        video.pause();
+        const bounds = bear.getBoundingClientRect();
+        pointerX = (event.clientX - bounds.left) / bounds.width * 480;
+        pointerY = (event.clientY - bounds.top) / bounds.height * 480;
       }
-      updateLabel();
+      window.clearTimeout(dotTimeout);
+      inspect();
+      dotTimeout = window.setTimeout(stopInspecting, 900);
     });
 
     document.addEventListener('visibilitychange', syncPlayback);
     reducedMotion.addEventListener('change', syncPlayback);
-    video.addEventListener('play', updateLabel);
-    video.addEventListener('pause', updateLabel);
 
     bear.addEventListener('pointermove', (event) => {
-      if (!finePointer.matches || reducedMotion.matches) return;
+      if (event.pointerType !== 'mouse' || !finePointer.matches || reducedMotion.matches) return;
       cancelAnimationFrame(frame);
       frame = requestAnimationFrame(() => {
         const bounds = bear.getBoundingClientRect();

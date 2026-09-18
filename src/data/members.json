@@ -80,7 +80,7 @@
   {
     "id": "sam-keamy",
     "name": "Sam Keamy",
-    "role": "Electrical Lead",
+    "role": "Senior Advisor",
     "teams": [
       "haptics",
       "lead"
@@ -232,8 +232,10 @@
   {
     "id": "spencer-liang",
     "name": "Spencer Liang",
+    "role": "BCI Lead",
     "teams": [
-      "bci"
+      "bci",
+      "lead"
     ],
     "major": "Computer Science",
     "year": "2029",
@@ -327,6 +329,17 @@
     "year": "2028",
     "email": "pw475@cornell.edu",
     "linkedin": "https://www.linkedin.com/in/patrick-wang-2a112826b/"
+  },
+  {
+    "id": "mike-zhang",
+    "name": "Mike Zhang",
+    "teams": [
+      "game"
+    ],
+    "major": "Information Science",
+    "year": "2029",
+    "email": "hz727@cornell.edu",
+    "linkedin": ""
   },
   {
     "id": "elizabeth-pfauth",

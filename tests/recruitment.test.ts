@@ -21,6 +21,16 @@ test('past sessions disappear at their ending instant', () => {
 test('invalid schedules and unsafe links fail validation', () => {
   assert.equal(recruitmentSchema.safeParse({ ...recruitment, closesAt: recruitment.opensAt }).success, false);
   assert.equal(recruitmentSchema.safeParse({ ...recruitment, applicationUrl: 'javascript:alert(1)' }).success, false);
+  assert.equal(recruitmentSchema.safeParse({ ...recruitment, coffeeChatUrl: 'javascript:alert(1)' }).success, false);
   assert.equal(recruitmentSchema.safeParse({ ...recruitment, timeZone: 'invalid' }).success, false);
   assert.equal(recruitmentSchema.safeParse({ ...recruitment, events: [{ ...recruitment.events[0], endsAt: recruitment.events[0].startsAt }] }).success, false);
+});
+test('application and coffee chat links are independently optional', () => {
+  for (const applicationUrl of [recruitment.applicationUrl, null, undefined]) {
+    for (const coffeeChatUrl of [recruitment.coffeeChatUrl, null, undefined]) {
+      assert.equal(recruitmentSchema.safeParse({ ...recruitment, applicationUrl, coffeeChatUrl }).success, true);
+    }
+  }
+  assert.equal(recruitmentSchema.safeParse({ ...recruitment, applicationUrl: '' }).success, false);
+  assert.equal(recruitmentSchema.safeParse({ ...recruitment, coffeeChatUrl: '' }).success, false);
 });
