@@ -52,6 +52,7 @@
   padding: 0;
   border: 0;
   background: transparent;
+  cursor: default;
   isolation: isolate;
   transform: perspective(1100px) rotateX(var(--bear-tilt-x, 0deg)) rotateY(var(--bear-tilt-y, 0deg));
   transition: transform var(--duration-content) var(--ease-out);

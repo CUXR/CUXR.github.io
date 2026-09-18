@@ -58,12 +58,12 @@ const description = 'A student-led project team at Cornell building extended rea
 
   if (hero && bear && video) {
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-    const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)');
     let visible = false;
     let dotTimeout = 0;
     let frame = 0;
     let dotFrame = 0;
     let inspecting = false;
+    let activationPointerType = '';
     let pointerX = 240;
     let pointerY = 240;
     let flowX = 240;
@@ -150,7 +150,8 @@ const description = 'A student-led project team at Cornell building extended rea
       bear.classList.remove('has-dots');
     };
     bear.addEventListener('pointerenter', (event) => {
-      if (event.pointerType !== 'mouse' || !finePointer.matches) return;
+      if (event.pointerType !== 'mouse') return;
+      window.clearTimeout(dotTimeout);
       const bounds = bear.getBoundingClientRect();
       pointerX = (event.clientX - bounds.left) / bounds.width * 480;
       pointerY = (event.clientY - bounds.top) / bounds.height * 480;
@@ -185,8 +186,12 @@ const description = 'A student-led project team at Cornell building extended rea
     );
     observer.observe(hero);
 
+    bear.addEventListener('pointerdown', (event) => {
+      activationPointerType = event.pointerType;
+    });
     bear.addEventListener('click', (event) => {
       if (reducedMotion.matches) return;
+      if (event.detail > 0 && activationPointerType === 'mouse') return;
       if (event.detail === 0) {
         pointerX = pointerY = 240;
       } else {
@@ -203,7 +208,7 @@ const description = 'A student-led project team at Cornell building extended rea
     reducedMotion.addEventListener('change', syncPlayback);
 
     bear.addEventListener('pointermove', (event) => {
-      if (event.pointerType !== 'mouse' || !finePointer.matches || reducedMotion.matches) return;
+      if (event.pointerType !== 'mouse' || reducedMotion.matches) return;
       cancelAnimationFrame(frame);
       frame = requestAnimationFrame(() => {
         const bounds = bear.getBoundingClientRect();
