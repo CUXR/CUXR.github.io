@@ -3,6 +3,33 @@
   --hero-bear-size: clamp(380px, 44vw, 620px);
   position: relative;
   overflow: clip;
+  isolation: isolate;
+  background: #000;
+}
+.hero__field {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+.hero__field img {
+  position: absolute;
+  width: calc(100% + 32px);
+  max-width: none;
+  height: 100%;
+  object-fit: cover;
+  object-position: left bottom;
+  left: -16px;
+  bottom: 0;
+  transform-origin: left bottom;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .hero__field img { animation: hero-field-wave 16s cubic-bezier(.45, 0, .55, 1) infinite alternate; }
+}
+@keyframes hero-field-wave {
+  from { transform: translateX(-6px); }
+  to { transform: translateX(6px); }
 }
 .hero__layout {
   min-height: max(0px, calc(100svh - var(--hero-top-offset, 96px)));
@@ -13,6 +40,7 @@
   padding-block: 24px 32px;
 }
 .hero__bear {
+  z-index: 1;
   grid-column: 2;
   grid-row: 1;
   justify-self: center;
@@ -24,11 +52,12 @@
   padding: 0;
   border: 0;
   background: transparent;
-  mix-blend-mode: screen;
+  isolation: isolate;
   transform: perspective(1100px) rotateX(var(--bear-tilt-x, 0deg)) rotateY(var(--bear-tilt-y, 0deg));
   transition: transform var(--duration-content) var(--ease-out);
 }
 .hero__video, .hero__dots {
+  mask-image: radial-gradient(ellipse closest-side, #000 68%, transparent 100%);
   display: block;
   width: 100%;
   height: 100%;

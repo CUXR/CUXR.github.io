@@ -23,7 +23,7 @@
   right: -48px;
   top: 0;
   filter: invert(1);
-  opacity: .24;
+  opacity: .65;
 }
 .recruitment-live, .recruitment-closed {
   margin-top: var(--space-xl);
@@ -86,4 +86,31 @@
   .recruitment-arm { width: 200px; height: 348px; left: 0; top: var(--space-md); opacity: .2; }
   .recruitment-steps > li { gap: var(--space-md); }
   .recruitment-steps > li:first-child { padding-top: var(--space-xl); border-top: 1px solid var(--color-border); }
+}
+
+@supports (animation-timeline: view()) {
+  @media (min-width: 761px) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+    .recruitment-intro { view-timeline: --headset-scroll block; }
+    .recruitment-process { view-timeline: --arm-scroll block; }
+    .recruitment-anchor-scene { height: calc(460px + 2 * var(--space-xxl)); }
+    .recruitment-anchor {
+      animation: headset-parallax linear both;
+      animation-timeline: --headset-scroll;
+      animation-range: exit 0% exit 100%;
+    }
+    .recruitment-arm-scene { overflow: visible; }
+    .recruitment-arm {
+      animation: arm-parallax linear both;
+      animation-timeline: --arm-scroll;
+      animation-range: entry 0% exit 100%;
+    }
+  }
+}
+@keyframes headset-parallax {
+  from { transform: translateY(0); }
+  to { transform: translateY(calc(2 * var(--space-xxl))); }
+}
+@keyframes arm-parallax {
+  from { transform: translateY(calc(-3 * var(--space-xxl))); }
+  to { transform: translateY(0); }
 }

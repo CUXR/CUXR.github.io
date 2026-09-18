@@ -31,16 +31,14 @@ const time = (date: string) =>
         <div class="recruitment-anchor-scene" aria-hidden="true">
             <svg class="recruitment-anchor" viewBox="0 0 410 294" width="410" height="294" fill="none" focusable="false">
                 <defs>
-                    <filter id="headset-pixels" x="0" y="0" width="410" height="294" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-                        <feFlood x="0" y="0" width="2" height="2" flood-opacity="0" result="grid-cell" />
-                        <feFlood x="0" y="0" width="1" height="1" flood-color="white" />
-                        <feComposite in2="grid-cell" operator="over" x="0" y="0" width="2" height="2" />
-                        <feTile x="0" y="0" width="410" height="294" />
-                        <feComposite in="SourceGraphic" operator="in" />
-                        <feMorphology operator="dilate" radius=".65" />
-                    </filter>
+                    <pattern id="headset-arm-texture" width="2.6" height="2.6" viewBox="0 0 4 4" patternUnits="userSpaceOnUse">
+                        <path d="M1 1h1v1H1zM3 1h1v1H3zM2 2h1v1H2zM1 3h1v1H1zM3 3h1v1H3z" fill="white" shape-rendering="crispEdges" />
+                    </pattern>
+                    <mask id="headset-texture-mask" x="0" y="0" width="410" height="294" maskUnits="userSpaceOnUse" style="mask-type: luminance">
+                        <rect width="410" height="294" fill="url(#headset-arm-texture)" />
+                    </mask>
                 </defs>
-                <image href="/media/headset-wireframe.svg" width="410" height="294" filter="url(#headset-pixels)" />
+                <image href="/media/headset-wireframe.svg" width="410" height="294" mask="url(#headset-texture-mask)" />
             </svg>
         </div>
         <div class="recruitment-intro-copy">

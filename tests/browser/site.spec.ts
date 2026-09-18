@@ -57,7 +57,7 @@ test('mobile recruitment banner links the copy beside inline icon actions', asyn
   for (const width of [320, 390]) {
     await page.setViewportSize({ width, height: 844 });
     await page.goto('/');
-    const copyLink = page.locator('.banner-copy');
+    const copyLink = page.locator('.banner-copy--mobile');
     await expect(copyLink).toHaveAttribute('href', /forms\.gle/);
     await expect(copyLink.locator('.banner-outlink')).toHaveText('↗');
     await expect(page.getByRole('link', { name: 'Coffee chat' })).toBeVisible();
@@ -79,34 +79,32 @@ test('mobile recruitment banner links the copy beside inline icon actions', asyn
   }
 });
 
-test('desktop recruitment banner keeps text actions and hover feedback', async ({ page }) => {
+test('desktop recruitment banner keeps Apply as the only application link', async ({ page }) => {
   await page.setViewportSize({ width: 1440, height: 900 });
   await page.goto('/');
   await expect(page.locator('.banner-action-label')).toHaveCount(2);
   await expect(page.locator('.banner-action-label').first()).toBeVisible();
   await expect(page.locator('.banner-info-icon')).toBeHidden();
   await expect(page.locator('.banner-button--apply')).toBeVisible();
-  const copyLink = page.locator('.banner-copy');
-  await copyLink.hover();
-  await expect.poll(() => copyLink.locator('.banner-outlink').evaluate((element) => getComputedStyle(element).opacity)).toBe('1');
-  await expect.poll(() => copyLink.locator('.banner-title').evaluate((element) => getComputedStyle(element).backgroundSize)).toBe('100% 1px');
+  await expect(page.locator('.banner-copy--desktop')).not.toHaveAttribute('href');
+  await expect(page.locator('.banner-copy--mobile')).toBeHidden();
 });
 
-test('recruitment arrow and Apply follow the text layout breakpoint', async ({ page }) => {
+test('recruitment copy link and Apply follow the text layout breakpoint', async ({ page }) => {
   for (const width of [601, 760, 761, 900, 1000, 1001]) {
     await page.setViewportSize({ width, height: 900 });
     await page.goto('/');
-    const title = await page.locator('.banner-copy strong').boundingBox();
-    const deadline = await page.locator('.banner-deadline').boundingBox();
-    const arrowOpacity = await page.locator('.banner-outlink').evaluate((element) => getComputedStyle(element).opacity);
+    const copy = page.locator(width <= 1000 ? '.banner-copy--mobile' : '.banner-copy--desktop');
+    const title = await copy.locator('strong').boundingBox();
+    const deadline = await copy.locator('.banner-deadline').boundingBox();
     const apply = page.locator('.banner-button--apply');
     if (width <= 1000) {
       expect(deadline!.y).toBeGreaterThan(title!.y);
-      expect(arrowOpacity).toBe('1');
+      await expect(copy).toHaveAttribute('href', /forms\.gle/);
       await expect(apply).toBeHidden();
     } else {
       expect(deadline!.y).toBe(title!.y);
-      expect(arrowOpacity).toBe('0');
+      await expect(copy).not.toHaveAttribute('href');
       await expect(apply).toBeVisible();
     }
     expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBe(width);
