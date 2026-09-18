@@ -201,6 +201,7 @@ test('team portraits toggle on touch without page overflow', async ({ browser })
 test('team roster entries reveal on hover', async ({ page }) => {
   await page.emulateMedia({ reducedMotion: 'reduce' });
   await page.goto('/team/');
+  await expect(page.locator('astro-island[ssr]')).toHaveCount(0);
   const member = page.locator('.team-member--compact').first();
   const details = member.locator('.team-member__details');
   await expect(details).toBeHidden();
@@ -212,6 +213,7 @@ test('team roster entries toggle on touch', async ({ browser }) => {
   const context = await browser.newContext({ viewport: { width: 390, height: 844 }, hasTouch: true, isMobile: true });
   const page = await context.newPage();
   await page.goto('http://127.0.0.1:4321/team/');
+  await expect(page.locator('astro-island[ssr]')).toHaveCount(0);
   const member = page.locator('.team-member--compact').first();
   const details = member.locator('.team-member__details');
   await expect(details).toBeHidden();
