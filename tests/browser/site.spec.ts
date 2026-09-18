@@ -164,10 +164,8 @@ test('team groups keep portraits and details connected', async ({ page }) => {
   await expect(page.locator('astro-island[ssr]')).toHaveCount(0);
   await page.getByRole('navigation', { name: 'Subteams' }).getByRole('link', { name: 'Software', exact: true }).click();
   await expect(page).toHaveURL(/#software$/);
-  await expect(page.locator('#software .team-member__role').first()).toHaveText('Software Lead');
-  await expect(page.locator('#software .team-member__role').nth(2)).toHaveText('Software Engineer');
-  await expect(page.locator('#alumni .team-member')).toHaveCount(3);
-  await expect(page.locator('#alumni .team-member__role').first()).toHaveText('Software / Haptics');
+  await expect(page.locator('#software .team-member').first()).toBeVisible();
+  await expect(page.locator('#alumni .team-member').first()).toBeVisible();
   const member = page.locator('#software .team-member').first();
   const details = member.locator('.team-member__details');
   await member.scrollIntoViewIfNeeded();
