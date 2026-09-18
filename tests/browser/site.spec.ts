@@ -142,7 +142,7 @@ test('carousel advances and pauses only while the carousel is hovered', async ({
   await expect(page.locator('.featured__progress')).toHaveAttribute('data-running', 'true');
   await page.locator('.featured__intro').hover();
   await expect(page.locator('.featured__progress')).toHaveAttribute('data-running', 'true');
-  await page.clock.fastForward(8100);
+  await page.clock.fastForward(5100);
   await expect(page.locator('.featured__story h3')).toHaveText('Persistent-Memory Glasses');
   await page.locator('.featured__media').hover();
   await expect(page.locator('.featured__progress')).toHaveAttribute('data-running', 'false');

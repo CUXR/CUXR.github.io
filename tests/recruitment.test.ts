@@ -34,3 +34,7 @@ test('application and coffee chat links are independently optional', () => {
   assert.equal(recruitmentSchema.safeParse({ ...recruitment, applicationUrl: '' }).success, false);
   assert.equal(recruitmentSchema.safeParse({ ...recruitment, coffeeChatUrl: '' }).success, false);
 });
+test('timezone defaults to New York', () => {
+  const parsed = recruitmentSchema.parse({ ...recruitment, timeZone: undefined });
+  assert.equal(parsed.timeZone, 'America/New_York');
+});

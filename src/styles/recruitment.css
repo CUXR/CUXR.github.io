@@ -89,10 +89,13 @@
 }
 
 @supports (animation-timeline: view()) {
-  @media (min-width: 761px) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  @media (prefers-reduced-motion: no-preference) {
     .recruitment-intro { view-timeline: --headset-scroll block; }
     .recruitment-process { view-timeline: --arm-scroll block; }
-    .recruitment-anchor-scene { height: calc(460px + 2 * var(--space-xxl)); }
+    .recruitment-anchor-scene { height: calc(460px + var(--space-xxl)); }
+    @media (max-width: 760px) {
+      .recruitment-anchor-scene { height: calc(320px + var(--space-xxl)); }
+    }
     .recruitment-anchor {
       animation: headset-parallax linear both;
       animation-timeline: --headset-scroll;
@@ -102,15 +105,15 @@
     .recruitment-arm {
       animation: arm-parallax linear both;
       animation-timeline: --arm-scroll;
-      animation-range: entry 0% exit 100%;
+      animation-range: exit-crossing -128px exit-crossing calc(66.6667% + 13.3333vh - 128px);
     }
   }
 }
 @keyframes headset-parallax {
   from { transform: translateY(0); }
-  to { transform: translateY(calc(2 * var(--space-xxl))); }
+  to { transform: translateY(var(--space-xxl)); }
 }
 @keyframes arm-parallax {
-  from { transform: translateY(calc(-3 * var(--space-xxl))); }
+  from { transform: translateY(calc(-2 * var(--space-xxl))); }
   to { transform: translateY(0); }
 }

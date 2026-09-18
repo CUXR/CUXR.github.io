@@ -1,6 +1,9 @@
 import { useEffect, useRef, useState } from 'react';
+import type { CSSProperties } from 'react';
 import type { Project } from '../lib/content';
 import '../styles/featured.css';
+
+const CAROUSEL_INTERVAL_MS = 5000;
 
 type Props = {
   projects: Project[];
@@ -48,7 +51,7 @@ export default function FeaturedProjects({ projects }: Props) {
     if (!canRotate) return;
     const interval = window.setInterval(() => {
       setActiveIndex((index) => (index + 1) % visibleProjects.length);
-    }, 8000);
+    }, CAROUSEL_INTERVAL_MS);
     return () => window.clearInterval(interval);
   }, [canRotate, visibleProjects.length]);
 
@@ -66,6 +69,7 @@ export default function FeaturedProjects({ projects }: Props) {
       id="featured"
       aria-labelledby="featured-title"
       ref={sectionRef}
+      style={{ '--featured-carousel-duration': `${CAROUSEL_INTERVAL_MS}ms` } as CSSProperties}
     >
       <div className="container">
         <div className="featured__intro">

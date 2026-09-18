@@ -106,7 +106,7 @@
   {
     "id": "annabelle-ford",
     "name": "Annabelle Ford",
-    "role": "Game Lead",
+    "role": "Game Dev Lead",
     "teams": [
       "game",
       "lead"
@@ -183,17 +183,6 @@
     "year": "2028",
     "email": "fyw5@cornell.edu",
     "linkedin": "https://www.linkedin.com/in/felicity-wu-b38604248/"
-  },
-  {
-    "id": "ronald-qu",
-    "name": "Ronald Qu",
-    "teams": [
-      "haptics"
-    ],
-    "major": "Electrical and Computer Engineering",
-    "year": "2027",
-    "email": "rq36@cornell.edu",
-    "linkedin": "https://www.linkedin.com/in/ronald-q-705692260/"
   },
   {
     "id": "allison-rowe",
@@ -353,8 +342,53 @@
     "linkedin": "https://www.linkedin.com/in/elizabeth-pfauth-103424282/"
   },
   {
+    "id": "michelle-zheng",
+    "name": "Michelle Zheng",
+    "teams": [
+      "business"
+    ],
+    "major": "Architecture",
+    "year": "2030",
+    "email": "maz75@cornell.edu",
+    "linkedin": ""
+  },
+  {
+    "id": "graco-rossanigo",
+    "name": "Graco Rossanigo",
+    "teams": [
+      "software"
+    ],
+    "major": "Economics and Statistical Science",
+    "year": "2029",
+    "email": "gr397@cornell.edu",
+    "linkedin": "https://www.linkedin.com/in/graco-rossanigo-927b52375/"
+  },
+  {
+    "id": "james-xu",
+    "name": "James Xu",
+    "teams": [
+      "game"
+    ],
+    "major": "Computer Science",
+    "year": "2029",
+    "email": "sx294@cornell.edu",
+    "linkedin": "https://www.linkedin.com/in/james-xu-37045a382/"
+  },
+  {
+    "id": "thomas-tedeschi",
+    "name": "Thomas Tedeschi",
+    "teams": [
+      "haptics"
+    ],
+    "major": "Electrical and Computer Engineering",
+    "year": "2028",
+    "email": "tmt65@cornell.edu",
+    "linkedin": "https://www.linkedin.com/in/thomas-tedeschi/"
+  },
+  {
     "id": "wei-che-harry-lin",
     "name": "Wei-Che (Harry) Lin",
+    "role": "Software (Haptics) Lead",
     "teams": [
       "alumni"
     ],
@@ -370,6 +404,7 @@
   {
     "id": "carmen-lin",
     "name": "Carmen Lin",
+    "role": "Mechanical Lead",
     "teams": [
       "alumni"
     ],
@@ -384,6 +419,7 @@
   {
     "id": "liliane-wu",
     "name": "Liliane Wu",
+    "role": "Business Lead",
     "teams": [
       "alumni"
     ],
@@ -393,6 +429,79 @@
     "linkedin": "https://www.linkedin.com/in/liliane-wu/",
     "formerTeams": [
       "Business"
+    ]
+  },
+  {
+    "id": "isabella-frank",
+    "name": "Isabella Frank",
+    "role": "Electrical Lead",
+    "teams": [
+      "alumni"
+    ],
+    "major": "Electrical and Computer Engineering",
+    "year": "2027",
+    "email": "isf9@cornell.edu",
+    "linkedin": "https://www.linkedin.com/in/isabella-s-frank/",
+    "formerTeams": [
+      "Electrical"
+    ]
+  },
+  {
+    "id": "grace-jin",
+    "name": "Grace Jin",
+    "teams": [
+      "alumni"
+    ],
+    "major": "Computer Science",
+    "year": "2027",
+    "email": "gsj33@cornell.edu",
+    "linkedin": "https://www.linkedin.com/in/grace-jin-cornell/",
+    "formerTeams": [
+      "Game"
+    ]
+  },
+  {
+    "id": "andy-pang",
+    "name": "Andy Pang",
+    "role": "Game Lead",
+    "teams": [
+      "alumni"
+    ],
+    "major": "Computer Science",
+    "year": "2025",
+    "email": "cp487@cornell.edu",
+    "linkedin": "https://www.linkedin.com/in/andypang1010/",
+    "formerTeams": [
+      "Game"
+    ]
+  },
+  {
+    "id": "henry-toll",
+    "name": "Henry Toll",
+    "role": "Software Lead",
+    "teams": [
+      "alumni"
+    ],
+    "major": "Computer Science",
+    "year": "2026",
+    "email": "hht26@cornell.edu",
+    "linkedin": "https://www.linkedin.com/in/henry-toll/",
+    "formerTeams": [
+      "Software"
+    ]
+  },
+  {
+    "id": "ronald-qu",
+    "name": "Ronald Qu",
+    "teams": [
+      "alumni"
+    ],
+    "major": "Electrical and Computer Engineering",
+    "year": "2027",
+    "email": "rq36@cornell.edu",
+    "linkedin": "https://www.linkedin.com/in/ronald-q-705692260/",
+    "formerTeams": [
+      "Haptics"
     ]
   }
 ]

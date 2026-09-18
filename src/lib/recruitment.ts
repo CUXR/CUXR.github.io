@@ -12,7 +12,7 @@ export const recruitmentSchema = z.object({
   opensAt: timestamp, closesAt: timestamp, upperclassmenClosesAt: timestamp,
   timeZone: z.string().refine((value) => {
     try { new Intl.DateTimeFormat('en-US', { timeZone: value }); return true; } catch { return false; }
-  }, 'Use an IANA time zone'),
+  }, 'Use an IANA time zone').optional().default('America/New_York'),
   applicationUrl: z.url().startsWith('https://').nullish(), coffeeChatUrl: z.url().startsWith('https://').nullish(),
   events: z.array(eventSchema),
 }).refine((config) => Date.parse(config.closesAt) > Date.parse(config.opensAt), 'Recruitment must close after it opens')
