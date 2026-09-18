@@ -7,6 +7,6 @@ export default defineConfig({
   site: 'https://cornellxr.com',
   output: 'static',
   trailingSlash: 'always',
-  integrations: [react(), sitemap({ filter: (page) => !page.endsWith('/404/') }), icon({ include: { 'fa6-brands': ['instagram', 'linkedin', 'github'] } })],
+  integrations: [react(), sitemap({ filter: (page) => !['/404/', '/apply/', '/coffeechat/'].some((path) => page.endsWith(path)) }), icon({ include: { 'fa6-brands': ['instagram', 'linkedin', 'github'] } })],
   devToolbar: { enabled: false },
 });

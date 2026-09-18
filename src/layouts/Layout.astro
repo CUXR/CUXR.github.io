@@ -115,7 +115,7 @@ const organization = {
                     aria-controls="site-nav"
                     aria-label="Menu"
                 >
-                    <span class="menu-icon" aria-hidden="true"></span>
+                    <span class="menu-icon" aria-hidden="true"><span class="menu-icon-middle"></span></span>
                 </button>
                 <nav
                     id="site-nav"
@@ -267,6 +267,17 @@ const organization = {
                     "[data-events-empty]",
                 );
                 if (empty) empty.hidden = upcoming > 0;
+                document
+                    .querySelectorAll<HTMLElement>("[data-info-sessions]")
+                    .forEach((element) => {
+                        const hasUpcoming = element.dataset.eventEnds!
+                            .split(",")
+                            .some((end) => Date.parse(end) > now);
+                        element.hidden = !hasUpcoming;
+                        element
+                            .closest<HTMLElement>(".banner-actions")
+                            ?.toggleAttribute("data-info-sessions-hidden", !hasUpcoming);
+                    });
                 const boundaries = [
                     opens,
                     closes,
@@ -276,6 +287,15 @@ const organization = {
                         ),
                         (element) => Date.parse(element.dataset.eventEnd!),
                     ),
+                    ...Array.from(
+                        document.querySelectorAll<HTMLElement>(
+                            "[data-info-sessions]",
+                        ),
+                        (element) =>
+                            element.dataset.eventEnds!
+                                .split(",")
+                                .map((end) => Date.parse(end)),
+                    ).flat(),
                 ].filter((value) => value > now);
                 timer = setTimeout(
                     refreshSchedule,

@@ -2,14 +2,31 @@
 import Layout from '../layouts/Layout.astro';
 import TeamDirectory from '../components/TeamDirectory';
 import { members, subteams } from '../lib/content';
+import type { Member } from '../lib/content';
 import '../styles/pages.css';
 import '../styles/team.css';
+
+const teamOrder = new Map(subteams.map((team, index) => [team.id, index] as const));
+const alumniTeamOrder = (member: Member) => {
+  const formerTeam = member.formerTeams[0]?.toLowerCase() || '';
+  const teamId = formerTeam === 'electrical' || formerTeam === 'mechanical' ? 'haptics' : formerTeam;
+  return teamOrder.get(teamId) ?? subteams.length;
+};
+
+const compareAlumni = (a: Member, b: Member) =>
+  Number(Boolean(b.image)) - Number(Boolean(a.image))
+  || Number(b.year) - Number(a.year)
+  || Number(Boolean(b.role?.trim())) - Number(Boolean(a.role?.trim()))
+  || alumniTeamOrder(a) - alumniTeamOrder(b)
+  || a.name.localeCompare(b.name);
 
 const groups = [...subteams, { id: 'alumni', name: 'Alumni', description: '' }].map((team) => ({
   ...team,
   members: members.filter((member) => member.teams.some((id) => id === team.id)
     && (team.id === 'alumni' || !member.teams.includes('alumni')))
-    .sort((a, b) => Number(b.teams.includes('lead')) - Number(a.teams.includes('lead'))),
+    .sort(team.id === 'alumni'
+      ? compareAlumni
+      : (a, b) => Number(b.teams.includes('lead')) - Number(a.teams.includes('lead'))),
 }));
 ---
 <Layout title="Team" description="Meet the students building CUXR projects across hardware, software, games, BCI, and business.">
@@ -30,5 +47,5 @@ const groups = [...subteams, { id: 'alumni', name: 'Alumni', description: '' }].
       </section>
     ))}
   </div>
-  <noscript><style>.team-member__details, .team-member__links { visibility: visible !important; opacity: 1 !important; }</style></noscript>
+  <noscript><style>.team-member__details, .team-member__links a { visibility: visible !important; opacity: 1 !important; }</style></noscript>
 </Layout>

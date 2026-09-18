@@ -23,15 +23,92 @@ for (const width of [390, 1440]) {
 
 test('mobile menu supports keyboard and Escape', async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 });
+  await page.emulateMedia({ reducedMotion: 'reduce' });
   await page.goto('/');
   const toggle = page.getByRole('button', { name: 'Menu' });
+  const header = page.locator('.site-header');
+  const main = page.locator('main');
+  const headerBefore = await header.boundingBox();
+  const mainBefore = await main.boundingBox();
   await toggle.focus();
   await page.keyboard.press('Enter');
   await expect(toggle).toHaveAttribute('aria-expanded', 'true');
-  await expect(page.getByRole('navigation', { name: 'Main navigation' })).toBeVisible();
+  const nav = page.getByRole('navigation', { name: 'Main navigation' });
+  await expect(nav).toBeVisible();
+  const headerAfter = await header.boundingBox();
+  const mainAfter = await main.boundingBox();
+  const navBox = await nav.boundingBox();
+  expect(headerAfter?.height).toBe(headerBefore?.height);
+  expect(mainAfter?.y).toBe(mainBefore?.y);
+  expect(navBox?.y).toBe(headerAfter!.y + headerAfter!.height - 1);
   await page.keyboard.press('Escape');
   await expect(toggle).toBeFocused();
   await expect(toggle).toHaveAttribute('aria-expanded', 'false');
+  await expect(nav).toBeHidden();
+  await page.emulateMedia({ reducedMotion: 'no-preference' });
+  expect(await page.locator('#site-nav').evaluate((element) => getComputedStyle(element).transitionDuration)).toContain('0.18s');
+  await toggle.click();
+  await expect.poll(() => nav.evaluate((element) => getComputedStyle(element).opacity)).toBe('1');
+  await toggle.click();
+  await expect(nav).toBeHidden();
+});
+
+test('mobile recruitment banner links the copy beside inline icon actions', async ({ page }) => {
+  for (const width of [320, 390]) {
+    await page.setViewportSize({ width, height: 844 });
+    await page.goto('/');
+    const copyLink = page.locator('.banner-copy--mobile');
+    await expect(copyLink).toHaveAttribute('href', /forms\.gle/);
+    await expect(copyLink.locator('.banner-outlink')).toHaveText('↗');
+    await expect(page.getByRole('link', { name: 'Coffee chat' })).toBeVisible();
+    await expect(page.getByRole('link', { name: 'Info sessions' })).toBeVisible();
+    const copy = await copyLink.boundingBox();
+    const inner = await page.locator('.recruit-banner-inner').boundingBox();
+    expect(copy!.width).toBeLessThan(inner!.width);
+    const actions = await page.locator('.banner-actions a:visible').all();
+    const boxes = await Promise.all(actions.map((action) => action.boundingBox()));
+    expect(boxes).toHaveLength(2);
+    expect(boxes[0]!.y).toBe(boxes[1]!.y);
+    expect(boxes[0]!.x).toBeGreaterThanOrEqual(copy!.x + copy!.width);
+    expect(boxes[1]!.x).toBeGreaterThanOrEqual(boxes[0]!.x + boxes[0]!.width);
+    expect(Math.max(...boxes.map((box) => box!.x + box!.width))).toBeLessThanOrEqual(inner!.x + inner!.width);
+    expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBe(width);
+    const url = page.url();
+    await page.locator('.recruit-banner').click({ position: { x: 5, y: 5 } });
+    expect(page.url()).toBe(url);
+  }
+});
+
+test('desktop recruitment banner keeps Apply as the only application link', async ({ page }) => {
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.goto('/');
+  await expect(page.locator('.banner-action-label')).toHaveCount(2);
+  await expect(page.locator('.banner-action-label').first()).toBeVisible();
+  await expect(page.locator('.banner-info-icon')).toBeHidden();
+  await expect(page.locator('.banner-button--apply')).toBeVisible();
+  await expect(page.locator('.banner-copy--desktop')).not.toHaveAttribute('href');
+  await expect(page.locator('.banner-copy--mobile')).toBeHidden();
+});
+
+test('recruitment copy link and Apply follow the text layout breakpoint', async ({ page }) => {
+  for (const width of [601, 760, 761, 900, 1000, 1001]) {
+    await page.setViewportSize({ width, height: 900 });
+    await page.goto('/');
+    const copy = page.locator(width <= 1000 ? '.banner-copy--mobile' : '.banner-copy--desktop');
+    const title = await copy.locator('strong').boundingBox();
+    const deadline = await copy.locator('.banner-deadline').boundingBox();
+    const apply = page.locator('.banner-button--apply');
+    if (width <= 1000) {
+      expect(deadline!.y).toBeGreaterThan(title!.y);
+      await expect(copy).toHaveAttribute('href', /forms\.gle/);
+      await expect(apply).toBeHidden();
+    } else {
+      expect(deadline!.y).toBe(title!.y);
+      await expect(copy).not.toHaveAttribute('href');
+      await expect(apply).toBeVisible();
+    }
+    expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBe(width);
+  }
 });
 
 test('an open recruitment page expires links at the deadline', async ({ page }) => {
@@ -65,7 +142,7 @@ test('carousel advances and pauses only while the carousel is hovered', async ({
   await expect(page.locator('.featured__progress')).toHaveAttribute('data-running', 'true');
   await page.locator('.featured__intro').hover();
   await expect(page.locator('.featured__progress')).toHaveAttribute('data-running', 'true');
-  await page.clock.fastForward(8100);
+  await page.clock.fastForward(5100);
   await expect(page.locator('.featured__story h3')).toHaveText('Persistent-Memory Glasses');
   await page.locator('.featured__media').hover();
   await expect(page.locator('.featured__progress')).toHaveAttribute('data-running', 'false');
