@@ -9,4 +9,6 @@ export default defineConfig({
   trailingSlash: 'always',
   integrations: [react(), sitemap({ filter: (page) => !['/404/', '/apply/', '/coffeechat/'].some((path) => page.endsWith(path)) }), icon({ include: { 'fa6-brands': ['instagram', 'linkedin', 'github'] } })],
   devToolbar: { enabled: false },
+  // CSS minification folds scroll timelines into invalid animation shorthands.
+  vite: { build: { cssMinify: false } },
 });
