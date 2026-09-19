@@ -59,7 +59,7 @@ test('mobile recruitment banner links the copy beside inline icon actions', asyn
     await page.goto('/');
     const copyLink = page.locator('.banner-copy--mobile');
     await expect(copyLink).toHaveAttribute('href', /forms\.gle/);
-    await expect(copyLink.locator('.banner-outlink')).toHaveText('↗');
+    await expect(copyLink.locator('.banner-outlink')).toHaveText('↗︎');
     await expect(page.getByRole('link', { name: 'Coffee chat' })).toBeVisible();
     await expect(page.getByRole('link', { name: 'Info sessions' })).toBeVisible();
     const copy = await copyLink.boundingBox();
@@ -189,6 +189,10 @@ test('team portraits toggle on touch without page overflow', async ({ browser })
   await expect(page.locator('astro-island[ssr]')).toHaveCount(0);
   const portrait = page.locator('.team-member__portrait').first();
   const details = page.locator('.team-member__details').first();
+  await expect(details).toBeHidden();
+  await portrait.tap();
+  await expect(details).toBeVisible();
+  await page.locator('#software .team-group__intro').tap();
   await expect(details).toBeHidden();
   await portrait.tap();
   await expect(details).toBeVisible();

@@ -7,7 +7,7 @@ const deadlineMessage = recruitment.applicationUrl ? 'Applications close' : 'Rec
 <aside class="recruit-banner" aria-label="Recruitment announcement" data-recruitment="open" hidden={!isRecruiting(recruitment)}>
   <div class="container recruit-banner-inner">
     <div class="banner-copy banner-copy--desktop"><strong><span class="banner-title">{recruitment.audience} recruitment</span></strong><span class="banner-deadline">{deadlineMessage} {deadlineLabel(recruitment)}</span></div>
-    <a class="banner-copy banner-copy--mobile" href={recruitment.applicationUrl ?? '/recruitment/'}><strong><span class="banner-title">{recruitment.audience} recruitment</span> <span class="banner-outlink" aria-hidden="true">↗</span></strong><span class="banner-deadline">{deadlineMessage} {deadlineLabel(recruitment)}</span></a>
+    <a class="banner-copy banner-copy--mobile" href={recruitment.applicationUrl ?? '/recruitment/'}><strong><span class="banner-title">{recruitment.audience} recruitment</span> <span class="banner-outlink" aria-hidden="true">↗︎</span></strong><span class="banner-deadline">{deadlineMessage} {deadlineLabel(recruitment)}</span></a>
     {(recruitment.applicationUrl || recruitment.coffeeChatUrl || events.length > 0) && <div class="banner-actions">
       {recruitment.applicationUrl && <a class="banner-button banner-button--apply" href={recruitment.applicationUrl}>Apply</a>}
       {recruitment.coffeeChatUrl && <a class="banner-button banner-button--secondary" href={recruitment.coffeeChatUrl} aria-label="Coffee chat"><span aria-hidden="true">☕️</span><span class="banner-action-label">Coffee Chat</span></a>}

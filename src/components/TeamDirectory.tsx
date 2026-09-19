@@ -70,14 +70,14 @@ function MemberCard({ member, teamId, teamName }: { member: Member; teamId: stri
   }, [member.image]);
   const [expanded, setExpanded] = useState(false);
   useEffect(() => {
-    if (member.image || !expanded) return;
+    if (!expanded) return;
     const dismissOutside = (event: PointerEvent) => {
       const row = bodyRef.current?.closest('article');
       if (event.target instanceof Node && !row?.contains(event.target)) setExpanded(false);
     };
     document.addEventListener('pointerdown', dismissOutside);
     return () => document.removeEventListener('pointerdown', dismissOutside);
-  }, [expanded, member.image]);
+  }, [expanded]);
   const linksId = `${teamId}-${member.id}-links`;
   const detailsId = `${teamId}-${member.id}-details`;
   const role = teamId === 'alumni'
