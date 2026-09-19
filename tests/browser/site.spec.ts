@@ -142,9 +142,6 @@ test('carousel advances and pauses only while the carousel is hovered', async ({
   await expect(page.locator('.featured__progress')).toHaveAttribute('data-running', 'true');
   await page.locator('.featured__intro').hover();
   await expect(page.locator('.featured__progress')).toHaveAttribute('data-running', 'true');
-  await page.clock.fastForward(5100);
-  await expect(page.locator('.featured__story h3')).toHaveText('Persistent-Memory Glasses');
-  await page.clock.fastForward(2500);
   const progress = page.locator('.featured__progress span');
   const seekProgress = (time: number) => progress.evaluate((bar, currentTime) => {
     const [animation] = bar.getAnimations();
@@ -154,13 +151,20 @@ test('carousel advances and pauses only while the carousel is hovered', async ({
     const transform = getComputedStyle(bar).transform;
     return transform === 'none' ? 0 : new DOMMatrixReadOnly(transform).a;
   });
-  expect(await progress.evaluate((bar) => bar.getAnimations()[0].effect?.getKeyframes().length)).toBe(3);
+  const keyframeCount = () => progress.evaluate((bar) => {
+    const effect = bar.getAnimations()[0].effect;
+    return effect instanceof KeyframeEffect ? effect.getKeyframes().length : 0;
+  });
+  await seekProgress(2500);
+  await page.clock.fastForward(5100);
+  await expect(page.locator('.featured__story h3')).toHaveText('Persistent-Memory Glasses');
+  expect(await keyframeCount()).toBe(3);
   await seekProgress(2500);
   const beforeHover = await progressScale();
   expect(beforeHover).toBeGreaterThan(0.4);
   await page.locator('.featured__media').hover();
   await expect(page.locator('.featured__progress')).toHaveAttribute('data-running', 'false');
-  expect(await progress.evaluate((bar) => bar.getAnimations()[0].effect?.getKeyframes().length)).toBe(2);
+  expect(await keyframeCount()).toBe(2);
   await seekProgress(110);
   const duringReset = await progressScale();
   expect(duringReset).toBeGreaterThan(0);
