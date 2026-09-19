@@ -39,6 +39,8 @@ Graphite is the main canvas. Use the lighter neutrals for controls and legibilit
 
 Geist Sans carries headings and body copy. Geist Mono is for dates, categories, and useful small labels. The hero's CU/XR lettering uses Chakra Petch and Geist Pixel; elsewhere, preserve the established wordmark. Red CU and light XR remain together. Body copy starts at 16px and long descriptions stay narrow enough to read comfortably. Heading tokens are desktop caps; scale them fluidly on smaller screens. Do not add labels solely for visual decoration.
 
+The hero description is an oversized near-white text block with a restrained, static Cornell-red registration edge. It should read as a deliberate secondary typographic element without competing with the wordmark or introducing another animation.
+
 ## Layout and imagery
 
 Center content within a 1280px maximum width, with responsive gutters and generous section spacing. Favor open columns, fine rules, and alternating large media with concise explanation. Avoid repeated card grids, rounded media frames, and shadows. Depth comes from scale, overlap, negative space, and intentional image placement.

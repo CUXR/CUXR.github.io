@@ -1,9 +1,10 @@
 import { useEffect, useRef, useState } from 'react';
-import type { CSSProperties } from 'react';
 import type { Project } from '../lib/content';
 import '../styles/featured.css';
 
 const CAROUSEL_INTERVAL_MS = 5000;
+const PROGRESS_RESET_MS = 220;
+const PROGRESS_RESET_EASING = 'cubic-bezier(0.22, 1, 0.36, 1)';
 
 type Props = {
   projects: Project[];
@@ -17,6 +18,10 @@ export default function FeaturedProjects({ projects }: Props) {
   const [pageVisible, setPageVisible] = useState(true);
   const [motionAllowed, setMotionAllowed] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
+  const progressRef = useRef<HTMLSpanElement>(null);
+  const previousProjectId = useRef<string | undefined>(visibleProjects[0]?.id);
+  const selectedIndex = visibleProjects.length === 0 ? 0 : activeIndex % visibleProjects.length;
+  const selected = visibleProjects[selectedIndex];
 
   useEffect(() => {
     const media = window.matchMedia('(prefers-reduced-motion: reduce)');
@@ -55,10 +60,51 @@ export default function FeaturedProjects({ projects }: Props) {
     return () => window.clearInterval(interval);
   }, [canRotate, visibleProjects.length]);
 
-  if (visibleProjects.length === 0) return null;
+  useEffect(() => {
+    const progress = progressRef.current;
+    if (!progress || !selected) return;
 
-  const selectedIndex = activeIndex % visibleProjects.length;
-  const selected = visibleProjects[selectedIndex];
+    if (!motionAllowed) {
+      progress.getAnimations().forEach((animation) => animation.cancel());
+      progress.style.transform = 'scaleX(0)';
+      return;
+    }
+
+    const transform = getComputedStyle(progress).transform;
+    const currentScale = transform === 'none' ? 0 : new DOMMatrixReadOnly(transform).a;
+    const projectChanged = previousProjectId.current !== selected.id;
+    previousProjectId.current = selected.id;
+
+    const animation = canRotate && projectChanged && currentScale > 0.01
+      ? progress.animate(
+          [
+            { transform: `scaleX(${currentScale})`, easing: PROGRESS_RESET_EASING },
+            { transform: 'scaleX(0)', offset: PROGRESS_RESET_MS / CAROUSEL_INTERVAL_MS, easing: 'linear' },
+            { transform: 'scaleX(1)' },
+          ],
+          { duration: CAROUSEL_INTERVAL_MS, fill: 'forwards' },
+        )
+      : progress.animate(
+          [
+            { transform: `scaleX(${currentScale})` },
+            { transform: canRotate ? 'scaleX(1)' : 'scaleX(0)' },
+          ],
+          {
+            duration: canRotate ? CAROUSEL_INTERVAL_MS : PROGRESS_RESET_MS,
+            easing: canRotate ? 'linear' : PROGRESS_RESET_EASING,
+            fill: 'forwards',
+          },
+        );
+
+    return () => {
+      // Preserve the sampled scale so an interrupted cycle retracts instead of snapping.
+      progress.style.transform = getComputedStyle(progress).transform;
+      animation.cancel();
+    };
+  }, [canRotate, motionAllowed, selected]);
+
+  if (!selected) return null;
+
   const choose = (index: number) => {
     setActiveIndex((index + visibleProjects.length) % visibleProjects.length);
   };
@@ -69,7 +115,6 @@ export default function FeaturedProjects({ projects }: Props) {
       id="featured"
       aria-labelledby="featured-title"
       ref={sectionRef}
-      style={{ '--featured-carousel-duration': `${CAROUSEL_INTERVAL_MS}ms` } as CSSProperties}
     >
       <div className="container">
         <div className="featured__intro">
@@ -113,7 +158,9 @@ export default function FeaturedProjects({ projects }: Props) {
               </a>
             </div>
 
-            <div className="featured__progress" data-running={canRotate} key={`${selected.id}-${canRotate}`} aria-hidden="true" />
+            <div className="featured__progress" data-running={canRotate} aria-hidden="true">
+              <span ref={progressRef} />
+            </div>
 
 
           </div>
