@@ -22,9 +22,6 @@
 .packet-reader__pages { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: thin; scrollbar-color: var(--color-border) transparent; }
 .packet-page { flex: 0 0 100%; min-width: 0; margin: 0; scroll-snap-align: start; scroll-snap-stop: always; }
 .packet-page img { width: 100%; aspect-ratio: 1500/1160; object-fit: contain; }
-.packet-page figcaption { display: grid; grid-template-columns: 1fr 2fr; gap: 32px; padding: 24px 0; }
-.packet-page strong { font-weight: 500; font-size: 1.25rem; }
-.packet-page p { margin: 0; color: var(--color-muted); }
 .packet-reader__controls { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--color-border); padding-top: 16px; }
 .packet-reader__controls p { color: var(--color-muted); font: .75rem var(--font-mono); }
 .packet-reader__controls > div { display: flex; gap: 8px; }
@@ -44,6 +41,5 @@
   .sponsor-collaboration { margin-top: 40px; gap: 16px; }
   .sponsor-packet { padding-block: 0 80px; }
   .sponsor-packet__heading { align-items: start; flex-direction: column; gap: 16px; margin-bottom: 24px; }
-  .packet-page figcaption { grid-template-columns: 1fr; gap: 12px; padding-block: 20px; }
   .sponsor-invitation { padding-block: 64px 80px; }
 }

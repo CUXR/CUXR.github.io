@@ -45,7 +45,7 @@ The hero description is an oversized near-white text block with a restrained, st
 
 Center content within a 1280px maximum width, with responsive gutters and generous section spacing. Favor open columns, fine rules, and alternating large media with concise explanation. Avoid repeated card grids, rounded media frames, and shadows. Depth comes from scale, overlap, negative space, and intentional image placement.
 
-Use real project, team, and sponsor media. Keep logos and wordmarks in their original proportions. Transparent brand assets should remain legible against the dark canvas. The bear is a free-standing hero focal point, never a card. On narrow screens, preserve reading order and fit content within the viewport.
+Use real project, team, and sponsor media. Keep logos and wordmarks in their original proportions. Arrange employer marks in centered, wrapping rows with consistent spacing. Transparent brand assets should remain legible against the dark canvas. The bear is a free-standing hero focal point, never a card. On narrow screens, preserve reading order and fit content within the viewport.
 
 ## Interaction and motion
 

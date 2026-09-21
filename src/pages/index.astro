@@ -56,6 +56,15 @@ const featured = projects.filter(
                 <ul aria-label="Member and alumni employers">
                     <li>
                         <img
+                            src="/media/apple.svg"
+                            alt="Apple"
+                            width="44"
+                            height="54"
+                            loading="lazy"
+                        />
+                    </li>
+                    <li>
+                        <img
                             src="/media/nvidia.svg"
                             alt="NVIDIA"
                             width="202"
@@ -69,6 +78,15 @@ const featured = projects.filter(
                             alt="Microsoft"
                             width="202"
                             height="43"
+                            loading="lazy"
+                        />
+                    </li>
+                    <li>
+                        <img
+                            src="/media/optiver.svg"
+                            alt="Optiver"
+                            width="168"
+                            height="46"
                             loading="lazy"
                         />
                     </li>
@@ -96,6 +114,15 @@ const featured = projects.filter(
                             alt="RTX"
                             width="202"
                             height="50"
+                            loading="lazy"
+                        />
+                    </li>
+                    <li>
+                        <img
+                            src="/media/picogrid-wordmark.png"
+                            alt="PicoGrid"
+                            width="160"
+                            height="36"
                             loading="lazy"
                         />
                     </li>
@@ -139,6 +166,63 @@ const featured = projects.filter(
             </div>
         </div>
     </section>
+    <script>
+        const employerList = document.querySelector<HTMLUListElement>(
+            ".company-strip ul",
+        );
+
+        if (employerList) {
+            const logos = Array.from(
+                employerList.querySelectorAll<HTMLLIElement>("li"),
+            );
+            let lastWidth = 0;
+
+            const balanceEmployerRows = () => {
+                const width = employerList.clientWidth;
+                if (width === lastWidth) return;
+                lastWidth = width;
+
+                employerList
+                    .querySelectorAll(".company-strip-break")
+                    .forEach((item) => item.remove());
+
+                const gap = parseFloat(getComputedStyle(employerList).columnGap);
+                const widths = logos.map((logo) => logo.getBoundingClientRect().width);
+                const costs = Array<number>(logos.length + 1).fill(Infinity);
+                const next = Array<number>(logos.length).fill(logos.length);
+                costs[logos.length] = 0;
+
+                // Balance unused space while keeping at least two logos on every row.
+                for (let start = logos.length - 1; start >= 0; start--) {
+                    let rowWidth = 0;
+                    for (let end = start; end < logos.length; end++) {
+                        rowWidth += widths[end] + (end > start ? gap : 0);
+                        if (rowWidth > width - 1) break;
+                        if (end === start || !Number.isFinite(costs[end + 1]))
+                            continue;
+
+                        const cost = (width - rowWidth) ** 2 + costs[end + 1];
+                        if (cost < costs[start]) {
+                            costs[start] = cost;
+                            next[start] = end + 1;
+                        }
+                    }
+                }
+
+                if (!Number.isFinite(costs[0])) return;
+                employerList.classList.add("is-balanced");
+                for (let start = next[0]; start < logos.length; start = next[start]) {
+                    const lineBreak = document.createElement("li");
+                    lineBreak.className = "company-strip-break";
+                    lineBreak.setAttribute("role", "presentation");
+                    lineBreak.setAttribute("aria-hidden", "true");
+                    employerList.insertBefore(lineBreak, logos[start]);
+                }
+            };
+
+            new ResizeObserver(balanceEmployerRows).observe(employerList);
+        }
+    </script>
     <section
         id="industry-collaboration"
         class="home-industry"

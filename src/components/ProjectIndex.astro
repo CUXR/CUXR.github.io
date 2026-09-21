@@ -11,7 +11,7 @@ const { projects } = Astro.props;
         <h2 class="project-index__heading" id={project.id}>
           <a href={`#${project.id}`} data-project-control aria-controls={`details-${project.id}`}>
             <span class="project-index__category">{project.category}</span>
-            <span class="project-index__name">{project.title}<span class="project-index__indicator" aria-hidden="true"></span></span>
+            <span class="project-index__name">{project.title}</span>
           </a>
         </h2>
         <div class="project-index__details" id={`details-${project.id}`} role="region" aria-labelledby={project.id}>
@@ -135,11 +135,6 @@ const { projects } = Astro.props;
   .project-index__heading a:is(:hover, :focus-visible, [data-active="true"]) { color: var(--color-text); }
   .project-index__category { display: block; margin-bottom: 4px; font: 400 .75rem/1.5 var(--font-mono); letter-spacing: 0; }
   .project-index__name { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; font-size: clamp(1.65rem, 2.6vw, 2.25rem); font-weight: 500; letter-spacing: -.045em; line-height: 1.12; }
-  .project-index__indicator { position: relative; flex: 0 0 18px; width: 18px; height: 18px; align-self: center; color: var(--color-accent); transition: transform var(--duration-fast) var(--ease-out); }
-  .project-index__indicator::before, .project-index__indicator::after { position: absolute; content: ''; inset: 8px 0 auto; height: 2px; background: currentColor; transition: transform 280ms var(--ease-out), opacity 240ms var(--ease-out); }
-  .project-index__indicator::after { transform: rotate(90deg) scaleX(0); opacity: 0; }
-  [data-active="false"] .project-index__indicator::after { transform: rotate(90deg) scaleX(1); opacity: 1; }
-  .project-index__heading a:active .project-index__indicator { transform: scale(.92); }
   .project-index__detail-content { padding-bottom: 32px; }
   .project-index__details[hidden] { display: none; }
   .project-index__details img { display: block; width: 100%; height: 280px; object-fit: contain; }
@@ -154,7 +149,6 @@ const { projects } = Astro.props;
     .project-index__details p { font-size: clamp(1.125rem, 1.6vw, 1.35rem); }
   }
   @media (prefers-reduced-motion: reduce) {
-    .project-index__heading a, .project-index__indicator, .project-index__indicator::before, .project-index__indicator::after { transition: none; }
-    .project-index__heading a:active .project-index__indicator { transform: none; }
+    .project-index__heading a { transition: none; }
   }
 </style>
