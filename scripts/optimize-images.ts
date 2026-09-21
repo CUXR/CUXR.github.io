@@ -7,7 +7,8 @@ import { imageUrl, imageWidths, type ImageFormat, type ImagePreset } from '../sr
 const jobs: { src: string; preset: ImagePreset }[] = [
   { src: '/media/team-photo.webp', preset: 'photo' },
   { src: '/media/info-session.webp', preset: 'photo' },
-  ...[1, 3, 4, 6].map((page) => ({ src: `/media/sponsor/packet-${page}.webp`, preset: 'packet' as const })),
+  ...Array.from({ length: 9 }, (_, index) => index + 1)
+    .map((page) => ({ src: `/media/sponsor/packet-${page}.webp`, preset: 'packet' as const })),
   ...(await readdir('public/team/headshots')).filter((name) => name.endsWith('.webp'))
     .map((name) => ({ src: `/team/headshots/${name}`, preset: 'portrait' as const })),
 ];
