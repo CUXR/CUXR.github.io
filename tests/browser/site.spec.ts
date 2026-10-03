@@ -2,6 +2,12 @@ import { test, expect } from '@playwright/test';
 import AxeBuilder from '@axe-core/playwright';
 import members from '../../src/data/members.json' with { type: 'json' };
 import subteams from '../../src/data/subteams.json' with { type: 'json' };
+import recruitment from '../../src/data/recruitment.json' with { type: 'json' };
+
+// Banner tests pin the browser clock inside the application window; the server still uses the real date to decide
+// whether the Info sessions link is rendered.
+const openRecruitment = new Date('2026-09-22T12:00:00-04:00');
+const hasUpcomingSessions = recruitment.events.some((event) => Date.parse(event.endsAt) > Date.now());
 
 for (const width of [390, 1440]) {
   for (const route of ['/', '/projects/', '/team/', '/sponsor/', '/recruitment/']) {
@@ -54,6 +60,7 @@ test('mobile menu supports keyboard and Escape', async ({ page }) => {
 });
 
 test('mobile recruitment banner links the copy beside inline icon actions', async ({ page }) => {
+  await page.clock.install({ time: openRecruitment });
   for (const width of [320, 390]) {
     await page.setViewportSize({ width, height: 844 });
     await page.goto('/');
@@ -61,16 +68,20 @@ test('mobile recruitment banner links the copy beside inline icon actions', asyn
     await expect(copyLink).toHaveAttribute('href', /forms\.gle/);
     await expect(copyLink.locator('.banner-outlink')).toHaveText('↗︎');
     await expect(page.getByRole('link', { name: 'Coffee chat' })).toBeVisible();
-    await expect(page.getByRole('link', { name: 'Info sessions' })).toBeVisible();
+    const infoSessions = page.getByRole('link', { name: 'Info sessions' });
+    if (hasUpcomingSessions) await expect(infoSessions).toBeVisible();
+    else await expect(infoSessions).toHaveCount(0);
     const copy = await copyLink.boundingBox();
     const inner = await page.locator('.recruit-banner-inner').boundingBox();
     expect(copy!.width).toBeLessThan(inner!.width);
     const actions = await page.locator('.banner-actions a:visible').all();
     const boxes = await Promise.all(actions.map((action) => action.boundingBox()));
-    expect(boxes).toHaveLength(2);
-    expect(boxes[0]!.y).toBe(boxes[1]!.y);
+    expect(boxes).toHaveLength(hasUpcomingSessions ? 2 : 1);
     expect(boxes[0]!.x).toBeGreaterThanOrEqual(copy!.x + copy!.width);
-    expect(boxes[1]!.x).toBeGreaterThanOrEqual(boxes[0]!.x + boxes[0]!.width);
+    for (let i = 1; i < boxes.length; i++) {
+      expect(boxes[i]!.y).toBe(boxes[0]!.y);
+      expect(boxes[i]!.x).toBeGreaterThanOrEqual(boxes[i - 1]!.x + boxes[i - 1]!.width);
+    }
     expect(Math.max(...boxes.map((box) => box!.x + box!.width))).toBeLessThanOrEqual(inner!.x + inner!.width);
     expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBe(width);
     const url = page.url();
@@ -80,9 +91,10 @@ test('mobile recruitment banner links the copy beside inline icon actions', asyn
 });
 
 test('desktop recruitment banner keeps Apply as the only application link', async ({ page }) => {
+  await page.clock.install({ time: openRecruitment });
   await page.setViewportSize({ width: 1440, height: 900 });
   await page.goto('/');
-  await expect(page.locator('.banner-action-label')).toHaveCount(2);
+  await expect(page.locator('.banner-action-label')).toHaveCount(hasUpcomingSessions ? 2 : 1);
   await expect(page.locator('.banner-action-label').first()).toBeVisible();
   await expect(page.locator('.banner-info-icon')).toBeHidden();
   await expect(page.locator('.banner-button--apply')).toBeVisible();
@@ -91,6 +103,7 @@ test('desktop recruitment banner keeps Apply as the only application link', asyn
 });
 
 test('recruitment copy link and Apply follow the text layout breakpoint', async ({ page }) => {
+  await page.clock.install({ time: openRecruitment });
   for (const width of [601, 760, 761, 900, 1000, 1001]) {
     await page.setViewportSize({ width, height: 900 });
     await page.goto('/');
