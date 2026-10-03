@@ -183,6 +183,14 @@ test('carousel advances and pauses only while the carousel is hovered', async ({
   expect(await page.locator('video').evaluate((video: HTMLVideoElement) => video.paused)).toBe(true);
 });
 
+test('employer logos link to company websites', async ({ page }) => {
+  await page.goto('/');
+  const employers = page.getByRole('list', { name: 'Member and alumni employers' });
+  const logos = employers.locator('img');
+  await expect(logos).not.toHaveCount(0);
+  await expect(employers.locator('a[href^="https://"] > img')).toHaveCount(await logos.count());
+});
+
 test('team groups keep portraits and details connected', async ({ page }) => {
   await page.emulateMedia({ reducedMotion: 'reduce' });
   await page.goto('/team/');
